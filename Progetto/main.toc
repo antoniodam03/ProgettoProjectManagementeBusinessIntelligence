@@ -21,6 +21,7 @@
 \contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{13}{subsection.1.4.3}%
 \contentsline {chapter}{\numberline {2}Tableau}{17}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Seguire pdf esempio}{17}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Power PI}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{18}{section.3.1}%
-\contentsline {chapter}{Sitografia}{19}{chapter*.25}%
+\contentsline {chapter}{\numberline {3}Power BI}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Materiali e Metodi}{18}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Importazione e Preparazione dei Dati.}{19}{subsection.3.1.1}%
+\contentsline {chapter}{Sitografia}{20}{chapter*.25}%

@@ -1,9 +1,32 @@
-\chapter{Power PI} %\label{1cap:spinta_laterale}
+\chapter{Power BI} %\label{1cap:spinta_laterale}
 
 \begin{preamble}
 {\em
-Preambolo da scrivere
+Nel seguente capitolo viene utilizzato Microsoft Power BI, una piattaforma leader nel settore della Business Intelligence che fornisce visualizzazioni interattive di dati tramite un'interfaccia grafica, consentendo la creazione di report e dashboard attraverso l'uso di linguaggio DAX (Data Analysis Expressions) per l'analisi dei dati.
+Nel contesto del presente progetto, Power BI è stato utilizzato per profilare i gruppi terroristici tramite tecniche di Cluster Analysis (raggruppando gli attori in base a frequenza e letalità) e per identificare le cause radice e i fattori determinanti che influenzano l'esito e l'impatto degli attacchi, completando così il quadro analitico avviato con l'esplorazione descrittiva.
 }
 \end{preamble}
 
-\section{Seguire pdf esempio}
+\section{Materiali e Metodi}
+L'analisi condotta su questo dataset ha come obiettivo principale quello di esplorare le dinamiche profonde del terrorismo globale, andando oltre la semplice descrizione degli eventi per comprendere le correlazioni nascoste tra le tattiche operative, la letalità degli attacchi e il profilo dei gruppi responsabili. Sono state sviluppate diverse visualizzazioni per effettuare le seguenti analisi:
+
+\begin{itemize}
+    \item \textit{Profilazione dei Gruppi Terroristici (Cluster Analysis):} questa analisi utilizza algoritmi di clustering per raggruppare le organizzazioni terroristiche (\texttt{gname}) in segmenti omogenei basati sulla frequenza degli attacchi e sul numero di vittime (\texttt{nkill}), identificando pattern comportamentali simili tra gruppi apparentemente diversi.
+    
+    \item \textit{Analisi dei fattori determinanti la letalità (Key Influencers):} questa analisi esplora quali variabili (come il tipo di arma \texttt{weaptype1\_txt} o la regione \texttt{region\_txt}) influenzino maggiormente la probabilità che un attacco provochi un alto numero di vittime.
+    
+    \item \textit{Scomposizione gerarchica dell'impatto (Decomposition Tree):} si è indagato sulla distribuzione del numero totale di vittime e feriti (\texttt{nkill} e \texttt{nwound}), permettendo di scomporre il dato aggregato a livello globale fino al dettaglio del singolo gruppo e della tattica utilizzata, per individuare le "cause radice" dei picchi di violenza.
+    
+    \item \textit{Confronto tra successo dell'attacco e tipologia di bersaglio:} questa analisi illustra la correlazione tra il tipo di obiettivo colpito (\texttt{targtype1\_txt}) e l'esito dell'evento (\texttt{success}), per capire se determinati bersagli (es. militari vs civili) presentino tassi di fallimento maggiori grazie a misure difensive.
+    
+    \item \textit{Analisi dell'impatto economico in relazione alle armi utilizzate:} l'obiettivo di questa analisi è stato mettere in evidenza la relazione tra il valore delle proprietà distrutte (\texttt{propvalue}) e la categoria di arma impiegata, esaminando se attacchi tecnologicamente più semplici possano comunque causare danni economici ingenti.
+    
+    \item \textit{Distribuzione geografica della letalità:} si è voluto valutare la relazione tra la macro-regione geografica e l'intensità degli attacchi, per capire come il contesto geopolitico influisca sul rapporto tra numero di eventi e numero di decessi.
+    
+    \item \textit{Analisi dei rapimenti e delle richieste di riscatto:} questa analisi mirava a tracciare l'incidenza dei rapimenti (\texttt{ishostkid}) e l'importo dei riscatti richiesti (\texttt{ransomamt}), per identificare se esistono pattern economici specifici legati a determinati gruppi o aree geografiche.
+\end{itemize}
+
+Queste analisi hanno fornito una visione diagnostica complessiva dell'interazione tra le strategie terroristiche e il loro impatto reale, fornendo diversi spunti per l'allocazione delle risorse di prevenzione e per la comprensione dei fattori di rischio critici.
+
+\subsection{Importazione e Preparazione dei Dati.}
+Per importare i dati in Power BI, è stato utilizzato il file CSV contenente il dataset del Global Terrorism Database 
