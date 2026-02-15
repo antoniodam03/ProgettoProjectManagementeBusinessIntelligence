@@ -25,108 +25,93 @@ Di seguito viene riportato il \textit{Dizionario dei Dati} (Tabella \ref{tab:dat
 
 \renewcommand{\arraystretch}{1.4}
 
-\begin{longtable}{|l|p{0.70\textwidth}|}
-
-\caption{Elenco completo delle 27 variabili selezionate dal GTD.}
-\label{tab:dataset_description} \\
-
-% --- INTESTAZIONE PRIMA PAGINA ---
-\hline
-\rowcolor[gray]{0.9} \textbf{Nome Colonna} & \textbf{Descrizione} \\
-\hline
-\endfirsthead
-
-% --- INTESTAZIONE PAGINE SUCCESSIVE ---
-\multicolumn{2}{c}{\textbf{\tablename\ \thetable{} -- continua dalla pagina precedente}} \\
-\hline
-\rowcolor[gray]{0.9} \textbf{Nome Colonna} & \textbf{Descrizione} \\
-\hline
-\endhead
-
-% --- PIÈ DI PAGINA ---
-\hline
-\multicolumn{2}{r}{Continua nella prossima pagina...} \\
-\endfoot
-
-% --- FINE TABELLA ---
-\hline
-\endlastfoot
-
-% --- 1. IDENTIFICATIVI E TEMPO ---
-\texttt{eventid} & Identificativo univoco numerico dell'evento (Chiave Primaria). \\
-\hline
-\texttt{iyear} & Anno in cui si è verificato l'incidente. \\
-\hline
-\texttt{imonth} & Mese in cui si è verificato l'incidente (0 se sconosciuto). \\
-\hline
-\texttt{iday} & Giorno in cui si è verificato l'incidente (0 se sconosciuto). \\
-\hline
-
-% --- 2. GEOGRAFIA ---
-\texttt{country\_txt} & Nome della Nazione in cui è avvenuto l'attacco. \\
-\hline
-\texttt{region\_txt} & Macro-regione geografica (es. Medio Oriente, Nord America). \\
-\hline
-\texttt{provstate} & Nome della Provincia o dello Stato amministrativo (es. Texas, Baghdad). \\
-\hline
-\texttt{city} & Nome della città o del villaggio specifico. \\
-\hline
-\texttt{latitude} & Coordinata geografica (Latitudine) dell'evento. \\
-\hline
-\texttt{longitude} & Coordinata geografica (Longitudine) dell'evento. \\
-\hline
-
-\texttt{Crit1} & Indicatore binario (1/0) se l'evento è violento o minaccia di violenza. \\
-\hline
-
-\texttt{Crit2} & Indicatore binario (1/0) se l’evento è perpetrato da un gruppo non statale. \\
-\hline
-
-\texttt{Crit3} & Indicatore binario (1/0) se l’evento ha uno scopo politico, religioso, ideologico o sociale. \\
-\hline
-
-% --- 3. TATTICHE E ARMI ---
-\texttt{attacktype1\_txt} & Categoria principale della tattica d'attacco (es. Bombardamento). \\
-\hline
-\texttt{weaptype1\_txt} & Categoria generale dell'arma utilizzata (es. Esplosivi). \\
-\hline
-\texttt{weapsubtype1\_txt} & Sottocategoria specifica dell'arma (es. Dinamite, Mina terrestre). \\
-\hline
-\texttt{suicide} & Indicatore binario (1/0) se l'attacco è stato suicida. \\
-\hline
-\texttt{success} & Indicatore binario (1/0) se l'attacco ha raggiunto l'obiettivo tattico. \\
-\hline
-
-% --- 4. OBIETTIVI ---
-\texttt{targtype1\_txt} & Categoria generale del bersaglio (es. Civili, Militari). \\
-\hline
-\texttt{targsubtype1\_txt} & Sottocategoria specifica del bersaglio (es. Ristorante, Caserma). \\
-\hline
-\texttt{corp1} & Nome dell'ente, azienda o gruppo specifico colpito. \\
-\hline
-\texttt{natlty1\_txt} & Nazionalità delle vittime colpite. \\
-\hline
-
-% --- 5. GRUPPI E TERRORISTI ---
-\texttt{gname} & Nome del gruppo terroristico responsabile o sospettato. \\
-\hline
-\texttt{claimed} & Indicatore binario (1/0) se l'attacco è stato rivendicato ufficialmente. \\
-\hline
-\texttt{nperps} & Numero di terroristi che hanno partecipato all'azione. \\
-\hline
-
-% --- 6. IMPATTO E VITTIME ---
-\texttt{nkill} & Numero di persone decedute (Morti). \\
-\hline
-\texttt{nwound} & Numero di persone ferite. \\
-\hline
-\texttt{propvalue} & Valore stimato del danno economico alla proprietà (in USD). \\
-\hline
-\texttt{ishostkid} & Indicatore binario (1/0) se l'evento è un rapimento/presa ostaggi. \\
-\hline
-\texttt{ransomamt} & Importo del riscatto richiesto (in USD). \\
-
-\end{longtable}
+\begin{table}[htbp] % 'htbp' cerca di piazzarla qui, in alto, in basso o in una pagina separata
+    \centering
+    \footnotesize % Riduce leggermente il font per farla entrare in una pagina
+    \caption{Elenco completo delle 27 variabili selezionate dal GTD.}
+    \label{tab:dataset_description}
+    
+    % Definisce la larghezza: l = left, p = paragrafo con larghezza fissa
+    \begin{tabular}{|l|p{0.70\textwidth}|}
+        \hline
+        \rowcolor[gray]{0.9} \textbf{Nome Colonna} & \textbf{Descrizione} \\
+        \hline
+        
+        % --- 1. IDENTIFICATIVI E TEMPO ---
+        \texttt{eventid} & Identificativo univoco numerico dell'evento (Chiave Primaria). \\
+        \hline
+        \texttt{iyear} & Anno in cui si è verificato l'incidente. \\
+        \hline
+        \texttt{imonth} & Mese in cui si è verificato l'incidente (0 se sconosciuto). \\
+        \hline
+        \texttt{iday} & Giorno in cui si è verificato l'incidente (0 se sconosciuto). \\
+        \hline
+        
+        % --- 2. GEOGRAFIA ---
+        \texttt{country\_txt} & Nome della Nazione in cui è avvenuto l'attacco. \\
+        \hline
+        \texttt{region\_txt} & Macro-regione geografica (es. Medio Oriente). \\
+        \hline
+        \texttt{provstate} & Nome della Provincia o dello Stato amministrativo. \\
+        \hline
+        \texttt{city} & Nome della città o del villaggio specifico. \\
+        \hline
+        \texttt{latitude} & Coordinata geografica (Latitudine) dell'evento. \\
+        \hline
+        \texttt{longitude} & Coordinata geografica (Longitudine) dell'evento. \\
+        \hline
+        
+        % --- CRITERI ---
+        \texttt{Crit1} & Indicatore binario (1/0) violenza o minaccia di violenza. \\
+        \hline
+        \texttt{Crit2} & Indicatore binario (1/0) perpetrato da gruppo non statale. \\
+        \hline
+        \texttt{Crit3} & Indicatore binario (1/0) scopo politico, religioso o sociale. \\
+        \hline
+        
+        % --- 3. TATTICHE E ARMI ---
+        \texttt{attacktype1\_txt} & Categoria principale della tattica d'attacco. \\
+        \hline
+        \texttt{weaptype1\_txt} & Categoria generale dell'arma utilizzata. \\
+        \hline
+        \texttt{weapsubtype1\_txt} & Sottocategoria specifica dell'arma. \\
+        \hline
+        \texttt{suicide} & Indicatore binario (1/0) se l'attacco è stato suicida. \\
+        \hline
+        \texttt{success} & Indicatore binario (1/0) successo dell'attacco. \\
+        \hline
+        
+        % --- 4. OBIETTIVI ---
+        \texttt{targtype1\_txt} & Categoria generale del bersaglio (es. Civili). \\
+        \hline
+        \texttt{targsubtype1\_txt} & Sottocategoria specifica del bersaglio. \\
+        \hline
+        \texttt{corp1} & Nome dell'ente, azienda o gruppo colpito. \\
+        \hline
+        \texttt{natlty1\_txt} & Nazionalità delle vittime colpite. \\
+        \hline
+        
+        % --- 5. GRUPPI E TERRORISTI ---
+        \texttt{gname} & Nome del gruppo terroristico responsabile. \\
+        \hline
+        \texttt{claimed} & Indicatore binario (1/0) rivendicazione ufficiale. \\
+        \hline
+        \texttt{nperps} & Numero di terroristi partecipanti. \\
+        \hline
+        
+        % --- 6. IMPATTO E VITTIME ---
+        \texttt{nkill} & Numero di persone decedute (Morti). \\
+        \hline
+        \texttt{nwound} & Numero di persone ferite. \\
+        \hline
+        \texttt{propvalue} & Valore stimato del danno economico (USD). \\
+        \hline
+        \texttt{ishostkid} & Indicatore (1/0) rapimento/presa ostaggi. \\
+        \hline
+        \texttt{ransomamt} & Importo del riscatto richiesto (in USD). \\
+        \hline
+    \end{tabular}
+\end{table}
 
 
 
