@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  15 FEB 2026 17:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  15 FEB 2026 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1200,37 +1200,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-Overfull \hbox (26.54678pt too wide) in paragraph at lines 183--183
+Overfull \hbox (26.54678pt too wide) in paragraph at lines 185--185
  []\T1/pcr/m/n/10.95 file_path = "/Users/antonio/Desktop/globalterrorismdb_0718dist.csv"[] 
  []
 
 
-Overfull \hbox (171.08661pt too wide) in paragraph at lines 183--183
+Overfull \hbox (171.08661pt too wide) in paragraph at lines 185--185
  []    \T1/pcr/m/n/10.95 "eventid", "country_txt", "region_txt", "provstate", "city", "latitude", "longitude",[] 
  []
 
 
-Overfull \hbox (118.52667pt too wide) in paragraph at lines 183--183
+Overfull \hbox (118.52667pt too wide) in paragraph at lines 185--185
  []    \T1/pcr/m/n/10.95 "attacktype1_txt", "weaptype1_txt", "weapsubtype1_txt", "suicide", "success",[] 
  []
 
 
-Overfull \hbox (6.8368pt too wide) in paragraph at lines 183--183
+Overfull \hbox (6.8368pt too wide) in paragraph at lines 185--185
  []    \T1/pcr/m/n/10.95 "targtype1_txt", "targsubtype1_txt", "corp1", "natlty1_txt",[] 
  []
 
 
-Overfull \hbox (217.07655pt too wide) in paragraph at lines 183--183
+Overfull \hbox (217.07655pt too wide) in paragraph at lines 185--185
  []\T1/pcr/m/n/10.95 df = pd.read_csv(file_path, usecols=columns_of_interest, encoding='ISO-8859-1', engine='python')[] 
  []
 
 
-Overfull \hbox (98.8167pt too wide) in paragraph at lines 192--192
+Overfull \hbox (98.8167pt too wide) in paragraph at lines 194--194
  []\T1/pcr/m/n/10.95 numeric_cols_unknown = ["nkill", "nwound", "propvalue", "ransomamt", "nperps"][] 
  []
 
 
-Overfull \hbox (0.26682pt too wide) in paragraph at lines 207--207
+Overfull \hbox (0.26682pt too wide) in paragraph at lines 209--209
  []        \T1/pcr/m/n/10.95 month = int(row['imonth']) if row['imonth'] != 0 else 1[] 
  []
 
@@ -1522,9 +1522,9 @@ Here is how much of TeX's memory you used:
  59546 multiletter control sequences out of 15000+600000
  639058 words of font info for 397 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,14n,131p,2409b,817s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 111i,14n,131p,2409b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (25 pages, 6890021 bytes).
+Output written on main.pdf (25 pages, 6890124 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  315 compressed objects within 4 object streams

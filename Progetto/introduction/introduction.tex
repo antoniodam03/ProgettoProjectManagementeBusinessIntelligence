@@ -144,8 +144,9 @@ In particolare, sono stati eseguiti i seguenti passaggi:
     \item \textit{Gestione delle date incomplete:} \\
     Alcuni record presentavano giorno o mese sconosciuti, indicati con valore ``0''. Per garantire la compatibilità con Qlik Sense, Tableau e Power BI, è stata creata una \textit{colonna unificata \texttt{date}}, combinando anno, mese e giorno. I valori sconosciuti sono stati sostituiti con ``1'', evitando errori nella lettura e permettendo aggregazioni temporali coerenti.
 
-    \item \textit{Normalizzazione dei valori numerici:} \\
-    Alcune colonne numeriche, come numero di morti, feriti, terroristi coinvolti, danni economici e riscatti richiesti, contenevano il codice ``-99'' a indicare valori sconosciuti. Tutti questi valori sono stati sostituiti con ``0''. Inoltre, eventuali celle vuote (\textit{NaN}) nelle stesse colonne sono state anch’esse convertite in ``0''. Questo passaggio garantisce la consistenza dei dati e permette di calcolare correttamente KPI come morti totali, danni economici complessivi e impatto degli attacchi.
+    \item \textit{Normalizzazione dei valori numerici:} \\ 
+    Alcune colonne numeriche, come numero di morti, feriti, terroristi coinvolti, danni economici e riscatti richiesti, contenevano il codice ``-99'' a indicare valori sconosciuti. Tali valori sono stati convertiti in \textit{NaN} (Not a Number) per distinguerli dai valori effettivamente pari a zero. Inoltre, tutte le colonne sono state convertite in formato numerico per garantire la corretta interpretazione dei dati. Questo passaggio consente di evitare distorsioni nelle analisi statistiche e nei KPI, preservando la distinzione tra dati mancanti e valori reali.
+
 
     \item \textit{Verifica della qualità dei dati:} \\
     Il dataset è stato controllato per valori nulli e duplicati, confermando che non esistono record che possano alterare aggregazioni statistiche o analisi temporali. Anche le colonne numeriche sono state verificate per assicurare la coerenza dei formati e la precisione dei calcoli.
@@ -154,16 +155,17 @@ In particolare, sono stati eseguiti i seguenti passaggi:
     Al termine del preprocessing, il dataset risultante è stato salvato come \textit{CSV pulito e standardizzato}, pronto per essere importato nei software di Business Intelligence. La struttura dei dati, con colonne coerenti e valori numerici normalizzati, consente di creare dashboard affidabili e KPI precisi senza rischio di errori derivanti da dati mancanti o codifiche anomale.
 \end{enumerate}
 
-\textit /{Nota metodologica:} \\
+\textit{Nota metodologica:} \\
 Questa fase di ETL è fondamentale per trasformare un dataset grezzo e complesso in un formato \textit{immediatamente utilizzabile} per analisi visive, aggregazioni temporali e comparazioni geografiche, migliorando la robustezza delle dashboard di Qlik Sense, Tableau e Power BI.
 
 \subsection{Preprocessing dei Dati in Python}
 
-Per preparare il dataset del \textit{Global Terrorism Database} per l'importazione nei software di Business Intelligence, è stato utilizzato Python con la libreria \texttt{pandas}. Di seguito sono descritti i principali passaggi eseguiti.
+Per preparare il dataset del \textit{Global Terrorism Database} per l'importazione nei software di Business Intelligence, è stato utilizzato Python con la libreria \texttt{pandas} e \texttt{numpy}. Di seguito sono descritti i principali passaggi eseguiti.
 
 \begin{enumerate}
     \item \textit{Importazione delle librerie e caricamento del dataset:}
-\begin{verbatim}
+
+    \begin{verbatim}
 import pandas as pd
 import numpy as np
 
