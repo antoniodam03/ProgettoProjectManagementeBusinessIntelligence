@@ -1,0 +1,220 @@
+\phantomsection
+\addcontentsline{toc}{chapter}{Introduzione}
+\chapter*{Introduzione}
+\markboth{Introduzione}{}
+
+In uno scenario geopolitico caratterizzato da crescenti tensioni e conflitti asimmetrici, la minaccia terroristica evolve rapidamente nelle sue modalità operative e strategiche, sfidando la stabilità della sicurezza internazionale. In questo contesto, la presente tesina si propone di esplorare le dinamiche della violenza politica sotto molteplici prospettive: valutando l'impatto umano ed economico, l'evoluzione del \textit{Modus Operandi} (tattiche e armamenti), l'efficacia delle azioni offensive (Successo vs Fallimento) e la distribuzione geografica delle zone di crisi a livello globale.
+
+Nello specifico, l'indagine si basa sul dataset \href{https://www.kaggle.com/datasets/START-UMD/gtd}{\textit{Global Terrorism Database (GTD)}}, sviluppato dal consorzio START dell'Università del Maryland, che raccoglie e sistematizza i dati relativi agli incidenti terroristici registrati dal \textit{1970} ad oggi. Il dataset offre una visione granulare su variabili cruciali quali la tipologia di attacco (es. \textit{Bombing}, \textit{Armed Assault}, \textit{Hijacking}), la natura del bersaglio colpito (\textit{Target Type}: Civili, Militari, Business), i danni materiali ed economici generati e l'identità dei gruppi responsabili.
+Il dataset rappresenta la fonte open-source più completa e autorevole in questo dominio, presentando un elevato livello di dettaglio storico e strutturale.
+
+Le analisi sono state condotte mediante l'utilizzo di avanzati software di \textit{Business Intelligence} (tra cui \textit{Qlik Sense}, \textit{Power BI} e \textit{Tableau}), che hanno permesso di trasformare oltre 180.000 record grezzi in \textit{dashboard interattive}. Questo approccio metodologico ha consentito di simulare un processo di \textit{Intelligence Analysis} orientato ai dati (\textit{Data-Driven Intelligence}), fornendo risposte concrete a specifiche domande strategiche e identificando pattern temporali e spaziali non rilevabili tramite una semplice analisi tabellare.
+
+\section{Approfondimento del Dataset Global Terrorism Database (GTD)}
+\textcolor{red}{\textbf{Da modificare prima e dopo pulizia}}
+
+Il dataset selezionato per questo progetto rappresenta la risorsa più completa e autorevole a livello mondiale per l'analisi quantitativa del terrorismo. Esso si compone di oltre \textit{180.000 record}, ciascuno rappresentante un singolo evento terroristico unico, e copre un arco temporale che va dal \textit{1970 al 2017}.
+
+La struttura del dataset è stata progettata per offrire una visione olistica del fenomeno della violenza politica: non si limita a registrare l'evento spaziale, ma ne traccia le modalità tattiche (\textit{Modus Operandi}), gli attori responsabili (Gruppi terroristici) e le conseguenze umane ed economiche.
+
+Di seguito viene riportato il \textit{Dizionario dei Dati} (Tabella \ref{tab:dataset_description}), che descrive nel dettaglio il significato di ciascuna variabile utilizzata nelle successive dashboard di Business Intelligence:
+
+\vspace{0.5cm}
+
+% Assicurati di aver inserito \usepackage{tabularx} e \usepackage{colortbl} nel preambolo
+
+\renewcommand{\arraystretch}{1.4}
+
+\begin{longtable}{|l|p{0.70\textwidth}|}
+
+\caption{Elenco completo delle 27 variabili selezionate dal GTD.}
+\label{tab:dataset_description} \\
+
+% --- INTESTAZIONE PRIMA PAGINA ---
+\hline
+\rowcolor[gray]{0.9} \textbf{Nome Colonna} & \textbf{Descrizione} \\
+\hline
+\endfirsthead
+
+% --- INTESTAZIONE PAGINE SUCCESSIVE ---
+\multicolumn{2}{c}{\textbf{\tablename\ \thetable{} -- continua dalla pagina precedente}} \\
+\hline
+\rowcolor[gray]{0.9} \textbf{Nome Colonna} & \textbf{Descrizione} \\
+\hline
+\endhead
+
+% --- PIÈ DI PAGINA ---
+\hline
+\multicolumn{2}{r}{Continua nella prossima pagina...} \\
+\endfoot
+
+% --- FINE TABELLA ---
+\hline
+\endlastfoot
+
+% --- 1. IDENTIFICATIVI E TEMPO ---
+\texttt{eventid} & Identificativo univoco numerico dell'evento (Chiave Primaria). \\
+\hline
+\texttt{iyear} & Anno in cui si è verificato l'incidente. \\
+\hline
+\texttt{imonth} & Mese in cui si è verificato l'incidente (0 se sconosciuto). \\
+\hline
+\texttt{iday} & Giorno in cui si è verificato l'incidente (0 se sconosciuto). \\
+\hline
+
+% --- 2. GEOGRAFIA ---
+\texttt{country\_txt} & Nome della Nazione in cui è avvenuto l'attacco. \\
+\hline
+\texttt{region\_txt} & Macro-regione geografica (es. Medio Oriente, Nord America). \\
+\hline
+\texttt{provstate} & Nome della Provincia o dello Stato amministrativo (es. Texas, Baghdad). \\
+\hline
+\texttt{city} & Nome della città o del villaggio specifico. \\
+\hline
+\texttt{latitude} & Coordinata geografica (Latitudine) dell'evento. \\
+\hline
+\texttt{longitude} & Coordinata geografica (Longitudine) dell'evento. \\
+\hline
+
+\texttt{Crit1} & Indicatore binario (1/0) se l'evento è violento o minaccia di violenza. \\
+\hline
+
+\texttt{Crit2} & Indicatore binario (1/0) se l’evento è perpetrato da un gruppo non statale. \\
+\hline
+
+\texttt{Crit3} & Indicatore binario (1/0) se l’evento ha uno scopo politico, religioso, ideologico o sociale. \\
+\hline
+
+% --- 3. TATTICHE E ARMI ---
+\texttt{attacktype1\_txt} & Categoria principale della tattica d'attacco (es. Bombardamento). \\
+\hline
+\texttt{weaptype1\_txt} & Categoria generale dell'arma utilizzata (es. Esplosivi). \\
+\hline
+\texttt{weapsubtype1\_txt} & Sottocategoria specifica dell'arma (es. Dinamite, Mina terrestre). \\
+\hline
+\texttt{suicide} & Indicatore binario (1/0) se l'attacco è stato suicida. \\
+\hline
+\texttt{success} & Indicatore binario (1/0) se l'attacco ha raggiunto l'obiettivo tattico. \\
+\hline
+
+% --- 4. OBIETTIVI ---
+\texttt{targtype1\_txt} & Categoria generale del bersaglio (es. Civili, Militari). \\
+\hline
+\texttt{targsubtype1\_txt} & Sottocategoria specifica del bersaglio (es. Ristorante, Caserma). \\
+\hline
+\texttt{corp1} & Nome dell'ente, azienda o gruppo specifico colpito. \\
+\hline
+\texttt{natlty1\_txt} & Nazionalità delle vittime colpite. \\
+\hline
+
+% --- 5. GRUPPI E TERRORISTI ---
+\texttt{gname} & Nome del gruppo terroristico responsabile o sospettato. \\
+\hline
+\texttt{claimed} & Indicatore binario (1/0) se l'attacco è stato rivendicato ufficialmente. \\
+\hline
+\texttt{nperps} & Numero di terroristi che hanno partecipato all'azione. \\
+\hline
+
+% --- 6. IMPATTO E VITTIME ---
+\texttt{nkill} & Numero di persone decedute (Morti). \\
+\hline
+\texttt{nwound} & Numero di persone ferite. \\
+\hline
+\texttt{propvalue} & Valore stimato del danno economico alla proprietà (in USD). \\
+\hline
+\texttt{ishostkid} & Indicatore binario (1/0) se l'evento è un rapimento/presa ostaggi. \\
+\hline
+\texttt{ransomamt} & Importo del riscatto richiesto (in USD). \\
+
+\end{longtable}
+
+
+
+\subsection{Qualità dei Dati e Preparazione (ETL)}
+
+Data la complessità e la vastità del \textit{Global Terrorism Database} (GTD), prima di procedere con l'importazione nei software di Business Intelligence, è stata necessaria una fase strutturata di \textit{Data Cleaning e preparazione dei dati (ETL -- Extract, Transform, Load)}.
+L'obiettivo principale è quello di rendere i dati accessibili, puliti e strutturati, così da supportare in modo efficace le analisi.
+
+In particolare, sono stati eseguiti i seguenti passaggi:
+
+\begin{enumerate}
+    \item \textit{Selezione delle colonne rilevanti:} \\
+    Dal dataset originale sono state estratte solo le colonne necessarie per l’analisi, suddivise per categorie: identificativi, dati geografici, criteri di terrorismo, tattiche e armi, obiettivi, gruppi e terroristi, impatto e vittime. Questa operazione ha permesso di ridurre il dataset ai soli dati utili, migliorando la leggibilità e le performance di calcolo nelle fasi successive.
+
+    \item \textit{Gestione delle date incomplete:} \\
+    Alcuni record presentavano giorno o mese sconosciuti, indicati con valore ``0''. Per garantire la compatibilità con Qlik Sense, Tableau e Power BI, è stata creata una \textit{colonna unificata \texttt{date}}, combinando anno, mese e giorno. I valori sconosciuti sono stati sostituiti con ``1'', evitando errori nella lettura e permettendo aggregazioni temporali coerenti.
+
+    \item \textit{Normalizzazione dei valori numerici:} \\
+    Alcune colonne numeriche, come numero di morti, feriti, terroristi coinvolti, danni economici e riscatti richiesti, contenevano il codice ``-99'' a indicare valori sconosciuti. Tutti questi valori sono stati sostituiti con ``0''. Inoltre, eventuali celle vuote (\textit{NaN}) nelle stesse colonne sono state anch’esse convertite in ``0''. Questo passaggio garantisce la consistenza dei dati e permette di calcolare correttamente KPI come morti totali, danni economici complessivi e impatto degli attacchi.
+
+    \item \textit{Verifica della qualità dei dati:} \\
+    Il dataset è stato controllato per valori nulli e duplicati, confermando che non esistono record che possano alterare aggregazioni statistiche o analisi temporali. Anche le colonne numeriche sono state verificate per assicurare la coerenza dei formati e la precisione dei calcoli.
+
+    \item \textit{Preparazione per l’analisi BI:} \\
+    Al termine del preprocessing, il dataset risultante è stato salvato come \textit{CSV pulito e standardizzato}, pronto per essere importato nei software di Business Intelligence. La struttura dei dati, con colonne coerenti e valori numerici normalizzati, consente di creare dashboard affidabili e KPI precisi senza rischio di errori derivanti da dati mancanti o codifiche anomale.
+\end{enumerate}
+
+\textit /{Nota metodologica:} \\
+Questa fase di ETL è fondamentale per trasformare un dataset grezzo e complesso in un formato \textit{immediatamente utilizzabile} per analisi visive, aggregazioni temporali e comparazioni geografiche, migliorando la robustezza delle dashboard di Qlik Sense, Tableau e Power BI.
+
+\subsection{Preprocessing dei Dati in Python}
+
+Per preparare il dataset del \textit{Global Terrorism Database} per l'importazione nei software di Business Intelligence, è stato utilizzato Python con la libreria \texttt{pandas}. Di seguito sono descritti i principali passaggi eseguiti.
+
+\begin{enumerate}
+    \item \textit{Importazione delle librerie e caricamento del dataset:}
+\begin{verbatim}
+import pandas as pd
+
+file_path = "/content/globalterrorismdb_0718dist.csv"
+
+columns_of_interest = [
+    "eventid", "country_txt", "region_txt", "provstate", "city",
+    "latitude", "longitude", "crit1", "crit2", "crit3",
+    "attacktype1_txt", "weaptype1_txt", "weapsubtype1_txt",
+    "suicide", "success", "targtype1_txt", "targsubtype1_txt",
+    "corp1", "natlty1_txt", "gname", "claimed", "nperps",
+    "nkill", "nwound", "propvalue", "ishostkid", "ransomamt",
+    "iyear", "imonth", "iday"
+]
+
+df = pd.read_csv(file_path, 
+                 usecols=columns_of_interest, 
+                 encoding='ISO-8859-1')
+\end{verbatim}
+
+    \item \textit{Pulizia dei valori numerici:} sostituzione di \texttt{-99} e valori mancanti con \texttt{0}.
+\begin{verbatim}
+numeric_cols = ["nkill", "nwound", "propvalue", "ransomamt", "nperps"]
+df[numeric_cols] = df[numeric_cols].replace(-99, 0).fillna(0)
+\end{verbatim}
+
+    \item \textit{Creazione di una colonna data unificata:} combinazione di anno, mese e giorno in una singola colonna \texttt{date}.
+\begin{verbatim}
+def create_date(row):
+    year = int(row['iyear'])
+    month = int(row['imonth']) if row['imonth'] != 0 else 1
+    day = int(row['iday']) if row['iday'] != 0 else 1
+    return pd.Timestamp(year=year, month=month, day=day)
+
+df['date'] = df.apply(create_date, axis=1)
+df = df.drop(columns=['iyear', 'imonth', 'iday'])
+\end{verbatim}
+
+    \item \textit{Esplorazione del dataset pulito:} visualizzazione delle prime righe per controllo.
+\begin{verbatim}
+df.head()
+\end{verbatim}
+
+    \item \textit{Salvataggio del dataset pulito:} creazione di un file CSV pronto per BI.
+\begin{verbatim}
+output_path = "/content/gtd_cleaned.csv"
+df.to_csv(output_path, index=False, encoding='utf-8')
+print("File salvato in:", output_path)
+\end{verbatim}
+
+\end{enumerate}
+
+
+
+
