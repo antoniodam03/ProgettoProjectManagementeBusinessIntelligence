@@ -5,22 +5,22 @@
 \contentsline {section}{\numberline {0.1}Approfondimento del Dataset Global Terrorism Database (GTD)}{1}{section.0.1}%
 \contentsline {subsection}{\numberline {0.1.1}Qualità dei Dati e Preparazione (ETL)}{3}{subsection.0.1.1}%
 \contentsline {subsection}{\numberline {0.1.2}Preprocessing dei Dati in Python}{4}{subsection.0.1.2}%
-\contentsline {chapter}{\numberline {1}Qlik}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Analisi descrittiva}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Caricamento dei dati su Qlik}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Data Analysis Dataset Global Terrorism Database}{6}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Analisi della distribuzione geopolitica delle minacce}{7}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Utente}{7}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Obiettivo}{8}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Filtri ed esempi di utilizzo}{8}{subsection.1.3.3}%
-\contentsline {subsubsection}{Evoluzione degli "Hotspot" e della Matrice Ideologica (Filtro Anno e Regione)}{8}{section*.10}%
-\contentsline {subsubsection}{Analisi della Letalità (Filtro per Criticità)}{10}{section*.15}%
-\contentsline {section}{\numberline {1.4}Analisi delle tattiche di attacco e armamenti}{12}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Utente}{12}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Obiettivo}{13}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{13}{subsection.1.4.3}%
-\contentsline {chapter}{\numberline {2}Tableau}{17}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Seguire pdf esempio}{17}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Power PI}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{18}{section.3.1}%
-\contentsline {chapter}{Sitografia}{19}{chapter*.24}%
+\contentsline {chapter}{\numberline {1}Qlik}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Analisi descrittiva}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Caricamento dei dati su Qlik}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Data Analysis Dataset Global Terrorism Database}{7}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Analisi della distribuzione geopolitica delle minacce}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Utente}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Obiettivo}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Filtri ed esempi di utilizzo}{9}{subsection.1.3.3}%
+\contentsline {subsubsection}{Evoluzione degli "Hotspot" e della Matrice Ideologica (Filtro Anno e Regione)}{9}{section*.10}%
+\contentsline {subsubsection}{Analisi della Letalità (Filtro per Criticità)}{11}{section*.15}%
+\contentsline {section}{\numberline {1.4}Analisi delle tattiche di attacco e armamenti}{13}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Utente}{13}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Obiettivo}{14}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{14}{subsection.1.4.3}%
+\contentsline {chapter}{\numberline {2}Tableau}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Seguire pdf esempio}{18}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Power PI}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{19}{section.3.1}%
+\contentsline {chapter}{Sitografia}{20}{chapter*.24}%
