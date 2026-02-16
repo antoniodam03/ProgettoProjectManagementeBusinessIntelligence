@@ -292,3 +292,146 @@ L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione de
     \label{fig:NonsuicideKPI}
     \end{figure}
 \end{itemize}
+
+\newpage
+
+\section{Analisi dell'impatto economico e danni causati}
+
+La dashboard, mostrata in Figura~\ref{fig:impatto_economico}, analizza le conseguenze economiche e i danni collaterali causati dagli attacchi terroristici. Essa permette di visualizzare il valore totale dei danni economici (in USD), suddivisi per regione geografica e tipo di attacco. Questo approccio consente di identificare le aree più colpite e i tipi di attacchi con maggiore impatto economico, fornendo informazioni utili per la pianificazione delle strategie di prevenzione e protezione.
+
+I principali indicatori sintetici (KPI) includono:
+
+\begin{itemize}
+    \item il \textit{Totale dei danni stimati} (in dollari), come misura aggregata dell’impatto economico complessivo;
+    \item il \textit{Danno medio per attacco}, utile a distinguere tra fenomeni ad alta frequenza ma basso impatto e attacchi rari ma altamente distruttivi;
+    \item il \textit{Massimo danno registrato}, indicatore di eventi estremi ad elevata intensità economica.
+\end{itemize}
+
+Accanto agli indicatori sintetici, la dashboard si articola in tre principali visualizzazioni analitiche, ciascuna finalizzata ad approfondire una specifica dimensione dell’impatto economico del terrorismo.
+
+Il primo grafico, denominato \textit{Analisi comparativa dei danni per regione e tattica}, rappresenta il totale dei danni economici in funzione delle macro-aree geografiche e della tipologia di attacco. Le regioni considerate (ad esempio Middle East \& North Africa, South Asia, Sub-Saharan Africa, Western Europe, North America) costituiscono la dimensione territoriale dell’analisi, mentre le diverse tattiche operative (quali Bombing/Explosion, Armed Assault, Facility/Infrastructure Attack) introducono una seconda chiave di lettura. La combinazione tra area geografica e modalità d’attacco consente di individuare non solo dove si concentra il maggior impatto economico, ma anche quali strategie operative risultano più distruttive nei diversi contesti regionali. Tale confronto permette di evidenziare eventuali differenze strutturali tra aree del mondo, distinguendo tra regioni caratterizzate da elevata intensità finanziaria e regioni in cui i danni risultano più contenuti.
+
+Il secondo grafico, \textit{Trend storico e previsione dei danni}, analizza l’evoluzione temporale del valore economico distrutto. La rappresentazione mostra l’andamento annuale dei danni stimati, permettendo di osservare fasi di crescita, stabilizzazione o contrazione dell’impatto economico nel lungo periodo. L’inclusione di una linea di tendenza consente di evidenziare la direzione generale del fenomeno, distinguendo tra fluttuazioni episodiche legate a eventi straordinari e dinamiche strutturali più persistenti. Questa visualizzazione assume particolare rilevanza per valutazioni prospettiche e per l’analisi del rischio economico su orizzonti temporali medio-lunghi.
+
+Il terzo grafico, una \textit{Treemap della distribuzione dei costi per tipo di bersaglio e armamento}, approfondisce la dimensione operativa del danno economico. La rappresentazione gerarchica consente di analizzare il valore economico distrutto in funzione della categoria di bersaglio (ad esempio Business, Government, Utilities, Transportation) e del tipo di armamento utilizzato. La dimensione dei riquadri è proporzionale al totale dei danni associati a ciascuna combinazione, permettendo di individuare rapidamente le configurazioni a maggiore impatto patrimoniale. Questa visualizzazione evidenzia se determinate combinazioni – ad esempio specifici armamenti contro infrastrutture strategiche – risultino particolarmente onerose in termini economici.
+
+La lettura congiunta delle tre visualizzazioni integra dunque una dimensione geografica, una dimensione temporale e una dimensione operativo-strutturale. La dashboard non si limita alla quantificazione aggregata delle perdite, ma consente di comprenderne la distribuzione territoriale, l’evoluzione nel tempo e la relazione con le modalità di attacco e le categorie di bersaglio, offrendo un quadro analitico completo dell’impatto economico del fenomeno terroristico.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter8/images/dashboard/dashboard3.png}
+    \caption{Analisi dell'impatto economico e danni causati}
+    \label{fig:impatto_economico}
+    \end{figure}
+
+\section{Utente}
+
+L’utente a cui è destinata questa dashboard è un Risk Manager operante nel settore assicurativo, finanziario o in ambito, con responsabilità nella valutazione e gestione del rischio geopolitico ed economico. Tale figura professionale utilizza lo strumento per analizzare l’impatto patrimoniale degli attacchi terroristici, valutando la distribuzione territoriale dei danni, la relazione tra tipologia di attacco e perdita economica e l’evoluzione temporale del fenomeno.
+
+L’analisi fornita dalla dashboard supporta i responsabili della gestione del rischio nella quantificazione dell’esposizione finanziaria associata a specifiche aree geografiche, settori economici e modalità operative. In particolare, la combinazione tra confronto regionale, studio delle tattiche e andamento storico dei danni consente di distinguere tra contesti a elevata frequenza di eventi ma impatto contenuto e scenari caratterizzati da eventi meno frequenti ma economicamente devastanti.
+
+Lo strumento risulta quindi funzionale alla definizione di politiche assicurative, alla determinazione dei premi in funzione del rischio territoriale e settoriale e alla pianificazione strategica di investimenti o aperture di nuove sedi in aree potenzialmente esposte. In questo modo, la dashboard contribuisce a trasformare il dato storico in informazione strategica, supportando decisioni orientate alla mitigazione del rischio economico e alla protezione del patrimonio aziendale.
+
+\section{Obiettivo}
+
+L’obiettivo principale dell’analisi è comprendere e quantificare l’impatto economico del terrorismo, valutandone la distribuzione territoriale, l’evoluzione temporale e la relazione con le modalità operative adottate. La dashboard consente di:
+
+\begin{itemize}
+    \item identificare le aree geografiche e le tipologie di attacco che generano il maggiore danno patrimoniale, distinguendo tra contesti ad alta frequenza di eventi e scenari caratterizzati da perdite economiche particolarmente elevate;
+
+    \item valutare la distribuzione dei costi in funzione del tipo di bersaglio e dell’armamento utilizzato, mettendo in relazione le configurazioni operative con il relativo impatto finanziario;
+
+    \item analizzare l’andamento storico dei danni economici, individuando trend strutturali e possibili dinamiche evolutive utili alla previsione del rischio;
+
+    \item supportare le decisioni strategiche in ambito assicurativo e aziendale attraverso evidenze empiriche sull’esposizione economica, favorendo la definizione di politiche di mitigazione del rischio e di allocazione efficiente delle risorse.
+\end{itemize}
+In sintesi, l’analisi mira a trasformare la complessità del fenomeno terroristico in informazioni chiare e utilizzabili, consentendo di comprendere non solo la dimensione quantitativa del danno, ma anche le sue caratteristiche qualitative e dinamiche, al fine di orientare efficacemente le strategie di gestione del rischio economico.
+
+\section{Filtri interattivi ed esempi di utilizzo}
+
+L’efficacia della dashboard risiede nella sua natura dinamica: l’integrazione dei filtri consente al Risk Manager di esplorare i dati in modo interattivo, isolando specifici scenari economici e verificando ipotesi strategiche in tempo reale. Attraverso la selezione mirata delle variabili, è possibile rispondere a quesiti operativi concreti.
+
+\begin{itemize}
+
+\item \textbf{1. Quali regioni e quali tattiche generano il maggiore impatto economico?} \\
+Osservando il grafico “Analisi comparativa dei danni per regione e tattica” nella sua configurazione globale, è possibile identificare immediatamente le macro-aree con la maggiore concentrazione di perdite patrimoniali. 
+Successivamente, {applicando il filtro \textit{Regione}}, l'analisi scende nel dettaglio per verificare se determinate modalità operative (ad esempio \textit{Bombing/Explosion}) risultino sistematicamente associate ai danni più elevati in quell'area specifica.
+
+Un esempio è mostrato nella Figura \ref{fig:impatto_economicomacroregione}, dove, dopo aver individuato l'Europa Occidentale come area critica, è stato applicato il filtro \textit{Western Europe}. La dashboard isola così un impatto economico complessivo di \textit{4.61 Miliardi di dollari} e l'analisi incrociata dei grafici permette di ricostruire lo scenario:
+
+\begin{enumerate}
+    \item \textit{Dominio delle tattiche esplosive:} Il grafico a barre evidenzia una prevalenza quasi assoluta della tattica \textit{Bombing/Explosion} (barra beige), responsabile della quasi totalità dei danni. Il KPI del costo medio sale a \textbf{1.93 Milioni di dollari} per evento, un valore altissimo che riflette il costo delle infrastrutture europee colpite.
+    
+    \item \textit{Analisi del Trend Temporale:}
+    Il grafico di dettaglio “Trend Storico” rivela che il danno economico non è costante, ma concentrato in specifici eventi catastrofici. Si osserva un picco estremo nel 1992 (con danni superiori a 2.5 Miliardi, visibile nel vertice massimo della linea blu) e un picco secondario nel 1996.
+    Tuttavia, la linea di regressione (tratteggiata in viola) mostra una chiara pendenza negativa: dopo la fase critica degli anni '90, la curva dei danni tende ad appiattirsi verso lo zero negli anni 2000, indicando una progressiva riduzione dell'impatto finanziario degli attacchi nella regione.
+    
+    \item \textit{Settori critici:} La Treemap identifica infine i bersagli: il blocco \textit{Private Citizens \& Property} rappresenta la quota maggiore di capitale distrutto, seguito dal settore \textit{Business}, confermando che i picchi di spesa sono stati causati da attentati contro proprietà civili e commerciali.
+\end{enumerate}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter8/images/dashboard/dannoeconomicomacroregione.png}
+    \caption{Analisi dell'impatto economico e danni causati per filtro Macro-regione}
+    \label{fig:impatto_economicomacroregione}
+    \end{figure}
+
+Tramite il filtro \textit{Zona Geografica}, è possibile inoltre isolare ulteriormente l’analisi per singolo paese, passando da una macro-regione a un contesto nazionale specifico. Un esempio di studio di micro-regione è mostrato nella Figura \ref{fig:impatto_economicomicroregione}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png}
+    \caption{Analisi dell'impatto economico e danni causati per filtro Micro-regione (Italy)}
+    \label{fig:impatto_economicomicroregione}
+    \end{figure}
+
+
+\item \textbf{2. L’impatto economico è in crescita nel lungo periodo?} \\
+Attraverso il grafico “Trend storico e previsione dei danni”, l’utente può analizzare l’andamento annuale del valore economico distrutto. 
+L'integrazione di una \textbf{linea di regressione} consente di distinguere tra picchi legati a singoli eventi straordinari e variazioni strutturali di lungo periodo, fornendo un supporto concreto alle valutazioni prospettiche sul rischio economico. \\
+Ad esempio, osservando la dashboard in Figura \ref{fig:impatto_economicomicroregione}, si nota che in Italia, pur essendoci stati eventi di grande impatto economico (come la strage di Bologna), l’andamento complessivo dei danni mostra una diminuzione nel tempo. La linea di regressione, con pendenza negativa, conferma questa tendenza.  
+
+Questo indica che, nel tempo sia la frequenza sia l’intensità degli eventi più distruttivi si sono ridotte, probabilmente grazie a misure di sicurezza più efficaci e a una maggiore capacità di risposta e protezione delle infrastrutture.
+
+\item \textbf{3. Qual è l'impatto economico di un certo tipo di attacco e come si distribuisce?} \\
+Utilizzando il filtro \textit{Attack Type} e selezionando, ad esempio, la voce \textbf{Armed Assault}, la dashboard isola i costi generati specificamente dalle incursioni armate. Questa vista permette di rispondere a tre interrogativi strategici sulla natura di questa minaccia:
+
+\begin{enumerate}
+    \item \textbf{Geografia del danno (Macroaree):}
+    Osservando il grafico a barre “Analisi Comparativa”, emerge un dato significativo: la macroarea che ha subito i maggiori danni economici da assalti armati è l'\textbf{Western Europe}, seguita dal \textbf{South America}. Questo evidenzia come, storicamente, l'uso di armi leggere per colpire il patrimonio non sia stato esclusiva di zone di guerra, ma abbia avuto un impatto finanziario devastante anche nelle economie occidentali avanzate.
+    
+    \item \textbf{Distribuzione su Obiettivi e Armamenti:}
+    La Treemap rivela chiaramente quali settori pagano il prezzo più alto. Nel caso degli \textit{Armed Assault}, il blocco dominante è il settore \textbf{Business} (aziende e attività commerciali), seguito da \textit{Private Citizens \& Property}. La scomposizione interna mostra che questi danni sono causati quasi esclusivamente tramite \textit{Firearms} (armi da fuoco), confermando che l'assalto armato è una tattica mirata verso asset economici specifici piuttosto che distruzioni indiscriminate.
+    
+    \item \textbf{Picco storico di criticità:}
+    Infine, il grafico del trend temporale permette di datare l'apice della minaccia. La curva dei costi per gli assalti armati raggiunge il suo massimo storico assoluto nell'anno \textbf{1977}. Tale picco, visibile come un vertice isolato nel grafico, corrisponde storicamente a periodi di forte instabilità politica interna in Europa (ad esempio gli "Anni di Piombo"), dove l'assalto armato era una modalità operativa frequente per i gruppi eversivi.
+\end{enumerate}
+
+{La Figura \ref{fig:impattoassalto} mostra la dashboard configurata con il filtro Armed Assault attivo.}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter8/images/dashboard/Danno economico assalto.png}
+    \caption{Analisi dell'impatto economico e danni causati per filtro Tipo di Attacco (Armed Assault)}
+    \label{fig:impattoassalto}
+    \end{figure}
+
+    \item \textbf{4. Profilazione economica di un gruppo terroristico} \\
+La dashboard consente un'analisi granulare focalizzata su singoli attori. Selezionando un determinato \textit{Gruppo Terroristico} dal pannello filtri, l'intera interfaccia si riconfigura per mostrare il "profilo economico" dell'organizzazione.
+\begin{itemize}
+    \item I \textbf{KPI} ricalcolano immediatamente il \textit{Danno Medio} e \textit{Massimo}, permettendo di capire se il gruppo opera con attacchi frequenti a basso costo o con rari eventi catastrofici.
+    \item La \textbf{Treemap} svela la distribuzione dei danni del gruppo sui vari bersagli.
+    \item Il \textbf{Trend Storico} traccia l'evoluzione della capacità distruttiva del gruppo nel tempo, evidenziando periodi di escalation o declino operativo.
+\end{itemize}
+Un esempio con il filtro \textit{Gruppo terroristico} è mostrato in Figura \ref{fig:Ira}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter8/images/dashboard/Ira.png}
+    \caption{Analisi dell'impatto economico e danni causati per filtro Gruppo Terroristico}
+    \label{fig:Ira}
+    \end{figure}
+
+\end{itemize}
+
+Nel complesso, la dashboard dimostra la propria capacità di rispondere a interrogativi strategici legati alla quantificazione e distribuzione del danno economico. L’interattività dei filtri trasforma la visualizzazione da strumento descrittivo a supporto decisionale, consentendo di adattare l’analisi a specifici contesti geografici, settoriali o temporali e di valutare in modo puntuale l’esposizione patrimoniale al rischio terroristico.
