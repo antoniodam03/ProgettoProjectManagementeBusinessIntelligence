@@ -59,12 +59,13 @@ Il progetto si articola in 7 Dashboard, organizzate in un percorso narrativo che
 \textcolor{red}{\textbf{Da ricontrollare }}
 \begin{itemize}
     \item \textbf{Dashboard 1:} Analisi Temporale degli Attacchi e delle Vittime (Trend Storici).
-    \item \textbf{Dashboard 2:} Previsione del Volume degli Attacchi.
-    \item \textbf{Dashboard 3:} Previsione dell’Impatto Economico per Tipo di Attacco.
-    \item \textbf{Dashboard 4:} Analisi e Previsione della Letalità per Regione.
-    \item \textbf{Dashboard 5:} Previsione dell’Intensità (Vittime) per Tipo di Attacco e Arma.
-    \item \textbf{Dashboard 6:} Previsione dei Bersagli (Target) per Regione.
-    \item \textbf{Dashboard 7:} Analisi degli Esiti dell’Attacco (Successo vs Fallimento).
+    \item \textbf{Dashboard 2:} Analisi e Previsione della Letalità per Regione.
+    \item \textbf{Dashboard 3:} Previsione dei Bersagli (Target) per Regione.
+    \item \textbf{Dashboard 4:} Analisi degli Esiti dell’Attacco (Successo vs Fallimento).
+    \item \textbf{Dashboard z:} Previsione del Volume degli Attacchi.
+    \item \textbf{Dashboard y:} Previsione dell’Impatto Economico per Tipo di Attacco.
+    \item \textbf{Dashboard x:} Previsione dell’Intensità (Vittime) per Tipo di Attacco e Arma.
+
 \end{itemize}
 
 
@@ -116,7 +117,7 @@ L'analisi dimostra che il rapporto tra attacchi e vittime non è $1:1$. L'impenn
     }
 \end{center}
 
-\subsection{Dashboard 4: Analisi e Previsione della Letalità per Regione}
+\subsection{Dashboard 2: Analisi e Previsione della Letalità per Regione}
 
 \subsubsection*{Obiettivo dell'Analisi}
 Questa dashboard indaga la relazione tra l'intensità dell'attacco (misurata in numero di feriti, \texttt{nwound}) e la sua mortalità (numero di morti, \texttt{nkill}). L'obiettivo è duplice: verificare la correlazione tra le due variabili e prevedere l'evoluzione della letalità media, permettendo confronti geografici mirati.
@@ -127,7 +128,7 @@ Questa dashboard indaga la relazione tra l'intensità dell'attacco (misurata in 
     \item \textbf{Analisi di Correlazione e Clustering (Scatter Plot):} La parte superiore ospita un grafico a dispersione dove ogni punto rappresenta un singolo evento.
     \begin{itemize}
         \item \textbf{Clustering K-Means:} Tramite l'algoritmo \textit{K-Means} di Tableau, gli attacchi sono stati raggruppati statisticamente per gravità.
-        \item \textbf{Legge di Potenza:} La densa "nuvola" colorata vicino all'origine rappresenta il \textit{Cluster a Bassa\Alta Intensità}. I punti isolati (\textit{Outliers}) rappresentano gli "Eventi Critici", rari ma devastanti.
+        \item \textbf{Legge di Potenza:} La densa "nuvola" colorata vicino all'origine rappresenta il \textit{Cluster a Bassa-Alta Intensità}. I punti isolati (\textit{Outliers}) rappresentano gli "Eventi Critici", rari ma devastanti.
     \end{itemize}
 
     \item \textbf{Trend Storico e Previsione (Forecast):} La parte inferiore utilizza il motore di \textit{Exponential Smoothing} di Tableau. L'area ombreggiata attorno alla linea di previsione rappresenta l'intervallo di confidenza al 95\%. Anche in questo grafico è visibile l'interruzione dei dati corrispondente all'anno 1993.
@@ -203,7 +204,7 @@ Gli eventi estremi (\textit{outliers}) possono alterare le medie in qualsiasi mo
 \textcolor{red}{\textbf{figura dati previsione}}
 
 
-\subsection{Dashboard 6: Previsione dei Bersagli (Target) per Regione}
+\subsection{Dashboard 3: Previsione dei Bersagli (Target) per Regione}
 
 \subsubsection*{Obiettivo dell'Analisi (Vittimologia)}
 Mentre le dashboard precedenti si sono concentrate sui volumi globali e sull'impatto in termini di vite umane (letalità), questa visualizzazione sposta il focus sulla \textbf{Vittimologia}. L'obiettivo è analizzare chi viene colpito e con quale frequenza, incrociando le tipologie di bersaglio (\texttt{targtype1\_txt}) con le aree geografiche (\texttt{region\_txt}).
@@ -247,7 +248,7 @@ L'analisi dei coefficienti del modello rivela una netta spaccatura matematica tr
 \end{enumerate}
 
 \paragraph{Analisi delle Metriche di Qualità (Il significato del rating "Scarso")}
-Come già osservato nell'analisi della letalità (Dashboard 4), Tableau classifica la qualità complessiva di queste previsioni come \textit{"Scarsa"}. Questa valutazione è il riflesso dell'alta volatilità geopolitica. Esaminando le metriche specifiche:
+Come già osservato nell'analisi della letalità (Dashboard 2), Tableau classifica la qualità complessiva di queste previsioni come \textit{"Scarsa"}. Questa valutazione è il riflesso dell'alta volatilità geopolitica. Esaminando le metriche specifiche:
 
 \begin{itemize}
     \item \textbf{MAPE (Errore Percentuale Medio Assoluto):} Si attesta su valori che vanno dal $27,7\%$ per il settore \textit{Business} fino a un picco del $50,1\%$ per i \textit{Private Citizens}. L'errore così alto sui civili è dovuto all'impennata anomala ed esponenziale degli attacchi nell'ultimo decennio, che rende i dati storici del passato meno affidabili per prevedere l'entità esatta della crescita futura.
@@ -260,7 +261,7 @@ L'alta varianza (testimoniata dall'ampio intervallo di confidenza, es. $\pm 780$
 \textcolor{red}{\textbf{Foto dati}}
 
 
-\subsection{Dashboard 7: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}
+\subsection{Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}
 
 \subsubsection*{Obiettivo dell'Analisi}
 Mentre le dashboard precedenti hanno esaminato la frequenza, la letalità e la natura dei bersagli, questa visualizzazione sposta il focus sull'efficacia delle misure di sicurezza e dell'intelligence antiterrorismo. L'analisi si basa sulla variabile binaria dell'esito dell'attacco: \textbf{Successo} (l'attacco è stato portato a termine come pianificato) o \textbf{Fallimento} (l'ordigno è stato disinnescato, il terrorista intercettato o l'azione è fallita per cause tecniche).
