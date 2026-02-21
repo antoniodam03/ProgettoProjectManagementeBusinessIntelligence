@@ -9,18 +9,27 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Anno e Regione}}{10}{figure.caption.12}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Anno (2000-2010)}}{11}{figure.caption.13}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Anno (2000-2010) e Regione (\textit {Middle East \& North Africa, Sub-Saharan Africa})}}{11}{figure.caption.14}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Anno, Regione e Criticità}}{12}{figure.caption.16}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Analisi delle tattiche di attacco e armamenti}}{13}{figure.caption.17}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro suicidio}}{15}{figure.caption.18}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro Bersaglio}}{15}{figure.caption.19}%
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro Bersaglio Cittadini}}{16}{figure.caption.20}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro Bersaglio Turisti}}{16}{figure.caption.21}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Dettaglio operativo su \textit {Educational Institutions}: KPI e tattiche in presenza di attacchi suicidi}}{17}{figure.caption.22}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Dettaglio operativo su \textit {Educational Institutions}: KPI e tattiche per attacchi convenzionali (non suicidi)}}{17}{figure.caption.23}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Analisi dell'impatto economico e danni causati}}{19}{figure.caption.24}%
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Macro-regione}}{21}{figure.caption.25}%
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Micro-regione (Italy)}}{21}{figure.caption.26}%
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Tipo di Attacco (Armed Assault)}}{23}{figure.caption.27}%
-\contentsline {figure}{\numberline {1.20}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Gruppo Terroristico}}{23}{figure.caption.28}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Criticità (Bassa Intensità - 0/1 morti)}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Criticità (Media Intensità - 2/10 morti)}}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Criticità (Alta Intensità $rightarrowx$10 morti)}}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Analisi della distribuzione geopolitica delle minacce filtrando per Anno, Regione e Criticità}}{13}{figure.caption.19}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Analisi delle tattiche di attacco e armamenti}}{14}{figure.caption.20}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro suicidio}}{16}{figure.caption.21}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro Bersaglio}}{16}{figure.caption.22}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro Bersaglio Cittadini}}{17}{figure.caption.23}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Analisi delle tattiche di attacco e armamenti: filtro Bersaglio Turisti}}{17}{figure.caption.24}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Dettaglio operativo su \textit {Educational Institutions}: KPI e tattiche in presenza di attacchi suicidi}}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Dettaglio operativo su \textit {Educational Institutions}: KPI e tattiche per attacchi convenzionali (non suicidi)}}{18}{figure.caption.26}%
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Analisi dell'impatto economico e danni causati}}{20}{figure.caption.27}%
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Macro-regione}}{22}{figure.caption.28}%
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Micro-regione (Italy)}}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Tipo di Attacco (Armed Assault)}}{24}{figure.caption.30}%
+\contentsline {figure}{\numberline {1.23}{\ignorespaces Analisi dell'impatto economico e danni causati per filtro Gruppo Terroristico}}{24}{figure.caption.31}%
+\contentsline {figure}{\numberline {1.24}{\ignorespaces Dashboard di analisi dei sequestri: indicatori sintetici su ostaggi e riscatti, mappatura del rischio globale e distribuzione per nazionalità e gruppi terroristici}}{26}{figure.caption.32}%
+\contentsline {figure}{\numberline {1.25}{\ignorespaces Analisi dei sequestri per filtro Macro-regione (South Asia): geografia del rischio, attori coinvolti e profilo delle vittime}}{28}{figure.caption.33}%
+\contentsline {figure}{\numberline {1.26}{\ignorespaces Analisi dei sequestri per filtro Paese (India): geolocalizzazione degli eventi e gruppi coinvolti}}{29}{figure.caption.34}%
+\contentsline {figure}{\numberline {1.27}{\ignorespaces Analisi dei sequestri per filtro Città (Srinagar): geolocalizzazione intra-urbana e profilo delle vittime}}{30}{figure.caption.35}%
+\contentsline {figure}{\numberline {1.28}{\ignorespaces Analisi dei sequestri per filtro Anno (1972): fenomeno episodico e orientato alla dimensione economica}}{31}{figure.caption.36}%
+\contentsline {figure}{\numberline {1.29}{\ignorespaces Analisi dei sequestri per filtro Anno (2017): fenomeno strutturato e orientato alla dimensione conflittuale}}{32}{figure.caption.37}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
