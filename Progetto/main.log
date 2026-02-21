@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  18 FEB 2026 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  21 FEB 2026 12:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1161,10 +1161,10 @@ Overfull \hbox (2.1929pt too wide) in paragraph at lines 13--13
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 30.
+(Font)              scaled to size 9.49997pt on input line 29.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 30.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 56.
+(Font)              scaled to size 9.49997pt on input line 29.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 55.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1173,7 +1173,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 5064) in paragraph at lines 113--114
+Underfull \hbox (badness 5064) in paragraph at lines 112--113
 []|\T1/ppl/m/n/10.95 (+20) Indicatore bi-na-rio (1/0) se l'at-tac-co è sta-to ri-ven-di-ca-to
  []
 
@@ -1183,7 +1183,7 @@ Underfull \hbox (badness 5064) in paragraph at lines 113--114
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.129 \end{longtable}
+l.128 \end{longtable}
                       [1
 
 
@@ -1198,7 +1198,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 145.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 144.
 
 
 
@@ -1209,37 +1209,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-Overfull \hbox (26.54678pt too wide) in paragraph at lines 185--185
+Overfull \hbox (26.54678pt too wide) in paragraph at lines 187--187
  []\T1/pcr/m/n/10.95 file_path = "/Users/antonio/Desktop/globalterrorismdb_0718dist.csv"[] 
  []
 
 
-Overfull \hbox (171.08661pt too wide) in paragraph at lines 185--185
- []    \T1/pcr/m/n/10.95 "eventid", "country_txt", "region_txt", "provstate", "city", "latitude", "longitude",[] 
+Overfull \hbox (59.39674pt too wide) in paragraph at lines 187--187
+ [] \T1/pcr/m/n/10.95 "eventid", "country_txt", "region_txt", "provstate", "city", "latitude"[] 
  []
 
 
-Overfull \hbox (118.52667pt too wide) in paragraph at lines 185--185
- []    \T1/pcr/m/n/10.95 "attacktype1_txt", "weaptype1_txt", "weapsubtype1_txt", "suicide", "success",[] 
+Overfull \hbox (26.54678pt too wide) in paragraph at lines 187--187
+ [] \T1/pcr/m/n/10.95 "attacktype1_txt", "weaptype1_txt", "weapsubtype1_txt", "suicide",[] 
  []
 
 
-Overfull \hbox (6.8368pt too wide) in paragraph at lines 185--185
- []    \T1/pcr/m/n/10.95 "targtype1_txt", "targsubtype1_txt", "corp1", "natlty1_txt",[] 
+Overfull \hbox (33.11678pt too wide) in paragraph at lines 197--197
+ []\T1/pcr/m/n/10.95 numeric_cols_unknown = ["nkill", "nwound", "propvalue", "ransomamt",[] 
  []
 
 
-Overfull \hbox (217.07655pt too wide) in paragraph at lines 185--185
- []\T1/pcr/m/n/10.95 df = pd.read_csv(file_path, usecols=columns_of_interest, encoding='ISO-8859-1', engine='python')[] 
- []
-
-
-Overfull \hbox (98.8167pt too wide) in paragraph at lines 194--194
- []\T1/pcr/m/n/10.95 numeric_cols_unknown = ["nkill", "nwound", "propvalue", "ransomamt", "nperps"][] 
- []
-
-
-Overfull \hbox (0.26682pt too wide) in paragraph at lines 209--209
+Overfull \hbox (0.26682pt too wide) in paragraph at lines 212--212
  []        \T1/pcr/m/n/10.95 month = int(row['imonth']) if row['imonth'] != 0 else 1[] 
  []
 
@@ -1753,9 +1743,9 @@ Here is how much of TeX's memory you used:
  59698 multiletter control sequences out of 15000+600000
  647783 words of font info for 461 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,14n,131p,2409b,719s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 111i,14n,131p,2409b,810s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (41 pages, 14049596 bytes).
+Output written on main.pdf (41 pages, 14049323 bytes).
 PDF statistics:
  619 PDF objects out of 1000 (max. 8388607)
  493 compressed objects within 5 object streams

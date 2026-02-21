@@ -11,7 +11,6 @@ Il dataset rappresenta la fonte open-source più completa e autorevole in questo
 Le analisi sono state condotte mediante l'utilizzo di avanzati software di \textit{Business Intelligence} (tra cui \textit{Qlik Sense}, \textit{Power BI} e \textit{Tableau}), che hanno permesso di trasformare oltre 180.000 record grezzi in \textit{dashboard interattive}. Questo approccio metodologico ha consentito di simulare un processo di \textit{Intelligence Analysis} orientato ai dati (\textit{Data-Driven Intelligence}), fornendo risposte concrete a specifiche domande strategiche e identificando pattern temporali e spaziali non rilevabili tramite una semplice analisi tabellare.
 
 \section{Approfondimento del Dataset Global Terrorism Database (GTD)}
-\textcolor{red}{\textbf{Da modificare prima e dopo pulizia}}
 
 Il dataset selezionato per questo progetto rappresenta la risorsa più completa e autorevole a livello mondiale per l'analisi quantitativa del terrorismo. Esso si compone di oltre \textit{180.000 record}, ciascuno rappresentante un singolo evento terroristico unico, e copre un arco temporale che va dal \textit{1970 al 2017}.
 
@@ -142,10 +141,10 @@ In particolare, sono stati eseguiti i seguenti passaggi:
     Dal dataset originale sono state estratte solo le colonne necessarie per l’analisi, suddivise per categorie: identificativi, dati geografici, criteri di terrorismo, tattiche e armi, obiettivi, gruppi e terroristi, impatto e vittime. Questa operazione ha permesso di ridurre il dataset ai soli dati utili, migliorando la leggibilità e le performance di calcolo nelle fasi successive.
 
     \item \textit{Gestione delle date incomplete:} \\
-    Alcuni record presentavano giorno o mese sconosciuti, indicati con valore ``0''. Per garantire la compatibilità con Qlik Sense, Tableau e Power BI, è stata creata una \textit{colonna unificata \texttt{date}}, combinando anno, mese e giorno. I valori sconosciuti sono stati sostituiti con ``1'', evitando errori nella lettura e permettendo aggregazioni temporali coerenti.
+    Alcuni record presentavano giorno o mese sconosciuti, indicati con valore ``0''. Per garantire la compatibilità con Qlik Sense, Tableau e Power BI, è stata creata una \textit{colonna unificata \texttt{date}}, combinando anno, mese e giorno.
 
     \item \textit{Normalizzazione dei valori numerici:} \\ 
-    Alcune colonne numeriche, come numero di morti, feriti, terroristi coinvolti, danni economici e riscatti richiesti, contenevano il codice ``-99'' a indicare valori sconosciuti. Tali valori sono stati convertiti in \textit{NaN} (Not a Number) per distinguerli dai valori effettivamente pari a zero. Inoltre, tutte le colonne sono state convertite in formato numerico per garantire la corretta interpretazione dei dati. Questo passaggio consente di evitare distorsioni nelle analisi statistiche e nei KPI, preservando la distinzione tra dati mancanti e valori reali.
+    Alcune colonne numeriche, come numero di morti, feriti, terroristi coinvolti, danni economici e riscatti richiesti, contenevano il codice ``-99'' a indicare valori sconosciuti. Tali valori sono stati convertiti in \textit{NaN} (Not a Number) per distinguerli dai valori effettivamente pari a zero. Questo passaggio consente di evitare distorsioni nelle analisi statistiche e nei KPI, preservando la distinzione tra dati mancanti e valori reali.
 
 
     \item \textit{Verifica della qualità dei dati:} \\
@@ -172,21 +171,25 @@ import numpy as np
 file_path = "/Users/antonio/Desktop/globalterrorismdb_0718dist.csv"
 
 columns_of_interest = [
-    "eventid", "country_txt", "region_txt", "provstate", "city", "latitude", "longitude",
-    "crit1", "crit2", "crit3",
-    "attacktype1_txt", "weaptype1_txt", "weapsubtype1_txt", "suicide", "success",
-    "targtype1_txt", "targsubtype1_txt", "corp1", "natlty1_txt",
-    "gname", "claimed", "nperps",
-    "nkill", "nwound", "propvalue", "ishostkid", "ransomamt",
-    "iyear", "imonth", "iday"
+ "eventid", "country_txt", "region_txt", "provstate", "city", "latitude"
+ ,"longitude",
+ "crit1", "crit2", "crit3",
+ "attacktype1_txt", "weaptype1_txt", "weapsubtype1_txt", "suicide",
+ "success",
+ "targtype1_txt", "targsubtype1_txt", "corp1", "natlty1_txt",
+ "gname", "claimed", "nperps",
+ "nkill", "nwound", "propvalue", "ishostkid", "ransomamt",
+ "iyear", "imonth", "iday"
 ]
 
-df = pd.read_csv(file_path, usecols=columns_of_interest, encoding='ISO-8859-1', engine='python')
+df = pd.read_csv(file_path, usecols=columns_of_interest, 
+encoding='ISO-8859-1', engine='python')
 \end{verbatim}
 
     \item \textit{Pulizia dei valori numerici:} sostituzione di \texttt{-99} con \texttt{NaN}
 \begin{verbatim}
-numeric_cols_unknown = ["nkill", "nwound", "propvalue", "ransomamt", "nperps"]
+numeric_cols_unknown = ["nkill", "nwound", "propvalue", "ransomamt", 
+"nperps"]
 
 for col in numeric_cols_unknown:
     df[col] = pd.to_numeric(df[col], errors='coerce')
