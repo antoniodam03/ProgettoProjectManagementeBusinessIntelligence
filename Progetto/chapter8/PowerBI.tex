@@ -51,20 +51,13 @@ Queste metriche sono state sviluppate per quantificare la pericolosità dei grup
 \begin{itemize}
     \item \textit{Efficienza Letale (Misura)}: calcola il tasso medio di mortalità per attacco. È fondamentale per distinguere i gruppi che effettuano "attacchi di massa" da quelli che operano azioni dimostrative a bassa letalità.
     \begin{verbatim}
-% Mix Armi = VAR AttacchiConQuestaArma
-     = COUNTROWS('gtd_cleaned_correct')
-
-VAR AttacchiTotaliDelGruppo = CALCULATE(
-    COUNTROWS('gtd_cleaned_correct'),
-    REMOVEFILTERS('gtd_cleaned_correct'[weaptype1 fondamentali]) 
-)
-
-RETURN
-DIVIDE(AttacchiConQuestaArma, AttacchiTotaliDelGruppo, 0)
+Efficienza_Letale = DIVIDE(SUM('gtd_cleaned_correct'[nkill]),
+ COUNT('gtd_cleaned_correct'[eventid]), 0)
     \end{verbatim}
     \item \textit{Livello Massacro (Colonna Calcolata)}: crea una segmentazione binaria degli eventi basata sulla soglia critica di 10 vittime. Questa colonna è utilizzata specificamente dall'algoritmo di AI \textit{Key Influencers} per identificare i fattori determinanti degli attacchi ad alto impatto.
     \begin{verbatim}
-        
+Livello_Massacro = IF('gtd_cleaned_correct'[nkill] >= 10, 
+ "Alto Impatto (>10 morti)", "Basso Impatto")
     \end{verbatim}
 \end{itemize}
 
@@ -74,7 +67,19 @@ Per la dashboard "\textit{Anatomia del Fallimento}", è stato necessario inverti
 
 \begin{itemize}
     \item \textit{\%\_Fallimento (Misura)}: calcola la percentuale di attacchi che sono stati sventati o sono falliti tecnicamente (dove \textit{success = 0}). Questa metrica dinamica permette di valutare la resilienza dei target (es. \textit{Military} vs \textit{Private Citizens}) in diverse regioni.
+    \begin{verbatim}
+%_Fallimento = DIVIDE(
+    CALCULATE(COUNT('gtd_cleaned_correct'[eventid]),
+    'gtd_cleaned_correct'[success] = 0),
+    COUNT('gtd_cleaned_correct'[eventid]),
+    0
+)
+    \end{verbatim}
     \item \textit{Esito Desc (Colonna Calcolata)}: traduce il flag numerico binario originale (0/1) in etichette testuali comprensibili per i grafici di flusso (\textit{Sankey Diagram}) e le legende.
+    \begin{verbatim}
+Esito_Desc = IF('gtd_cleaned_correct'[success] = 1,
+ "Riuscito", "Fallito")
+    \end{verbatim}
 \end{itemize}
 
 \subsubsection{- Profilazione Logistica e Tattica}
@@ -83,12 +88,56 @@ Queste formule servono a segmentare gli attori in base alla loro organizzazione 
 
 \begin{itemize}
     \item \textit{Dimensione Commando (Colonna Calcolata)}: una classificazione granulare basata sul numero di terroristi partecipanti (\textit{nperps}). Serve a correlare la dimensione dell'unità operativa con il successo dell'attacco, distinguendo tra lupi solitari, cellule e veri e propri battaglioni.
+    \begin{verbatim}
+Dimensione_Commando = 
+SWITCH(
+    TRUE(),
+    'gtd_cleaned_correct'[nperps] < 1, "Sconosciuto",
+    'gtd_cleaned_correct'[nperps] = 1, "1. Lupo Solitario",
+    'gtd_cleaned_correct'[nperps] >= 2 &&
+     'gtd_cleaned_correct'[nperps] <= 4, "2. Piccola Cellula",
+    'gtd_cleaned_correct'[nperps] >= 5 &&
+     'gtd_cleaned_correct'[nperps] <= 15, "3. Commando",
+    'gtd_cleaned_correct'[nperps] > 15 &&
+     'gtd_cleaned_correct'[nperps] <= 50, "4. Larga Scala",
+    'gtd_cleaned_correct'[nperps] > 50, "5. Milizia / Esercito",
+    "Sconosciuto"
+)
+    \end{verbatim}
     \item \textit{Tipo Cellula (Colonna Calcolata)}: una versione semplificata della precedente, utilizzata per analisi aggregate ad alto livello nelle dashboard riepilogative.
+    \begin{verbatim}
+Tipo_Cellula = SWITCH(TRUE(),
+    'gtd_cleaned_correct'[nperps] = 1, "Lupo Solitario",
+    'gtd_cleaned_correct'[nperps] > 1 &&
+     'gtd_cleaned_correct'[nperps] <= 4, "Piccola Cellula",
+    'gtd_cleaned_correct'[nperps] > 4, "Commando",
+    "Sconosciuto"
+)
+    \end{verbatim}
     \item \textit{\% Mix Armi (Misura)}: una misura complessa che calcola l'incidenza di uno specifico tipo di arma sul totale dell'arsenale utilizzato da un gruppo. È essenziale per il \textit{Radar Chart} nella Dashboard 1, permettendo di visualizzare la "\textit{firma tattica}" (es. preferenza per esplosivi vs armi da fuoco) di ciascun cluster.
+    \begin{verbatim}
+% Mix Armi = 
+ VAR AttacchiConQuestaArma = COUNTROWS('gtd_cleaned_correct')
+
+ VAR AttacchiTotaliDelGruppo = CALCULATE(
+    COUNTROWS('gtd_cleaned_correct'),
+    REMOVEFILTERS('gtd_cleaned_correct'[weaptype1 fondamentali]))
+ RETURN
+ DIVIDE(AttacchiConQuestaArma, AttacchiTotaliDelGruppo, 0)
+    \end{verbatim}
 \end{itemize}
 
 \subsubsection{- Strategia di Comunicazione}
 
 \begin{itemize}
     \item \textit{Stato Rivendicazione (Colonna Calcolata)}: normalizza il campo relativo alla rivendicazione di responsabilità, permettendo di analizzare la strategia mediatica dei gruppi (es. chi rivendica per propaganda vs chi agisce nell'ombra).
+    \begin{verbatim}
+Stato_Rivendicazione = 
+SWITCH(
+    'gtd_cleaned_correct'[claimed],
+    1, "Rivendicato",
+    0, "Non Rivendicato",
+    "Sconosciuto"
+)
+    \end{verbatim}
 \end{itemize}
