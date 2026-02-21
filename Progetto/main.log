@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  21 FEB 2026 12:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  21 FEB 2026 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1031,7 +1031,7 @@ Package hyperref Info: Link coloring ON on input line 50.
 \openout2 = `frontmatter/frontispiece.aux'.
 
  (./frontmatter/frontispiece.tex
-<frontmatter/images/logo.png, id=123, 332.24126pt x 332.24126pt>
+<frontmatter/images/logo.png, id=155, 332.24126pt x 332.24126pt>
 File: frontmatter/images/logo.png Graphic file (type png)
 <use frontmatter/images/logo.png>
 Package pdftex.def Info: frontmatter/images/logo.png  used on input line 25.
@@ -1117,19 +1117,28 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (./main.toc)
-\tf@toc=\write10
-\openout10 = `main.toc'.
-
-
+ (./main.toc
 
 [2
 
 
 
-] (./main.lof
+])
+\tf@toc=\write10
+\openout10 = `main.toc'.
 
-[3
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3] (./main.lof
+
+[4
 
 ])
 \tf@lof=\write11
@@ -1144,13 +1153,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4] (./main.lot)
+[5] (./main.lot)
 \tf@lot=\write12
 \openout12 = `main.lot'.
 
 
 
-[5
+[6
 
 ]
 \openout2 = `introduction/introduction.aux'.
@@ -1258,7 +1267,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Capitolo 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 23.63593pt on input line 1.
-<chapter8/images/1.png, id=304, 1471.4975pt x 843.15pt>
+<chapter8/images/1.png, id=351, 1471.4975pt x 843.15pt>
 File: chapter8/images/1.png Graphic file (type png)
 <use chapter8/images/1.png>
 Package pdftex.def Info: chapter8/images/1.png  used on input line 25.
@@ -1266,7 +1275,7 @@ Package pdftex.def Info: chapter8/images/1.png  used on input line 25.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<chapter8/images/2.png, id=306, 1471.4975pt x 843.15pt>
+<chapter8/images/2.png, id=353, 1471.4975pt x 843.15pt>
 File: chapter8/images/2.png Graphic file (type png)
 <use chapter8/images/2.png>
 Package pdftex.def Info: chapter8/images/2.png  used on input line 32.
@@ -1307,7 +1316,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 68.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 68.
-<chapter8/images/dashboard/Dashboard1.png, id=321, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/Dashboard1.png, id=367, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/Dashboard1.png Graphic file (type png)
 <use chapter8/images/dashboard/Dashboard1.png>
 Package pdftex.def Info: chapter8/images/dashboard/Dashboard1.png  used on input line 82.
@@ -1331,17 +1340,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9 <./chapter8/images/dashboard/Dashboard1.png>]
-<chapter8/images/dashboard/Filtro su anno.png, id=335, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/Filtro su anno.png, id=381, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/Filtro su anno.png Graphic file (type png)
 <use chapter8/images/dashboard/Filtro su anno.png>
 Package pdftex.def Info: chapter8/images/dashboard/Filtro su anno.png  used on input line 118.
 (pdftex.def)             Requested size: 352.81554pt x 202.15428pt.
-<chapter8/images/dashboard/filtroannoregione.png, id=336, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/filtroannoregione.png, id=382, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/filtroannoregione.png Graphic file (type png)
 <use chapter8/images/dashboard/filtroannoregione.png>
 Package pdftex.def Info: chapter8/images/dashboard/filtroannoregione.png  used on input line 125.
 (pdftex.def)             Requested size: 352.81554pt x 202.15428pt.
-<chapter8/images/dashboard/anni2000.png, id=339, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/anni2000.png, id=385, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/anni2000.png Graphic file (type png)
 <use chapter8/images/dashboard/anni2000.png>
 Package pdftex.def Info: chapter8/images/dashboard/anni2000.png  used on input line 137.
@@ -1356,7 +1365,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10 <./chapter8/images/dashboard/Filtro su anno.png> <./chapter8/images/dashboard/filtroannoregione.png>]
-<chapter8/images/dashboard/filtroafricamedio.png, id=346, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/filtroafricamedio.png, id=392, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/filtroafricamedio.png Graphic file (type png)
 <use chapter8/images/dashboard/filtroafricamedio.png>
 Package pdftex.def Info: chapter8/images/dashboard/filtroafricamedio.png  used on input line 144.
@@ -1371,17 +1380,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11 <./chapter8/images/dashboard/anni2000.png> <./chapter8/images/dashboard/filtroafricamedio.png>]
-<chapter8/images/dashboard/Verde.png, id=357, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Verde.png, id=403, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Verde.png Graphic file (type png)
 <use chapter8/images/dashboard/Verde.png>
 Package pdftex.def Info: chapter8/images/dashboard/Verde.png  used on input line 167.
 (pdftex.def)             Requested size: 352.81554pt x 201.12106pt.
-<chapter8/images/dashboard/Giallo.png, id=358, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Giallo.png, id=404, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Giallo.png Graphic file (type png)
 <use chapter8/images/dashboard/Giallo.png>
 Package pdftex.def Info: chapter8/images/dashboard/Giallo.png  used on input line 176.
 (pdftex.def)             Requested size: 352.81554pt x 201.12106pt.
-<chapter8/images/dashboard/Rosso.png, id=359, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Rosso.png, id=405, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Rosso.png Graphic file (type png)
 <use chapter8/images/dashboard/Rosso.png>
 Package pdftex.def Info: chapter8/images/dashboard/Rosso.png  used on input line 184.
@@ -1404,7 +1413,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [12 <./chapter8/images/dashboard/Verde.png> <./chapter8/images/dashboard/Giallo.png>]
-<chapter8/images/dashboard/torrigemelle.png, id=367, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/torrigemelle.png, id=414, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/torrigemelle.png Graphic file (type png)
 <use chapter8/images/dashboard/torrigemelle.png>
 Package pdftex.def Info: chapter8/images/dashboard/torrigemelle.png  used on input line 201.
@@ -1419,7 +1428,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [13 <./chapter8/images/dashboard/Rosso.png> <./chapter8/images/dashboard/torrigemelle.png>]
-<chapter8/images/dashboard/dashboard2.png, id=376, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/dashboard2.png, id=422, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/dashboard2.png Graphic file (type png)
 <use chapter8/images/dashboard/dashboard2.png>
 Package pdftex.def Info: chapter8/images/dashboard/dashboard2.png  used on input line 231.
@@ -1434,12 +1443,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14 <./chapter8/images/dashboard/dashboard2.png>]
-<chapter8/images/dashboard/suicede.png, id=383, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/suicede.png, id=429, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/suicede.png Graphic file (type png)
 <use chapter8/images/dashboard/suicede.png>
 Package pdftex.def Info: chapter8/images/dashboard/suicede.png  used on input line 266.
 (pdftex.def)             Requested size: 396.91327pt x 227.42197pt.
-<chapter8/images/dashboard/airport.png, id=385, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/airport.png, id=431, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/airport.png Graphic file (type png)
 <use chapter8/images/dashboard/airport.png>
 Package pdftex.def Info: chapter8/images/dashboard/airport.png  used on input line 279.
@@ -1463,12 +1472,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [16 <./chapter8/images/dashboard/suicede.png> <./chapter8/images/dashboard/airport.png>]
-<chapter8/images/dashboard/cittadini.png, id=398, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/cittadini.png, id=444, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/cittadini.png Graphic file (type png)
 <use chapter8/images/dashboard/cittadini.png>
 Package pdftex.def Info: chapter8/images/dashboard/cittadini.png  used on input line 293.
 (pdftex.def)             Requested size: 396.91327pt x 227.42197pt.
-<chapter8/images/dashboard/turisti.png, id=399, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/turisti.png, id=445, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/turisti.png Graphic file (type png)
 <use chapter8/images/dashboard/turisti.png>
 Package pdftex.def Info: chapter8/images/dashboard/turisti.png  used on input line 300.
@@ -1483,12 +1492,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [17 <./chapter8/images/dashboard/cittadini.png> <./chapter8/images/dashboard/turisti.png>]
-<chapter8/images/dashboard/suicidekpi.png, id=408, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/suicidekpi.png, id=455, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/suicidekpi.png Graphic file (type png)
 <use chapter8/images/dashboard/suicidekpi.png>
 Package pdftex.def Info: chapter8/images/dashboard/suicidekpi.png  used on input line 313.
 (pdftex.def)             Requested size: 396.91327pt x 227.42197pt.
-<chapter8/images/dashboard/nonsuicidekpi.png, id=409, 1471.4975pt x 843.15pt>
+<chapter8/images/dashboard/nonsuicidekpi.png, id=456, 1471.4975pt x 843.15pt>
 File: chapter8/images/dashboard/nonsuicidekpi.png Graphic file (type png)
 <use chapter8/images/dashboard/nonsuicidekpi.png>
 Package pdftex.def Info: chapter8/images/dashboard/nonsuicidekpi.png  used on input line 320.
@@ -1512,7 +1521,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-<chapter8/images/dashboard/dashboard3.png, id=422, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/dashboard3.png, id=469, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/dashboard3.png Graphic file (type png)
 <use chapter8/images/dashboard/dashboard3.png>
 Package pdftex.def Info: chapter8/images/dashboard/dashboard3.png  used on input line 352.
@@ -1536,12 +1545,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [21]
-<chapter8/images/dashboard/dannoeconomicomacroregione.png, id=435, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/dannoeconomicomacroregione.png, id=482, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/dannoeconomicomacroregione.png Graphic file (type png)
 <use chapter8/images/dashboard/dannoeconomicomacroregione.png>
 Package pdftex.def Info: chapter8/images/dashboard/dannoeconomicomacroregione.png  used on input line 404.
 (pdftex.def)             Requested size: 396.91327pt x 226.26442pt.
-<chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png, id=437, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png, id=484, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png Graphic file (type png)
 <use chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png>
 Package pdftex.def Info: chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png  used on input line 413.
@@ -1556,12 +1565,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [22 <./chapter8/images/dashboard/dannoeconomicomacroregione.png> <./chapter8/images/dashboard/dannoeconomicomicroregioneitalia.png>]
-<chapter8/images/dashboard/Danno economico assalto.png, id=448, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Danno economico assalto.png, id=494, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Danno economico assalto.png Graphic file (type png)
 <use chapter8/images/dashboard/Danno economico assalto.png>
 Package pdftex.def Info: chapter8/images/dashboard/Danno economico assalto.png  used on input line 444.
 (pdftex.def)             Requested size: 396.91327pt x 226.26442pt.
-<chapter8/images/dashboard/Ira.png, id=450, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Ira.png, id=496, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Ira.png Graphic file (type png)
 <use chapter8/images/dashboard/Ira.png>
 Package pdftex.def Info: chapter8/images/dashboard/Ira.png  used on input line 460.
@@ -1585,7 +1594,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [24 <./chapter8/images/dashboard/Danno economico assalto.png> <./chapter8/images/dashboard/Ira.png>]
-<chapter8/images/dashboard/dashboard4.png, id=465, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/dashboard4.png, id=512, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/dashboard4.png Graphic file (type png)
 <use chapter8/images/dashboard/dashboard4.png>
 Package pdftex.def Info: chapter8/images/dashboard/dashboard4.png  used on input line 502.
@@ -1618,7 +1627,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [27]
-<chapter8/images/dashboard/Dashboard4Macroregione.png, id=483, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Dashboard4Macroregione.png, id=529, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Dashboard4Macroregione.png Graphic file (type png)
 <use chapter8/images/dashboard/Dashboard4Macroregione.png>
 Package pdftex.def Info: chapter8/images/dashboard/Dashboard4Macroregione.png  used on input line 569.
@@ -1633,7 +1642,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [28 <./chapter8/images/dashboard/Dashboard4Macroregione.png>]
-<chapter8/images/dashboard/Dashboard4Microregione.png, id=494, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Dashboard4Microregione.png, id=540, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Dashboard4Microregione.png Graphic file (type png)
 <use chapter8/images/dashboard/Dashboard4Microregione.png>
 Package pdftex.def Info: chapter8/images/dashboard/Dashboard4Microregione.png  used on input line 588.
@@ -1648,7 +1657,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [29 <./chapter8/images/dashboard/Dashboard4Microregione.png>]
-<chapter8/images/dashboard/Dashboard4citta.png, id=504, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Dashboard4citta.png, id=550, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Dashboard4citta.png Graphic file (type png)
 <use chapter8/images/dashboard/Dashboard4citta.png>
 Package pdftex.def Info: chapter8/images/dashboard/Dashboard4citta.png  used on input line 622.
@@ -1663,12 +1672,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [30 <./chapter8/images/dashboard/Dashboard4citta.png>]
-<chapter8/images/dashboard/Rapimento 1972.png, id=517, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Rapimento 1972.png, id=564, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Rapimento 1972.png Graphic file (type png)
 <use chapter8/images/dashboard/Rapimento 1972.png>
 Package pdftex.def Info: chapter8/images/dashboard/Rapimento 1972.png  used on input line 674.
 (pdftex.def)             Requested size: 396.91327pt x 226.26442pt.
-<chapter8/images/dashboard/Rapimenti2017.png, id=518, 1475.5125pt x 841.1425pt>
+<chapter8/images/dashboard/Rapimenti2017.png, id=565, 1475.5125pt x 841.1425pt>
 File: chapter8/images/dashboard/Rapimenti2017.png Graphic file (type png)
 <use chapter8/images/dashboard/Rapimenti2017.png>
 Package pdftex.def Info: chapter8/images/dashboard/Rapimenti2017.png  used on input line 681.
@@ -1696,7 +1705,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./chapter8/Tableau.tex
 Capitolo 2.
-)
+
 
 [33
 
@@ -1704,13 +1713,94 @@ Capitolo 2.
 
 
 ]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[34]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[35]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[36]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[37]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[38]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[39]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[40]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[41])
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[42]
 \openout2 = `chapter8/PowerBI.aux'.
 
  (./chapter8/PowerBI.tex
 Capitolo 3.
 )
 
-[34
+[43
 
 
 
@@ -1723,7 +1813,7 @@ This document will not have a glossary.
 
 
 
-[35
+[44
 
 
 
@@ -1734,21 +1824,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 78DFAEBA568A81C188284738F41291FD;5372.
+(rerunfilecheck)             Checksum: F62A9E88AF2E480006706BF77A304E14;7773.
  ) 
 Here is how much of TeX's memory you used:
- 37803 strings out of 473190
- 730722 string characters out of 5715800
- 1256502 words of memory out of 5000000
- 59698 multiletter control sequences out of 15000+600000
- 647783 words of font info for 461 fonts, out of 8000000 for 9000
+ 37985 strings out of 473190
+ 732584 string characters out of 5715800
+ 1256638 words of memory out of 5000000
+ 59719 multiletter control sequences out of 15000+600000
+ 656046 words of font info for 529 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,14n,131p,2409b,810s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (41 pages, 14049323 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (51 pages, 14115963 bytes).
 PDF statistics:
- 619 PDF objects out of 1000 (max. 8388607)
- 493 compressed objects within 5 object streams
- 139 named destinations out of 1000 (max. 500000)
- 123787 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 779 PDF objects out of 1000 (max. 8388607)
+ 633 compressed objects within 7 object streams
+ 200 named destinations out of 1000 (max. 500000)
+ 136139 words of extra memory for PDF output out of 154059 (max. 10000000)
 

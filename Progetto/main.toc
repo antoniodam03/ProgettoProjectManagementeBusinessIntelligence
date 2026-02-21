@@ -28,7 +28,27 @@
 \contentsline {subsection}{\numberline {1.9.2}Obiettivo}{27}{subsection.1.9.2}%
 \contentsline {subsection}{\numberline {1.9.3}Filtri interattivi ed esempi di utilizzo}{27}{subsection.1.9.3}%
 \contentsline {chapter}{\numberline {2}Tableau}{33}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Seguire pdf esempio}{33}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Power PI}{34}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{34}{section.3.1}%
-\contentsline {chapter}{Sitografia}{35}{chapter*.38}%
+\contentsline {section}{\numberline {2.1}Introduzione}{33}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Metodologia di Analisi}{33}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Strategia di Visualizzazione}{34}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Gestione della Qualità dei Dati}{34}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Panoramica delle Dashboard Realizzate}{34}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}{35}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Dashboard 2: Analisi e Previsione della Letalità per Regione}{36}{subsection.2.5.2}%
+\contentsline {subsubsection}{Caso Studio Comparativo: South Asia vs North America}{36}{section*.44}%
+\contentsline {paragraph}{Analisi Qualitativa}{37}{section*.45}%
+\contentsline {paragraph}{Analisi Predittiva e Business Insights}{37}{section*.46}%
+\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{37}{section*.50}%
+\contentsline {paragraph}{Analisi delle Metriche di Qualità}{37}{section*.51}%
+\contentsline {paragraph}{Interpretazione Strategica del Modello}{38}{section*.52}%
+\contentsline {subsection}{\numberline {2.5.3}Dashboard 3: Previsione dei Bersagli (Target) per Regione}{38}{subsection.2.5.3}%
+\contentsline {subsubsection}{Validazione Statistica e Comportamento del Modello Predittivo}{39}{section*.54}%
+\contentsline {paragraph}{Motore di Forecasting e Orizzonte Temporale}{39}{section*.55}%
+\contentsline {paragraph}{Il Cambiamento di Paradigma (Soft Target vs Hard Target)}{39}{section*.56}%
+\contentsline {paragraph}{Analisi delle Metriche di Qualità (Il significato del rating "Scarso")}{39}{section*.57}%
+\contentsline {paragraph}{Implicazioni Strategiche}{40}{section*.58}%
+\contentsline {subsection}{\numberline {2.5.4}Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}{40}{subsection.2.5.4}%
+\contentsline {subsubsection}{Caso Studio Comparativo: \textit {Military} vs \textit {Airports \& Aircraft}}{41}{section*.61}%
+\contentsline {chapter}{\numberline {3}Power PI}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{43}{section.3.1}%
+\contentsline {chapter}{Sitografia}{44}{chapter*.62}%
