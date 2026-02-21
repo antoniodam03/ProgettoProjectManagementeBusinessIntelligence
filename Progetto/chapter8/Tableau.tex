@@ -56,7 +56,6 @@ Una fase critica antecedente alla visualizzazione ha riguardato la bonifica dei 
 \section{Panoramica delle Dashboard Realizzate}
 Il progetto si articola in 7 Dashboard, organizzate in un percorso narrativo che parte dall'analisi storica globale per arrivare a previsioni specifiche su target e regioni:
 
-\textcolor{red}{\textbf{Da ricontrollare }}
 \begin{itemize}
     \item \textbf{Dashboard 1:} Analisi Temporale degli Attacchi e delle Vittime (Trend Storici).
     \item \textbf{Dashboard 2:} Analisi e Previsione della Letalità per Regione.
@@ -91,8 +90,6 @@ Osservando il grafico, emergono due fasi distinte:
     \item \textbf{Divergenza e Accelerazione (Post-2010):} È la fase più critica. Sebbene entrambe le curve crescano, la linea delle \textbf{Vittime} mostra un'accelerazione verticale più marcata rispetto alla linea degli \textbf{Attacchi}. Questo fenomeno suggerisce un cambiamento strutturale nel \textit{modus operandi}: negli ultimi anni del dataset, il terrorismo è diventato più efficiente nel causare vittime (attacchi di massa, uso di esplosivi più potenti), rompendo la correlazione lineare del passato.
 \end{enumerate}
 
-\textcolor{red}{\textbf{Da controllare}}
-
 \subsubsection*{Validazione Statistica dei Modelli}
 Per confermare matematicamente l'osservazione visiva, sono state applicate \textbf{Linee di Tendenza Polinomiali di 3° grado (Cubiche)}. I parametri statistici estratti confermano la robustezza dell'analisi:
 \begin{itemize}
@@ -104,6 +101,9 @@ Per confermare matematicamente l'osservazione visiva, sono state applicate \text
     \end{itemize}
     \textit{Interpretazione:} Il coefficiente delle vittime è più del doppio di quello degli attacchi. Matematicamente, questo conferma che la curva della mortalità è più "ripida" e cresce più velocemente.
 \end{itemize}
+
+\textcolor{red}{\textbf{foto dati }}
+
 
 \subsubsection*{Conclusioni}
 L'analisi dimostra che il rapporto tra attacchi e vittime non è $1:1$. L'impennata della linea rossa e i coefficienti del modello polinomiale rivelano un aggravamento della minaccia nell'ultimo decennio analizzato: il terrorismo moderno non colpisce solo più spesso, ma colpisce "più forte".
@@ -139,6 +139,7 @@ Questa dashboard indaga la relazione tra l'intensità dell'attacco (misurata in 
 \subsubsection{Caso Studio Comparativo: South Asia vs North America}
 Per validare il modello, è stato eseguito un confronto diretto tra \textit{South Asia} (area ad alta instabilità) e \textit{North America} (area a stabilità relativa).
 
+\textcolor{red}{\textbf{Foto caso studio}}
 
 
 \paragraph{Analisi Qualitativa}
@@ -171,13 +172,10 @@ L'analisi del \textit{Tasso di Letalità Previsto} (rapporto tra morti e feriti 
 Il confronto evidenzia due profili di rischio opposti: nel \textbf{Sud Asia}, le strutture di emergenza devono focalizzarsi sulla gestione dei grandi flussi di feriti; in \textbf{Nord America}, la prevenzione deve concentrarsi sull'anticipazione dell'evento raro, data l'altissima probabilità di decesso in caso di attacco.
 
 
-
-\textcolor{red}{\textbf{Da controllare}}
-
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
 \paragraph{Motore di Forecasting e Parametri di Base}
-Per generare la proiezione futura della letalità, Tableau ha utilizzato un algoritmo di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Questo approccio assegna pesi decrescenti nel tempo ai dati storici (1970--2016). Il modello selezionato automaticamente è di tipo \textbf{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}). L'assenza di stagionalità è coerente con la natura del dataset aggregato su base annua.
+Per generare la proiezione futura della letalità, Tableau ha utilizzato un algoritmo di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Il modello selezionato automaticamente è di tipo \textbf{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}).
 
 L'algoritmo ha calcolato i seguenti valori per la previsione:
 \begin{itemize}
@@ -199,7 +197,7 @@ Il software ha classificato la qualità della previsione come \textit{"Scarsa"}.
 \paragraph{Interpretazione Strategica del Modello}
 Dal punto di vista dell'analisi di \textit{intelligence}, una qualità statistica definita "scarsa" a causa dell'alta varianza è un'informazione preziosa. L'ampiezza dell'intervallo di confidenza ($\pm 0,701$) dimostra matematicamente che il terrorismo non segue un trend lineare.
 
-Gli eventi estremi (\textit{outliers}) possono alterare le medie in qualsiasi momento. Il modello suggerisce che i \textit{decision maker} non devono basare la pianificazione solo sulla media attesa ($0,86$), ma devono preparare le risorse di emergenza per l'estremo superiore dell'intervallo di confidenza, ovvero per potenziali picchi di letalità improvvisi.
+Gli eventi estremi possono alterare le medie in qualsiasi momento. Il modello suggerisce che non si deve basare la pianificazione solo sulla media attesa ($0,86$), ma si devono preparare le risorse di emergenza per l'estremo superiore dell'intervallo di confidenza, ovvero per potenziali picchi di letalità improvvisi.
 
 \textcolor{red}{\textbf{figura dati previsione}}
 
@@ -230,12 +228,10 @@ Al fine di valutare il "Rischio di essere colpiti", la metrica utilizzata non è
     \item \textbf{Interattività e Risposta alle Business Questions:} Il collante dell'intera dashboard è il \textbf{Filtro Dinamico per Regione}, posizionato in alto a destra. Selezionando un'area specifica (es. \textit{Western Europe}), sia l'\textit{Area Chart} che la previsione si ricalcolano immediatamente. Questo permette agli analisti di rispondere a domande di business mirate, come ad esempio verificare se in Europa si stia assistendo a uno spostamento dei bersagli dalle istituzioni (\textit{Government}) verso i mercati civili (\textit{Business} o \textit{Private Citizens}).
 \end{enumerate}
 
-\textcolor{red}{\textbf{Da cantrollare}}
-
 \subsubsection{Validazione Statistica e Comportamento del Modello Predittivo}
 
 \paragraph{Motore di Forecasting e Orizzonte Temporale}
-Per la proiezione a 5 anni (2017--2021) dei volumi di attacco sui diversi bersagli, il motore analitico ha utilizzato il Livellamento Esponenziale sui dati storici dal 1970 al 2016. Coerentemente con la granularità annuale del dataset, il software non ha forzato alcuna componente di stagionalità (Modello Stagione: \textit{Nessuna}). Tuttavia, l'aspetto più rilevante non risiede nelle impostazioni generali, ma in come l'algoritmo si è adattato autonomamente alle diverse serie storiche dei singoli target.
+Per la proiezione a 5 anni (2017--2021) dei volumi di attacco sui diversi bersagli, il motore analitico ha utilizzato il Livellamento Esponenziale sui dati storici dal 1970 al 2016. Coerentemente con la granularità annuale del dataset, il software non ha forzato alcuna componente di stagionalità (Modello Stagione: \textit{Nessuna}).
 
 \paragraph{Il Cambiamento di Paradigma (Soft Target vs Hard Target)}
 L'analisi dei coefficienti del modello rivela una netta spaccatura matematica tra gli obiettivi civili e quelli istituzionali, confermando l'ipotesi visiva di un cambio di strategia del terrorismo moderno:
@@ -243,16 +239,20 @@ L'analisi dei coefficienti del modello rivela una netta spaccatura matematica tr
 
 
 \begin{enumerate}
-    \item \textbf{Istituzioni, Forze dell'Ordine e Business (Hard/Economic Targets):} Per categorie come \texttt{Police}, \texttt{Military}, \texttt{Government} e \texttt{Business}, l'algoritmo ha selezionato un modello di tipo \textit{"Aggiuntivo, Nessuno, Nessuno"} (ovvero con Livello, ma senza Trend). Il coefficiente Beta ($\beta$, che regola la pendenza del trend) è pari a $0,000$. Di conseguenza, il modello prevede una stabilizzazione della minaccia: la stima di crescita per il quinquennio successivo è pari a $0$ rispetto al valore iniziale.
-    \item \textbf{Civili e Proprietà Private (Soft Targets):} Per la categoria \texttt{Private Citizens \& Property}, il software ha invece applicato un modello \textit{"Aggiuntivo, Aggiuntivo, Nessuno"}, rilevando un trend di fondo estremamente forte. Il coefficiente $\beta$ è salito a $0,297$, portando il modello a calcolare un incremento stimato impressionante di $+2.084$ attacchi nel quinquennio. Questo dato certifica matematicamente lo spostamento della violenza verso bersagli non difesi.
+    \item \textbf{Istituzioni, Forze dell'Ordine e Business (Hard/Economic Targets):} Per categorie come \texttt{Police}, \texttt{Military}, \texttt{Government} e \texttt{Business}, il coefficiente Beta ($\beta$, che regola la pendenza del trend) è pari a $0,000$. Di conseguenza, il modello prevede una stabilizzazione della minaccia: la stima di crescita per il quinquennio successivo è pari a $0$ rispetto al valore iniziale.
+    \item \textbf{Civili e Proprietà Private (Soft Targets):} Per la categoria \texttt{Private Citizens \& Property}, il coefficiente $\beta$ è salito a $0,297$, portando il modello a calcolare un incremento stimato impressionante di $+2.084$ attacchi nel quinquennio. Questo dato certifica matematicamente lo spostamento della violenza verso bersagli non difesi.
 \end{enumerate}
+
+\textcolor{red}{\textbf{Foto dati confronto}}
+
+
 
 \paragraph{Analisi delle Metriche di Qualità (Il significato del rating "Scarso")}
 Come già osservato nell'analisi della letalità (Dashboard 2), Tableau classifica la qualità complessiva di queste previsioni come \textit{"Scarsa"}. Questa valutazione è il riflesso dell'alta volatilità geopolitica. Esaminando le metriche specifiche:
 
 \begin{itemize}
-    \item \textbf{MAPE (Errore Percentuale Medio Assoluto):} Si attesta su valori che vanno dal $27,7\%$ per il settore \textit{Business} fino a un picco del $50,1\%$ per i \textit{Private Citizens}. L'errore così alto sui civili è dovuto all'impennata anomala ed esponenziale degli attacchi nell'ultimo decennio, che rende i dati storici del passato meno affidabili per prevedere l'entità esatta della crescita futura.
-    \item \textbf{MASE (Mean Absolute Scaled Error):} I valori oscillano tra $1,01$ e $1,11$. Essendo leggermente superiori a $1$, indicano che, a causa delle brusche oscillazioni (cicli di pace seguiti da improvvise ondate di attentati), il modello di smussamento esponenziale fatica a performare significativamente meglio di una semplice "previsione Naive" (che replicherebbe linearmente l'ultimo dato noto).
+    \item \textbf{MAPE :} Si attesta su valori che vanno dal $27,7\%$ per il settore \textit{Business} fino a un picco del $50,1\%$ per i \textit{Private Citizens}. L'errore così alto sui civili è dovuto all'impennata anomala ed esponenziale degli attacchi nell'ultimo decennio, che rende i dati storici del passato meno affidabili per prevedere l'entità esatta della crescita futura.
+    \item \textbf{MASE :} I valori oscillano tra $1,01$ e $1,11$. Essendo leggermente superiori a $1$, indicano che, a causa delle brusche oscillazioni (cicli di pace seguiti da improvvise ondate di attentati), il modello di smussamento esponenziale fatica a performare significativamente meglio di una semplice "previsione Naive" (che replicherebbe linearmente l'ultimo dato noto).
 \end{itemize}
 
 \paragraph{Implicazioni Strategiche}
@@ -297,7 +297,6 @@ L'obiettivo strategico è comprendere se le capacità difensive globali stiano m
 Questa dashboard chiude il cerchio dell'analisi, trasformando una variabile binaria in un misuratore di \textit{performance} (KPI) per la sicurezza globale. La visualizzazione dimostra che, sebbene spostare l'attenzione sui \textit{Soft Target} garantisca ai terroristi tassi di successo altissimi, gli sforzi di prevenzione sistemica degli ultimi anni stanno invertendo la rotta, registrando i tassi di fallimento dell'attacco più alti degli ultimi 40 anni.
 
 
-\textcolor{red}{\textbf{da ricontrollare}}
 
 \subsubsection{Caso Studio Comparativo: \textit{Military} vs \textit{Airports \& Aircraft}}
 Per rispondere al quesito specifico se sia più difficile colpire una base militare rispetto a un aeroporto, sono stati isolati i dati di queste due categorie tramite il filtro dinamico, analizzando le rispettive linee di tendenza dei fallimenti. Il confronto ha rivelato un dato statistico di grande rilevanza strategica.
@@ -307,7 +306,7 @@ Per rispondere al quesito specifico se sia più difficile colpire una base milit
 \begin{itemize}
     \item \textbf{Analisi del Target \textit{Military} (Basi e Forze Armate):} Filtrando per obiettivi militari, il grafico a barre mostra che il tasso di successo degli attacchi rimane storicamente molto alto. Osservando la \textit{Trend Line} del tasso di fallimento, notiamo che per decenni (dal 1970 al 2014) la percentuale di attacchi sventati ha oscillato in una fascia relativamente bassa, tra il 5\% e il 10\%. Solo nel biennio finale (2016--2017) si registra un'impennata che supera il 20\%.
 
-    \textit{Interpretazione:} Sebbene le basi militari siano \textit{Hard Targets} (obiettivi fortificati), le truppe operano spesso in zone di conflitto attivo o in scenari asimmetrici, dove sono costantemente esposte ad agguati, ordigni improvvisati (IED) o attacchi suicidi, rendendo la prevenzione assoluta molto complessa.
+    \textit{Interpretazione:} Sebbene le basi militari siano \textit{Hard Targets} (obiettivi fortificati), le truppe operano spesso in zone di conflitto attivo o in scenari asimmetrici, dove sono costantemente esposte ad agguati, ordigni improvvisati, rendendo la prevenzione assoluta molto complessa.
 
     \item \textbf{Analisi del Target \textit{Airports \& Aircraft} (Aviazione Civile e Infrastrutture):} Cambiando il filtro sul settore dell'aviazione, lo scenario cambia drasticamente. La prima evidenza tecnica è il cambio di scala dell'asse Y del grafico del Trend di Efficacia: mentre per i militari il tetto massimo era intorno al 20\%, qui l'asse arriva all'80\%. Storicamente, l'aviazione mostra tassi di fallimento molto più alti (spesso tra il 15\% e il 30\% già negli anni passati), con un picco anomalo e verticale nell'ultimo anno registrato (2017), dove la percentuale di attacchi falliti o sventati schizza quasi all'80\%. Il grafico a barre soprastante conferma visivamente questo dato, mostrando ampie porzioni (fallimenti) che dominano in diverse annate.
 \end{itemize}
@@ -315,7 +314,7 @@ Per rispondere al quesito specifico se sia più difficile colpire una base milit
 Questa marcata discrepanza deriva dalla natura delle difese:
 \begin{enumerate}
     \item \textbf{Standardizzazione Globale:} Il settore aeroportuale è regolato da protocolli di sicurezza internazionali standardizzati (\textit{metal detector}, \textit{scanner} a raggi X, controlli incrociati sui passeggeri, \textit{intelligence} preventiva) che bloccano la minaccia prima che entri nella fase esecutiva.
-    \item \textbf{Vulnerabilità Tattica:} Un aeroporto è un ambiente chiuso e controllato, dove l'attaccante deve superare filtri successivi. Un convoglio militare o un \textit{checkpoint}, al contrario, si trova spesso in campo aperto, dove l'attaccante può sfruttare il fattore sorpresa o la forza bruta.
+    \item \textbf{Vulnerabilità Tattica:} Un aeroporto è un ambiente chiuso e controllato, dove l'attaccante deve superare filtri successivi. Un convoglio militare, al contrario, si trova spesso in campo aperto, dove l'attaccante può sfruttare il fattore sorpresa o la forza bruta.
 \end{enumerate}
 
 \textcolor{red}{\textbf{Foto esempio }}
