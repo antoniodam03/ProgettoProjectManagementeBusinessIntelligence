@@ -11,22 +11,84 @@ Nel contesto del presente progetto, Power BI è stato utilizzato per profilare i
 L'analisi condotta su questo dataset ha come obiettivo principale quello di esplorare le dinamiche profonde del terrorismo globale, andando oltre la semplice descrizione degli eventi per comprendere le correlazioni nascoste tra le tattiche operative, la letalità degli attacchi e il profilo dei gruppi responsabili. Sono state sviluppate diverse visualizzazioni per effettuare le seguenti analisi:
 
 \begin{itemize}
-    \item \textit{Profilazione dei Gruppi Terroristici (Cluster Analysis):} questa analisi utilizza algoritmi di clustering per raggruppare le organizzazioni terroristiche (\texttt{gname}) in segmenti omogenei basati sulla frequenza degli attacchi e sul numero di vittime (\texttt{nkill}), identificando pattern comportamentali simili tra gruppi apparentemente diversi.
+    \item \textit{Cluster Analysis dei gruppi terroristici (Mappatura Comportamentale)}: questa analisi applica algoritmi di clustering per segmentare i gruppi terroristici in base al loro comportamento operativo (frequenza degli attacchi vs letalità), identificando profili distinti come \textit{minacce egemoniche} o \textit{operatori di nicchia}.
     
-    \item \textit{Analisi dei fattori determinanti la letalità (Key Influencers):} questa analisi esplora quali variabili (come il tipo di arma \texttt{weaptype1\_txt} o la regione \texttt{region\_txt}) influenzino maggiormente la probabilità che un attacco provochi un alto numero di vittime.
+    \item \textit{Analisi dei Fattori Determinanti del Massacro (Key Influencers)}: sfruttando gli algoritmi di Intelligenza Artificiale integrati, questa analisi esplora quali fattori (es. tipo di arma, tattica, regione geografica) influenzano matematicamente la probabilità che un attacco si trasformi in un evento ad \textit{Alto Impatto} (massacro).
     
-    \item \textit{Scomposizione gerarchica dell'impatto (Decomposition Tree):} si è indagato sulla distribuzione del numero totale di vittime e feriti (\texttt{nkill} e \texttt{nwound}), permettendo di scomporre il dato aggregato a livello globale fino al dettaglio del singolo gruppo e della tattica utilizzata, per individuare le "cause radice" dei picchi di violenza.
+    \item \textit{Matrice di Asimmetria (Costo Umano vs Costo Economico)}: si è indagato sulla correlazione tra i danni materiali (in USD) e la perdita di vite umane, cercando di capire se esista un trade-off tra la sofisticazione logistica (costo dell'attacco) e la letalità, e come questa vari in base alla resilienza del target.
     
-    \item \textit{Confronto tra successo dell'attacco e tipologia di bersaglio:} questa analisi illustra la correlazione tra il tipo di obiettivo colpito (\texttt{targtype1\_txt}) e l'esito dell'evento (\texttt{success}), per capire se determinati bersagli (es. militari vs civili) presentino tassi di fallimento maggiori grazie a misure difensive.
+    \item \textit{Anatomia del Fallimento e Resilienza dei Target}: questa analisi inverte la prospettiva tradizionale, esaminando le cause e i pattern degli attacchi falliti (sventati o inefficaci). L'obiettivo è stato valutare la capacità difensiva dei diversi bersagli (es. Militari vs Civili) e l'incompetenza operativa in diverse aree geografiche.
     
-    \item \textit{Analisi dell'impatto economico in relazione alle armi utilizzate:} l'obiettivo di questa analisi è stato mettere in evidenza la relazione tra il valore delle proprietà distrutte (\texttt{propvalue}) e la categoria di arma impiegata, esaminando se attacchi tecnologicamente più semplici possano comunque causare danni economici ingenti.
-    
-    \item \textit{Distribuzione geografica della letalità:} si è voluto valutare la relazione tra la macro-regione geografica e l'intensità degli attacchi, per capire come il contesto geopolitico influisca sul rapporto tra numero di eventi e numero di decessi.
-    
-    \item \textit{Analisi dei rapimenti e delle richieste di riscatto:} questa analisi mirava a tracciare l'incidenza dei rapimenti (\texttt{ishostkid}) e l'importo dei riscatti richiesti (\texttt{ransomamt}), per identificare se esistono pattern economici specifici legati a determinati gruppi o aree geografiche.
+    \item \textit{Analisi della Logistica Operativa e Strategia di Comunicazione}: questa analisi illustra l'efficienza letale in relazione alla dimensione dell'unità operativa (dal \textit{lupo solitario} al battaglione) e incrocia questi dati con la propensione alla rivendicazione (propaganda), per capire come i gruppi utilizzano gli attacchi come strumento di marketing politico.
 \end{itemize}
 
 Queste analisi hanno fornito una visione diagnostica complessiva dell'interazione tra le strategie terroristiche e il loro impatto reale, fornendo diversi spunti per l'allocazione delle risorse di prevenzione e per la comprensione dei fattori di rischio critici.
 
-\subsection{Importazione e Preparazione dei Dati.}
-Per importare i dati in Power BI, è stato utilizzato il file CSV contenente il dataset del Global Terrorism Database 
+\subsection{Acquisizione e Trasformazione dei Dati}
+
+La fase preliminare del progetto ha riguardato l'acquisizione e la trasformazione del dataset \textit{Global Terrorism Database}, importato all'interno dell'ambiente Power BI Desktop utilizzando il formato CSV (\textit{Comma-Separated Values}). Una volta stabilita la connessione con la fonte dati, è stato utilizzato l'Editor di Power Query per eseguire le operazioni di pulizia e normalizzazione (ETL - \textit{Extract, Transform, Load}) necessarie a rendere i dati coerenti e pronti per l'analisi.
+
+Nello specifico, sono state eseguite le seguenti operazioni di trasformazione:
+
+\begin{itemize}
+    \item \textit{Intestazioni alzate di livello}: inizialmente, il dataset importato non riconosceva la prima riga come riga di intestazione, trattando i nomi delle variabili come dati ordinari. È stata applicata la trasformazione per promuovere la prima riga a intestazione, assegnando così correttamente il nome a ogni colonna.
+    
+    \item \textit{Gestione dei separatori decimali}: è stata effettuata un'operazione di sostituzione dei valori per garantire la corretta interpretazione dei dati numerici. Poiché il file originale utilizzava la notazione anglosassone (punto per i decimali), è stata eseguita una sostituzione globale dei caratteri "." con ",". Questo passaggio è stato critico per consentire a Power BI di leggere i valori come numeri decimali e non come testo.
+    
+    \item \textit{Conversione e assegnazione dei tipi di dati}: a seguito dell'importazione, Power BI aveva assegnato genericamente il tipo "Stringa" (Testo) a tutte le colonne. È stato quindi necessario modificare manualmente il tipo di dato per ogni colonna chiave, convertendo i campi in \textit{Numero Intero} (es. \textit{eventid}, \textit{nkill}), \textit{Numero Decimale} o \textit{Data}, abilitando così le successive operazioni di aggregazione e calcolo statistico.
+\end{itemize}
+
+\subsection{Arricchimento del Modello Dati (Misure e Colonne)}
+
+Oltre alla pulizia, per consentire l'utilizzo dei dati nel modo migliore all'interno delle dashboard diagnostiche, è stato necessario arricchire il modello creando nuove \textit{Colonne Calcolate} e \textit{Misure DAX} (\textit{Data Analysis Expressions}). Tra le metriche personalizzate implementate si segnalano:
+
+Di seguito si riportano le specifiche delle principali metriche e colonne implementate.
+
+\subsubsection{- Analisi della Letalità e dell'Impatto}
+
+Queste metriche sono state sviluppate per quantificare la pericolosità dei gruppi e la gravità degli eventi oltre il semplice conteggio.
+
+\begin{itemize}
+    \item \textit{Efficienza Letale (Misura)}: calcola il tasso medio di mortalità per attacco. È fondamentale per distinguere i gruppi che effettuano "attacchi di massa" da quelli che operano azioni dimostrative a bassa letalità.
+    \begin{verbatim}
+% Mix Armi = VAR AttacchiConQuestaArma
+     = COUNTROWS('gtd_cleaned_correct')
+
+VAR AttacchiTotaliDelGruppo = CALCULATE(
+    COUNTROWS('gtd_cleaned_correct'),
+    REMOVEFILTERS('gtd_cleaned_correct'[weaptype1 fondamentali]) 
+)
+
+RETURN
+DIVIDE(AttacchiConQuestaArma, AttacchiTotaliDelGruppo, 0)
+    \end{verbatim}
+    \item \textit{Livello Massacro (Colonna Calcolata)}: crea una segmentazione binaria degli eventi basata sulla soglia critica di 10 vittime. Questa colonna è utilizzata specificamente dall'algoritmo di AI \textit{Key Influencers} per identificare i fattori determinanti degli attacchi ad alto impatto.
+    \begin{verbatim}
+        
+    \end{verbatim}
+\end{itemize}
+
+\subsubsection{- Analisi della Resilienza e del Fallimento}
+
+Per la dashboard "\textit{Anatomia del Fallimento}", è stato necessario invertire la logica di analisi, focalizzandosi sugli insuccessi.
+
+\begin{itemize}
+    \item \textit{\%\_Fallimento (Misura)}: calcola la percentuale di attacchi che sono stati sventati o sono falliti tecnicamente (dove \textit{success = 0}). Questa metrica dinamica permette di valutare la resilienza dei target (es. \textit{Military} vs \textit{Private Citizens}) in diverse regioni.
+    \item \textit{Esito Desc (Colonna Calcolata)}: traduce il flag numerico binario originale (0/1) in etichette testuali comprensibili per i grafici di flusso (\textit{Sankey Diagram}) e le legende.
+\end{itemize}
+
+\subsubsection{- Profilazione Logistica e Tattica}
+
+Queste formule servono a segmentare gli attori in base alla loro organizzazione e alle scelte operative.
+
+\begin{itemize}
+    \item \textit{Dimensione Commando (Colonna Calcolata)}: una classificazione granulare basata sul numero di terroristi partecipanti (\textit{nperps}). Serve a correlare la dimensione dell'unità operativa con il successo dell'attacco, distinguendo tra lupi solitari, cellule e veri e propri battaglioni.
+    \item \textit{Tipo Cellula (Colonna Calcolata)}: una versione semplificata della precedente, utilizzata per analisi aggregate ad alto livello nelle dashboard riepilogative.
+    \item \textit{\% Mix Armi (Misura)}: una misura complessa che calcola l'incidenza di uno specifico tipo di arma sul totale dell'arsenale utilizzato da un gruppo. È essenziale per il \textit{Radar Chart} nella Dashboard 1, permettendo di visualizzare la "\textit{firma tattica}" (es. preferenza per esplosivi vs armi da fuoco) di ciascun cluster.
+\end{itemize}
+
+\subsubsection{- Strategia di Comunicazione}
+
+\begin{itemize}
+    \item \textit{Stato Rivendicazione (Colonna Calcolata)}: normalizza il campo relativo alla rivendicazione di responsabilità, permettendo di analizzare la strategia mediatica dei gruppi (es. chi rivendica per propaganda vs chi agisce nell'ombra).
+\end{itemize}
