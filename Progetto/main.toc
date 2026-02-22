@@ -20,15 +20,21 @@
 \contentsline {subsection}{\numberline {1.4.2}Obiettivo}{15}{subsection.1.4.2}%
 \contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{15}{subsection.1.4.3}%
 \contentsline {section}{\numberline {1.5}Analisi dell'impatto economico e danni causati}{19}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Utente}{20}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Obiettivo}{20}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Filtri interattivi ed esempi di utilizzo}{21}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Geopolitica dei Sequestri: Attori, Vittime e Dinamiche Estorsive}{25}{section.1.9}%
-\contentsline {subsection}{\numberline {1.9.1}Utente}{26}{subsection.1.9.1}%
-\contentsline {subsection}{\numberline {1.9.2}Obiettivo}{27}{subsection.1.9.2}%
-\contentsline {subsection}{\numberline {1.9.3}Filtri interattivi ed esempi di utilizzo}{27}{subsection.1.9.3}%
-\contentsline {chapter}{\numberline {2}Tableau}{33}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Seguire pdf esempio}{33}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Power PI}{34}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{34}{section.3.1}%
-\contentsline {chapter}{Sitografia}{35}{chapter*.38}%
+\contentsline {subsection}{\numberline {1.5.1}Utente}{20}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Obiettivo}{20}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Filtri interattivi ed esempi di utilizzo}{21}{subsection.1.5.3}%
+\contentsline {section}{\numberline {1.6}Geopolitica dei Sequestri: Attori, Vittime e Dinamiche Estorsive}{25}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Utente}{26}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Obiettivo}{27}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Filtri interattivi ed esempi di utilizzo}{27}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}Analisi strategica delle rivendicazioni e propaganda}{32}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Trend Storico del Tasso di Rivendicazione}{32}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Rivendicazioni: Successi vs Fallimenti}{33}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Utente}{33}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Obiettivo}{34}{subsection.1.7.4}%
+\contentsline {section}{\numberline {1.8}Conclusioni}{34}{section.1.8}%
+\contentsline {chapter}{\numberline {2}Tableau}{35}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Seguire pdf}{35}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Power PI}{36}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{36}{section.3.1}%
+\contentsline {chapter}{Sitografia}{37}{chapter*.39}%
