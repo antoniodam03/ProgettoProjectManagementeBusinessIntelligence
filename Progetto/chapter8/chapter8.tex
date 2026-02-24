@@ -3,9 +3,9 @@
 \begin{preamble}
 {\em
 In questo capitolo viene presentata l’implementazione di una soluzione di Business Intelligence mediante l’utilizzo di Qlik Sense, piattaforma che consente un’analisi interattiva e multidimensionale dei dati grazie al suo motore associativo.
-L’attenzione è rivolta alla modellazione dei dati e alla realizzazione di una dashboard strategica composta da diverse visualizzazioni, progettate per supportare in modo efficace il processo decisionale in ambito cybersecurity.
+L’attenzione è rivolta alla modellazione dei dati e alla realizzazione di una serie di dashboard strategiche composte da diverse visualizzazioni, progettate per supportare in modo efficace il processo decisionale in ambito del terrorismo globale.
 Fondata nel 1993, Qlik offre soluzioni di Business Intelligence che facilitano l’esplorazione autonoma dei dati, permettendo agli utenti di individuare relazioni e correlazioni in modo dinamico. A differenza degli strumenti tradizionali basati esclusivamente su interrogazioni SQL, Qlik consente un approccio analitico più flessibile e intuitivo, riducendo i tempi di analisi e accelerando l’individuazione di insight rilevanti.
-Nel contesto del presente progetto, Qlik Sense è stato impiegato per effettuare un’analisi descrittiva delle minacce di cybersecurity a livello globale, fornendo una visione d’insieme sull’evoluzione temporale degli attacchi, sulle tipologie di minacce più diffuse e sulle aree geografiche maggiormente colpite
+Nel contesto del presente progetto, Qlik Sense è stato impiegato per effettuare un’analisi descrittiva delle minacce terristiche a livello globale, fornendo una visione d’insieme sull’evoluzione degli attacchi, sulle tipologie di minacce più diffuse e sulle aree geografiche maggiormente colpite
 }
 \end{preamble}
 
@@ -71,12 +71,12 @@ La visualizzazione principale è costituita da una Mappa Geografica interattiva 
 \begin{itemize}
     \item il colore \textit{Verde} identifica gli eventi a bassa letalità (0-1 vittime);
 
-    \item il colore \textit{Giallo} identifica gli enventi con impatto medio (2-10 vittime);
+    \item il colore \textit{Giallo} identifica gli eventi con impatto medio (2-10 vittime);
 
     \item il colore \textit{Rosso} identifica le stragi o gli eventi critici (oltre 10 vittime);
 \end{itemize} 
 
-Accanto alla mappa, la Treemap (Mappa ad Albero) permette di profilare i gruppi terroristici più attivi (come Taliban, ISIL o Boko Haram) e i loro bersagli prediletti (Civili, Militari, Business). Il grafico è configurato per escludere i dati classificati come "Unknown", garantendo così una visione specifica sulle gerarchie dei gruppi identificati. Sono inoltre presenti filtri per \textit{Regione} e per \textit{Anno}, che consentono una visione dinamica della distribuzione del terrorismo, permettendo di osservare come il fenomeno sia cambiato dagli anni '80 a oggi.
+Accanto alla mappa, la Treemap (Mappa ad Albero) permette di profilare i gruppi terroristici più attivi (come Taliban, ISIL o Boko Haram) e i loro bersagli prediletti (Civili, Militari, Business). Il grafico è configurato per escludere i dati classificati come "Unknown", garantendo così una visione specifica sulle gerarchie dei gruppi identificati. Sono inoltre presenti filtri per \textit{Regione} e per \textit{Anno}, che consentono una visione dinamica della distribuzione del terrorismo, permettendo di osservare come il fenomeno sia cambiato dagli anni '70 a oggi.
 
 \begin{figure}[ht!]
     \centering
@@ -155,7 +155,7 @@ Infine, per rispondere alla domanda di ricerca: {"Qual è l'impatto reale degli 
 
 Questo strumento permette di segmentare il dataset in base al numero di vittime (\textit{nkill}), applicando la stessa logica "a semaforo" visibile sulla mappa:
 \begin{itemize}
-\item \textit{Bassa Intensità (Verde - 0/1 morti):} Isola la frequenza degli attacchi intimidatori o falliti. Un esempio è mostrato in Figura \ref{fig:FiltroVerde}.
+\item \textit{Bassa Intensità (Verde - 0/1 morti):} Isola la frequenza degli attacchi intimidatori con un numero contenuto di vittime. Un esempio è mostrato in Figura \ref{fig:FiltroVerde}.
 \item \textit{Media Intensità (Giallo - 2/10 morti):} Evidenzia gli scontri tattici. Un esempio è mostrato in Figura \ref{fig:FiltroGiallo}.
 \item \textit{Alta Intensità (Rosso - >10 morti):} Permette di visualizzare esclusivamente i \textit{"Mass Casualty Events"}, pulendo la mappa dal "rumore di fondo" per far emergere solo le crisi umanitarie più gravi. Un esempio è mostrato in Figura \ref{fig:FiltroRosso}.
 \end{itemize}
@@ -308,6 +308,7 @@ L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione de
     come mostrato nelle Figure \ref{fig:suicideKPI} e \ref{fig:NonsuicideKPI}.
 
     Questo dato suggerisce che, mentre gli attacchi tradizionali (es. piazzamento di ordigni) risultano più difficili da prevenire in istituzioni educative accessibili, il tentativo di intrusione di un attentatore suicida viene più spesso intercettato o fallisce nella fase esecutiva.
+    Inoltre si osserva che il numero di attacchi suicidi e nettamente inferiore rispetto a quelli non suicidi indicando che questa tipologia di attacco non è tipica di questo bersaglio.
 
    \begin{figure}[ht!]
     \centering
@@ -357,7 +358,7 @@ La lettura congiunta delle tre visualizzazioni integra dunque una dimensione geo
 
 \subsection{Utente}
 
-L’utente a cui è destinata questa dashboard è un Risk Manager operante nel settore assicurativo, finanziario o in ambito, con responsabilità nella valutazione e gestione del rischio geopolitico ed economico. Tale figura professionale utilizza lo strumento per analizzare l’impatto patrimoniale degli attacchi terroristici, valutando la distribuzione territoriale dei danni, la relazione tra tipologia di attacco e perdita economica e l’evoluzione temporale del fenomeno.
+L’utente a cui è destinata questa dashboard è un Risk Manager operante nel settore assicurativo o finanziario, con responsabilità nella valutazione e gestione del rischio geopolitico ed economico. Tale figura professionale utilizza lo strumento per analizzare l’impatto patrimoniale degli attacchi terroristici, valutando la distribuzione territoriale dei danni, la relazione tra tipologia di attacco e perdita economica e l’evoluzione temporale del fenomeno.
 
 L’analisi fornita dalla dashboard supporta i responsabili della gestione del rischio nella quantificazione dell’esposizione finanziaria associata a specifiche aree geografiche, settori economici e modalità operative. In particolare, la combinazione tra confronto regionale, studio delle tattiche e andamento storico dei danni consente di distinguere tra contesti a elevata frequenza di eventi ma impatto contenuto e scenari caratterizzati da eventi meno frequenti ma economicamente devastanti.
 
@@ -432,7 +433,7 @@ Utilizzando il filtro \textit{Attack Type} e selezionando, ad esempio, la voce \
     Osservando il grafico a barre “Analisi Comparativa”, emerge un dato significativo: la macroarea che ha subito i maggiori danni economici da assalti armati è l'\textbf{Western Europe}, seguita dal \textbf{South America}. Questo evidenzia come, storicamente, l'uso di armi leggere per colpire il patrimonio non sia stato esclusiva di zone di guerra, ma abbia avuto un impatto finanziario devastante anche nelle economie occidentali avanzate.
     
     \item \textbf{Distribuzione su Obiettivi e Armamenti:}
-    La Treemap rivela chiaramente quali settori pagano il prezzo più alto. Nel caso degli \textit{Armed Assault}, il blocco dominante è il settore \textbf{Business} (aziende e attività commerciali), seguito da \textit{Private Citizens \& Property}. La scomposizione interna mostra che questi danni sono causati quasi esclusivamente tramite \textit{Firearms} (armi da fuoco), confermando che l'assalto armato è una tattica mirata verso asset economici specifici piuttosto che distruzioni indiscriminate.
+    La Treemap rivela chiaramente quali settori pagano il prezzo più alto. Nel caso degli \textit{Armed Assault}, il blocco dominante è il settore \textit{Business} (aziende e attività commerciali), seguito da \textit{Private Citizens \& Property}. La scomposizione interna mostra che questi danni sono causati quasi esclusivamente tramite \textit{Firearms} (armi da fuoco), confermando che l'assalto armato è una tattica mirata verso asset economici specifici piuttosto che distruzioni indiscriminate.
     
     \item \textbf{Picco storico di criticità:}
     Infine, il grafico del trend temporale permette di datare l'apice della minaccia. La curva dei costi per gli assalti armati raggiunge il suo massimo storico assoluto nell'anno \textbf{1977}. Tale picco, visibile come un vertice isolato nel grafico, corrisponde storicamente a periodi di forte instabilità politica interna in Europa (ad esempio gli "Anni di Piombo"), dove l'assalto armato era una modalità operativa frequente per i gruppi eversivi.
@@ -748,6 +749,30 @@ L’obiettivo principale dell’analisi è comprendere e quantificare la dimensi
 
 In sintesi, l’analisi mira a trasformare la complessità delle dinamiche propagandistiche in informazioni strutturate e interpretabili, supportando valutazioni comparative e decisioni strategiche in ambito sicurezza e intelligence.
 
+\subsection{Filtri interattivi ed esempi di utilizzo}
+
+L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione dei filtri consente all'Analista di Intelligence o al Security Manager di esplorare i dati in modo interattivo, isolando specifici scenari geopolitici e verificando ipotesi sulle tattiche di \textit{Information Warfare} in tempo reale. Attraverso la selezione mirata delle variabili (Gruppo, Regione, Nazione), è possibile rispondere a quesiti operativi concreti riguardanti la strategia comunicativa e la minaccia percepita.
+
+\begin{itemize}
+    \item \textbf{1. Qual è il grado di dipendenza mediatica e l'impiego del martirio da parte di un network terroristico strutturato?}
+    Tramite il pannello di controllo, è possibile isolare l'analisi su uno specifico ``brand del terrore'' in un determinato teatro operativo. Un esempio significativo è riportato in Figura \ref{fig:PropagandaAQIM}, dove sono stati applicati i filtri \textit{Geografia$\rightarrow$Middle East \& North Africa$\rightarrow$Algeria} e \textit{Gruppo$\rightarrow$Al-Qaida in the Islamic Maghreb (AQIM)}. La dashboard isola il sotto-insieme di dati pertinente e l'analisi incrociata permette di ricostruire il profilo psicologico e mediatico del gruppo:
+    \begin{enumerate}
+        \item \textbf{Magnitudo e Tasso di Propaganda:} I KPI mostrano un volume di 179 attentati con un Tasso Medio di Propaganda del 32\%, un valore quasi doppio rispetto alla media globale (17\%). Questo indica una forte dipendenza del gruppo dall'attenzione pubblica per legittimare la propria presenza sul territorio algerino.
+        \item \textbf{Uso Mediatico dei Suicidi (Targeting Psicologico):} L'indicatore evidenzia un drammatico 60\%. Questo dato geopolitico conferma che AQIM non si limita a colpire il nemico, ma utilizza sistematicamente le missioni suicide come strumento primario di reclutamento e di guerra psicologica, capitalizzando al massimo il concetto di ``martirio''.
+        \item \textbf{Trend Storico:} Il grafico a barre mostra un'escalation della percentuale di rivendicazioni concentrata nel biennio 2015-2016, suggerendo una fase in cui il gruppo aveva estrema necessità di visibilità per affermare la propria egemonia regionale.
+        \item \textbf{Veridicità:} Il grafico a torta evidenzia un 98,2\% di successi operativi tra gli attacchi rivendicati. AQIM dimostra un approccio pragmatico: limita il ``bluff mediatico'' quasi a zero, preferendo firmare solo azioni andate a segno per consolidare un'immagine di invincibilità e letalità certa.
+    \end{enumerate}
+    
+    \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapter8/images/dashboard/ultimadashspecifica.png} % Sostituisci con il nome corretto del tuo file
+    \caption{Analisi della propaganda per filtro Gruppo e Paese (AQIM in Algeria): elevato tasso di rivendicazione e forte uso mediatico delle tattiche suicide.}
+    \label{fig:PropagandaAQIM}
+    \end{figure}
+
+\end{itemize}
+
 \section{Conclusioni}
 
 In sintesi, Qlik si conferma come uno strumento potente per l’analisi descrittiva dei dati, offrendo un ambiente interattivo che facilita l’esplorazione approfondita delle informazioni. Grazie al suo motore associativo, gli utenti possono navigare tra i dati in maniera fluida e intuitiva, individuando rapidamente trend, pattern e insight significativi. Questo approccio permette alle organizzazioni di comprendere meglio le proprie performance e di prendere decisioni più consapevoli e basate su evidenze concrete.
+

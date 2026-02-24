@@ -796,6 +796,11 @@ INPUT ./chapter8/images/dashboard/Ultimadash.png
 INPUT ./chapter8/images/dashboard/Ultimadash.png
 INPUT ./chapter8/images/dashboard/Ultimadash.png
 INPUT ./chapter8/images/dashboard/Ultimadash.png
+INPUT ./chapter8/images/dashboard/ultimadashspecifica.png
+INPUT ./chapter8/images/dashboard/ultimadashspecifica.png
+INPUT ./chapter8/images/dashboard/ultimadashspecifica.png
+INPUT ./chapter8/images/dashboard/ultimadashspecifica.png
+INPUT ./chapter8/images/dashboard/ultimadashspecifica.png
 INPUT ./chapter8/Tableau.tex
 INPUT ./chapter8/Tableau.tex
 OUTPUT chapter8/Tableau.aux
