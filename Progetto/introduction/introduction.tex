@@ -141,8 +141,8 @@ In particolare, sono stati eseguiti i seguenti passaggi:
     Dal dataset originale sono state estratte solo le colonne necessarie per l’analisi, suddivise per categorie: identificativi, dati geografici, criteri di terrorismo, tattiche e armi, obiettivi, gruppi e terroristi, impatto e vittime. Questa operazione ha permesso di ridurre il dataset ai soli dati utili, migliorando la leggibilità e le performance di calcolo nelle fasi successive.
 
     \item \textit{Gestione delle date incomplete:} \\
-    Alcuni record presentavano giorno o mese sconosciuti, indicati con valore ``0''. Per garantire la compatibilità con Qlik Sense, Tableau e Power BI, è stata creata una \textit{colonna unificata \texttt{date}}, combinando anno, mese e giorno.
-
+    Alcuni record del \textit{Global Terrorism Dataset} contenevano informazioni temporali organizzate in colonne separate (\texttt{year}, \texttt{month}, \texttt{day}).
+    Si è proceduto alla creazione di una colonna unificata \texttt{date}, ottenuta combinando anno, mese e giorno in un unico campo di tipo data.   
     \item \textit{Normalizzazione dei valori numerici:} \\ 
     Alcune colonne numeriche, come numero di morti, feriti, terroristi coinvolti, danni economici e riscatti richiesti, contenevano il codice ``-99'' a indicare valori sconosciuti. Tali valori sono stati convertiti in \textit{NaN} (Not a Number) per distinguerli dai valori effettivamente pari a zero. Questo passaggio consente di evitare distorsioni nelle analisi statistiche e nei KPI, preservando la distinzione tra dati mancanti e valori reali.
 
