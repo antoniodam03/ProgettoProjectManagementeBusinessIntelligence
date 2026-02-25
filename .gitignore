@@ -3,3 +3,6 @@
 *.log
 *.pdf
 *.synctex.gz
+*.ilg
+*.lof
+*.lot
