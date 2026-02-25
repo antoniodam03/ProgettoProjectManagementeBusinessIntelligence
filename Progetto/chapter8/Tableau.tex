@@ -8,7 +8,7 @@
 
 \section{Introduzione}
 
-Il presente capitolo illustra la fase di \textbf{Data Visualization} e \textbf{Analisi Predittiva}, realizzata mediante l'utilizzo del software Tableau. La scelta di questo strumento è stata dettata dalla necessità di gestire un dataset complesso come il \textit{Global Terrorism Database} (GTD), caratterizzato da una profonda serie storica (1970--2017) e da una natura multivariata (geografica, temporale e categorica).
+Il presente capitolo illustra la fase di \textit{Data Visualization} e \textit{Analisi Predittiva}, realizzata mediante l'utilizzo del software Tableau. La scelta di questo strumento è stata dettata dalla necessità di gestire un dataset complesso come il \textit{Global Terrorism Database} (GTD), caratterizzato da una profonda serie storica (1970--2017) e da una natura multivariata (geografica, temporale e categorica).
 
 L'obiettivo principale del progetto è trasformare i dati grezzi in informazioni strategiche (\textit{Actionable Insights}). Non ci si è limitati a una rappresentazione descrittiva degli eventi passati, ma si è sfruttato il motore analitico di Tableau per implementare:
 
@@ -80,10 +80,10 @@ Il progetto si articola in 7 Dashboard, organizzate in un percorso narrativo che
 \subsection{Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}
 
 \subsubsection*{Obiettivo dell'Analisi}
-Questa dashboard(\ref{Dashboard1}) rappresenta il punto di ingresso all'analisi storica, mettendo a confronto la \textbf{Frequenza} del fenomeno (Conteggio degli Attacchi -- Linea Blu) con la sua \textbf{Letalità Totale} (Somma delle Vittime/\texttt{nkill} -- Linea Rossa). L'obiettivo è verificare la correlazione tra volume di fuoco e impatto umano, rispondendo al quesito: \textit{"L'aumento del numero di attacchi si traduce sempre in un aumento proporzionale delle vittime, o esistono periodi in cui il terrorismo diventa intrinsecamente più letale?"}.
+Questa dashboard (\ref{Dashboard1}) rappresenta il punto di ingresso all'analisi storica, mettendo a confronto la \textit{Frequenza} del fenomeno (Conteggio degli Attacchi -- Linea Blu) con la sua \textit{Letalità Totale} (Somma delle Vittime/\texttt{nkill} -- Linea Rossa). L'obiettivo è verificare la correlazione tra volume di fuoco e impatto umano, rispondendo al quesito: \textit{"L'aumento del numero di attacchi si traduce sempre in un aumento proporzionale delle vittime, o esistono periodi in cui il terrorismo diventa intrinsecamente più letale?"}.
 
 \subsubsection*{Configurazione della Visualizzazione}
-È stato utilizzato un grafico \textbf{Dual Axis} (Doppio Asse) con scale indipendenti:
+È stato utilizzato un grafico \textit{Dual Axis} (Doppio Asse) con scale indipendenti:
 \begin{itemize}
     \item \textbf{Asse Sinistro (Attacchi):} Scala adattata al volume degli eventi.
     \item \textbf{Asse Destro (Vittime):} Scala adattata al numero dei deceduti.
@@ -101,12 +101,12 @@ Questa scelta tecnica è cruciale: sganciando la sincronizzazione degli assi, è
 \subsubsection*{Analisi del Trend (Confronto Attacchi vs Vittime)}
 Osservando il grafico, emergono due fasi distinte:
 \begin{enumerate}
-    \item \textbf{Parallelismo (1970 -- 2000):} Le due linee si muovono quasi all'unisono. Quando gli attacchi salgono, le vittime salgono in proporzione. Questo indica una letalità media costante e una "capacità distruttiva" standardizzata degli attacchi.
-    \item \textbf{Divergenza e Accelerazione (Post-2010):} È la fase più critica. Sebbene entrambe le curve crescano, la linea delle \textbf{Vittime} mostra un'accelerazione verticale più marcata rispetto alla linea degli \textbf{Attacchi}. Questo fenomeno suggerisce un cambiamento strutturale nel \textit{modus operandi}: negli ultimi anni del dataset, il terrorismo è diventato più efficiente nel causare vittime (attacchi di massa, uso di esplosivi più potenti), rompendo la correlazione lineare del passato.
+    \item \textit{Parallelismo (1970 -- 2000):} Le due linee si muovono quasi all'unisono. Quando gli attacchi salgono, le vittime salgono in proporzione. Questo indica una letalità media costante e una "capacità distruttiva" standardizzata degli attacchi.
+    \item \textit{Divergenza e Accelerazione (Post-2010):} È la fase più critica. Sebbene entrambe le curve crescano, la linea delle \textbf{Vittime} mostra un'accelerazione verticale più marcata rispetto alla linea degli \textbf{Attacchi}. Questo fenomeno suggerisce un cambiamento strutturale nel \textit{modus operandi}: negli ultimi anni del dataset, il terrorismo è diventato più efficiente nel causare vittime (attacchi di massa, uso di esplosivi più potenti), rompendo la correlazione lineare del passato.
 \end{enumerate}
 
 \subsubsection*{Validazione Statistica dei Modelli}
-Per confermare matematicamente l'osservazione visiva, sono state applicate \textbf{Linee di Tendenza Polinomiali di 3° grado (Cubiche)}. I parametri statistici estratti confermano la robustezza dell'analisi:
+Per confermare matematicamente l'osservazione visiva, sono state applicate \textit{Linee di Tendenza Polinomiali di 3° grado (Cubiche)}. I parametri statistici estratti confermano la robustezza dell'analisi:
 \begin{itemize}
     \item \textbf{Significatività (P-Value):} Per entrambe le curve, il \textit{P-Value} è $< 0,0001$. Essendo ben al di sotto della soglia di $0,05$, possiamo affermare con certezza statistica che la crescita osservata non è casuale ma descrive un trend reale.
     \item \textbf{Confronto dei Coefficienti:}
@@ -213,15 +213,15 @@ L'analisi del \textit{Tasso di Letalità Previsto} (rapporto tra morti e feriti 
 \end{itemize}
 
 \subsubsection*{Conclusioni Strategiche}
-Il confronto evidenzia due profili di rischio opposti: nel \textbf{Sud Asia}, le strutture di emergenza devono focalizzarsi sulla gestione dei grandi flussi di feriti; in \textbf{Nord America}, la prevenzione deve concentrarsi sull'anticipazione dell'evento raro, data l'altissima probabilità di decesso in caso di attacco.
+Il confronto evidenzia due profili di rischio opposti: nel \textit{Sud Asia}, le strutture di emergenza devono focalizzarsi sulla gestione dei grandi flussi di feriti; in \textit{Nord America}, la prevenzione deve concentrarsi sull'anticipazione dell'evento raro, data l'altissima probabilità di decesso in caso di attacco.
 
 
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
 \paragraph{Motore di Forecasting e Parametri di Base}
-Per generare la proiezione futura della letalità, Tableau ha utilizzato un algoritmo di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Il modello selezionato automaticamente è di tipo \textbf{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}).
+Per generare la proiezione futura della letalità, Tableau ha utilizzato un algoritmo di \textit{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Il modello selezionato automaticamente è di tipo \textit{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}).
 
-L'algoritmo ha calcolato i seguenti valori per la previsione(\ref{Dashboard_2_Dati_Previsione_n1}:
+L'algoritmo ha calcolato i seguenti valori per la previsione \ref{Dashboard_2_Dati_Previsione_n1}:
 \begin{itemize}
     \item \textbf{Rapporto di Letalità Iniziale previsto:} $0,864$
     \item \textbf{Intervallo di confidenza (95\%):} $\pm 0,701$
@@ -235,7 +235,7 @@ L'algoritmo ha calcolato i seguenti valori per la previsione(\ref{Dashboard_2_Da
 \end{figure}
 
 \paragraph{Analisi delle Metriche di Qualità}
-Il software ha classificato la qualità della previsione come \textit{"Scarsa"}. Tale valutazione non indica un errore di modellazione, ma riflette l'estrema volatilità del fenomeno. Le metriche specifiche chiariscono il quadro(\ref{Dashboard_2_Dati_Previsione_n2}:
+Il software ha classificato la qualità della previsione come \textit{"Scarsa"}. Tale valutazione non indica un errore di modellazione, ma riflette l'estrema volatilità del fenomeno. Le metriche specifiche chiariscono il quadro \ref{Dashboard_2_Dati_Previsione_n2}:
 
 \begin{itemize}
     \item \textbf{RMSE ($0,358$) e MAE ($0,245$):} Misurano lo scostamento tra valori previsti e reali. Essendo contenuti, indicano che la linea di base è centrata correttamente sulla media storica.
@@ -262,9 +262,9 @@ Gli eventi estremi possono alterare le medie in qualsiasi momento. Il modello su
 \subsection{Dashboard 3: Previsione dei Bersagli (Target) per Regione}
 
 \subsubsection*{Obiettivo dell'Analisi (Vittimologia)}
-Mentre le dashboard precedenti si sono concentrate sui volumi globali e sull'impatto in termini di vite umane (letalità), questa visualizzazione (\ref{Dashboard_3}) sposta il focus sulla \textbf{Vittimologia}. L'obiettivo è analizzare chi viene colpito e con quale frequenza, incrociando le tipologie di bersaglio (\texttt{targtype1\_txt}) con le aree geografiche (\texttt{region\_txt}).
+Mentre le dashboard precedenti si sono concentrate sui volumi globali e sull'impatto in termini di vite umane (letalità), questa visualizzazione (\ref{Dashboard_3}) sposta il focus sulla \textit{Vittimologia}. L'obiettivo è analizzare chi viene colpito e con quale frequenza, incrociando le tipologie di bersaglio (\texttt{targtype1\_txt}) con le aree geografiche (\texttt{region\_txt}).
 
-Al fine di valutare il "Rischio di essere colpiti", la metrica utilizzata non è più la somma dei decessi, ma il \textbf{Conteggio degli Eventi} (Frequenza). Questo permette di identificare quali settori sono strutturalmente più sotto tiro, indipendentemente dall'esito letale del singolo attacco. La dashboard si compone di due strumenti complementari: un'analisi dinamica temporale (a sinistra) e una mappatura statica del rischio (a destra).
+Al fine di valutare il "Rischio di essere colpiti", la metrica utilizzata non è più la somma dei decessi, ma il \textit{Conteggio degli Eventi} (Frequenza). Questo permette di identificare quali settori sono strutturalmente più sotto tiro, indipendentemente dall'esito letale del singolo attacco. La dashboard si compone di due strumenti complementari: un'analisi dinamica temporale (a sinistra) e una mappatura statica del rischio (a destra).
 
 \begin{figure}[h]
     \centering
@@ -500,8 +500,8 @@ Dall'osservazione dei trend trimestrali emerge chiaramente che il danno economic
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
 \paragraph{Motore di Forecasting e Orizzonte Temporale}
-Il modello di \textit{Exponential Smoothing} di Tableau ha generato una proiezione per i successivi 4 trimestri (2018 T1 -- 2018 T4), escludendo automaticamente i dati storici più remoti e basando l'addestramento sul periodo \textbf{1995 T3 -- 2017 T4}.
-Per tutte le categorie, il software ha applicato un modello \textbf{Aggiuntivo, Nessuno, Nessuno} (Livello aggiunto, senza Trend continuo, senza Stagionalità), indicando che i danni economici colpiscono in modo imprevedibile durante l'anno.
+Il modello di \textit{Exponential Smoothing} di Tableau ha generato una proiezione per i successivi 4 trimestri (2018 T1 -- 2018 T4), escludendo automaticamente i dati storici più remoti e basando l'addestramento sul periodo \textit{1995 T3 -- 2017 T4}.
+Per tutte le categorie, il software ha applicato un modello \textit{Aggiuntivo, Nessuno, Nessuno} (Livello aggiunto, senza Trend continuo, senza Stagionalità), indicando che i danni economici colpiscono in modo imprevedibile durante l'anno.
 
 \paragraph{Analisi dei Dati Predittivi (Focus sulle Categorie Critiche)}
 I risultati numerici evidenziano l'entità del rischio finanziario per le due tattiche economicamente più impattanti:
@@ -539,7 +539,7 @@ L'ultima fase del progetto sposta il focus sulle scelte tattiche dei gruppi terr
 \subsubsection*{Configurazione della Visualizzazione}
 La dashboard è composta da due visualizzazioni sovrapposte e interdipendenti:
 \begin{enumerate}
-    \item \textbf{Box Plot con Scala Logaritmica (Top):} Un diagramma a scatola e baffi progettato per l'analisi degli \textit{Outliers}. Poiché gli eventi terroristici estremi creano un asse Y sproporzionato (decine di migliaia di vittime), è stata applicata una \textbf{scala logaritmica}. Questo stratagemma visivo permette di "comprimere" i valori anomali e rendere visibile la scatola grigia, che rappresenta il 50\% centrale degli attacchi (dal 25° al 75° percentile).
+    \item \textbf{Box Plot con Scala Logaritmica (Top):} Un diagramma a scatola e baffi progettato per l'analisi degli \textit{Outliers}. Poiché gli eventi terroristici estremi creano un asse Y sproporzionato (decine di migliaia di vittime), è stata applicata una \textit{scala logaritmica}. Questo stratagemma visivo permette di "comprimere" i valori anomali e rendere visibile la scatola grigia, che rappresenta il 50\% centrale degli attacchi (dal 25° al 75° percentile).
     \item \textbf{Multi-Series Line Chart (Bottom):} Un grafico a linee temporale con aggregazione trimestrale che mostra l'andamento storico delle vittime per arma, culminando nell'area di previsione (Forecast) per i successivi 5 trimestri (fino alla fine del 2018).
 \end{enumerate}
 
@@ -559,7 +559,7 @@ La lettura del Box Plot restituisce una fotografia cruda della letalità tattica
 
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
-\paragraph{Motore di Forecasting e Filtro Dati}
+\paragraph{Motore di Forecasting e Filtro Dati:}
 Il modello ha proiettato i dati di 5 trimestri in avanti (2017 T4 -- 2018 T4). Un dettaglio tecnico rilevante è l'impostazione \textbf{"Ignora ultimo: 1 trimestre"}. Escludendo deliberatamente l'ultimo trimestre del 2017 (spesso incompleto o soggetto a ritardi di consolidamento nel GTD), l'algoritmo ha basato il suo addestramento su una serie storica pienamente consolidata (1995 T2 -- 2017 T3).
 
 \paragraph{Analisi dei Dati Predittivi e Scoperta della Stagionalità}
@@ -567,10 +567,10 @@ L'estrazione dei coefficienti di livellamento ha portato alla luce due scenari a
 
 \begin{enumerate}
     \item \textbf{Il Modello Additivo (Esplosivi e Armi Bianche/Incendiarie):}
-    Per armi come gli \textit{Explosives}, il sistema ha generato un modello \textbf{Aggiuntivo, Nessuno, Nessuno}. La previsione si attesta su una media drammatica di $7.870$ vittime stimate a trimestre, ma senza alcun ciclo prevedibile ($\beta = 0, \gamma = 0$). L'intervallo di confidenza enorme ($\pm 2.875$) e il MAPE del $25,8\%$ giustificano la qualità \textit{"Scarsa"}: gli attacchi esplosivi sono caotici, impulsivi e non seguono calendari regolari. Il coefficiente di livello ($\alpha = 0,500$) indica un rapido adattamento del modello alle variazioni recenti.
+    Per armi come gli \textit{Explosives}, il sistema ha generato un modello \textit{Aggiuntivo, Nessuno, Nessuno}. La previsione si attesta su una media drammatica di $7.870$ vittime stimate a trimestre, ma senza alcun ciclo prevedibile ($\beta = 0, \gamma = 0$). L'intervallo di confidenza enorme ($\pm 2.875$) e il MAPE del $25,8\%$ giustificano la qualità \textit{"Scarsa"}: gli attacchi esplosivi sono caotici, impulsivi e non seguono calendari regolari. Il coefficiente di livello ($\alpha = 0,500$) indica un rapido adattamento del modello alle variazioni recenti.
     
     \item \textbf{Il Modello Moltiplicativo (Armi da Fuoco - Firearms):}
-    L'insight più rilevante dell'intera analisi emerge dalle armi da fuoco. Tableau ha classificato la qualità del modello come \textbf{"Ok"}, identificando matematicamente un pattern strutturato. Il modello selezionato è \textbf{Moltiplicativo, Nessuno, Moltiplicativo}. 
+    L'insight più rilevante dell'intera analisi emerge dalle armi da fuoco. Tableau ha classificato la qualità del modello come \textbf{"Ok"}, identificando matematicamente un pattern strutturato. Il modello selezionato è \textit{Moltiplicativo, Nessuno, Moltiplicativo}. 
     \begin{itemize}
         \item \textbf{La Stagionalità:} Il sistema ha assegnato un contributo stagionale del \textbf{100\%}, rilevando un picco ciclico atteso nel secondo trimestre dell'anno (2018 T2) e un calo nel quarto (2018 T4).
         \item \textbf{Coefficiente Gamma ($\gamma = 0,194$):} La presenza di un fattore Gamma attivo conferma che la componente stagionale non è un errore casuale, ma una ricorrenza storica che l'algoritmo ha intercettato. Il MAPE contenuto ($33,3\%$, un ottimo risultato per dati sul terrorismo) e il MASE a $0,65$ confermano la validità superiore del modello predittivo rispetto a un'ipotesi \textit{Naive}.
