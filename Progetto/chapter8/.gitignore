@@ -1,0 +1,11 @@
+# File generati da LaTeX
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.toc
+*.out
+*.lof
+*.synctex.gz
+*.pdf
+*.ilg
