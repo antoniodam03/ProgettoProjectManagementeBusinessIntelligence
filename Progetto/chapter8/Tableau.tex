@@ -2,7 +2,8 @@
 
 \begin{preamble}
 {\em
-    \textcolor{red}{\textbf{Da scrivere}}}
+    Questo capitolo è dedicato all'esplorazione visiva e all'analisi predittiva del Global Terrorism Database (GTD) attraverso l'ambiente analitico di Tableau. Trasformando oltre quarant'anni di dati storici in dashboard interattive e modelli di forecasting, il presente lavoro si propone di superare la semplice statistica descrittiva. L'obiettivo è fornire strumenti dinamici in grado di svelare pattern nascosti, quantificare l'evoluzione della letalità e proiettare scenari futuri, convertendo così l'intrinseca complessità dei dati grezzi in informazioni strategiche (\textit{Actionable Insights}) a supporto dei processi decisionali e di sicurezza.
+}
 \end{preamble}
 
 \section{Introduzione}
@@ -31,13 +32,15 @@ L'approccio analitico adottato segue un flusso logico strutturato in tre fasi di
 \section{Strategia di Visualizzazione}
 Per garantire la massima leggibilità e interattività, le dashboard sono state progettate seguendo le \textit{best practices} della Data Visualization. Ogni visualizzazione è stata costruita per rispondere a una specifica domanda chiave, utilizzando filtri dinamici (per Regione, Anno o Tipo di Attacco) che permettono all'utente di esplorare i dati a diversi livelli di granularità.
 
+
 Sono state impiegate diverse tipologie di grafici avanzati, tra cui:
 \begin{itemize}
     \item \textbf{Dual Axis Chart:} per il confronto di metriche con scale differenti.
     \item \textbf{Scatter Plot:} per l'analisi di dispersione e correlazione.
     \item \textbf{Highlight Tables:} per la visualizzazione immediata delle densità di rischio tramite gradienti di colore.
-    \item \textcolor{red}{\textbf{Altro?}}.
-
+    \item \textbf{Box Plot (Diagrammi a Scatola):} abbinati a scale logaritmiche, per l'analisi diagnostica della dispersione e l'identificazione degli \textit{outliers} estremi (es. letalità delle singole armi).
+    \item \textbf{Small Multiples (Grafici a Faccette):} con assi Y resi indipendenti, per confrontare storicamente grandezze economiche radicalmente diverse senza appiattire la visualizzazione.
+    \item \textbf{Stacked Area e 100\% Stacked Bar Chart:} per l'analisi della composizione percentuale nel tempo (es. evoluzione dei target e tassi di successo/fallimento).
 \end{itemize}
 
 \section{Gestione della Qualità dei Dati}
@@ -45,13 +48,19 @@ Una fase critica antecedente alla visualizzazione ha riguardato la bonifica dei 
 
 \begin{enumerate}
     \item \textbf{Errata Tipizzazione (Data Type Mismatch):} In fase di importazione, Tableau aveva interpretato queste colonne come stringhe. È stato necessario forzare il \textit{Type Casting} in \textbf{Numero Intero} per abilitare le aggregazioni matematiche (somme, medie).
+    
     \item \textbf{Gestione dei Valori Nulli (Missing Values):} Numerosi record presentavano valori vuoti. È stata applicata la funzione \texttt{ZN()} (\textit{Zero Null}):
     \begin{quote}
         \texttt{nkill\_fix = ZN([nkill])} $\rightarrow$ Se il valore è nullo, viene convertito in 0.
     \end{quote}
+    
+    \item \textbf{Creazione di Metriche Aggregate (Campi Calcolati):} Per valutare l'impatto umano complessivo degli eventi (Intensità Totale), è stato creato un nuovo campo calcolato unendo i decessi e i feriti bonificati:
+    \begin{quote}
+        \texttt{nvittime = ZN([nkill\_fix ]) + ZN([nwound\_fix ])}
+    \end{quote}
+    
+    \item \textbf{Filtraggio e Riduzione del Rumore (Data Subsetting):} Per garantire la robustezza statistica dei modelli predittivi (in particolare il \textit{Forecasting} sulle armi e sui danni economici), il dataset è stato depurato dalle categorie marginali o prive di una serie storica sufficientemente densa, isolando solo i dati consolidati.
 \end{enumerate}
-
-\textcolor{red}{\textbf{è stato fatto altro ? }}
 
 \section{Panoramica delle Dashboard Realizzate}
 Il progetto si articola in 7 Dashboard, organizzate in un percorso narrativo che parte dall'analisi storica globale per arrivare a previsioni specifiche su target e regioni:
@@ -61,9 +70,9 @@ Il progetto si articola in 7 Dashboard, organizzate in un percorso narrativo che
     \item \textbf{Dashboard 2:} Analisi e Previsione della Letalità per Regione.
     \item \textbf{Dashboard 3:} Previsione dei Bersagli (Target) per Regione.
     \item \textbf{Dashboard 4:} Analisi degli Esiti dell’Attacco (Successo vs Fallimento).
-    \item \textbf{Dashboard z:} Previsione del Volume degli Attacchi.
-    \item \textbf{Dashboard y:} Previsione dell’Impatto Economico per Tipo di Attacco.
-    \item \textbf{Dashboard x:} Previsione dell’Intensità (Vittime) per Tipo di Attacco e Arma.
+    \item \textbf{Dashboard 5:} Previsione del Volume degli Attacchi.
+    \item \textbf{Dashboard 6:} Previsione dell’Impatto Economico per Tipo di Attacco.
+    \item \textbf{Dashboard 7:} Previsione dell’Intensità (Vittime) per Tipo di Attacco e Arma.
 
 \end{itemize}
 
@@ -387,7 +396,7 @@ Per rispondere al quesito specifico se sia più difficile colpire una base milit
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico}
-    \caption{Dashboard 4 Airports & Aircraft}
+    \caption{Dashboard 4 Airports  Aircraft}
     \label{Dashboard_4_Airports_&_Aircraft}
 \end{figure}
 
@@ -412,7 +421,12 @@ La dashboard è costruita attorno a un \textbf{Time-Series Line Chart} continuo:
 \end{itemize}
 Nella porzione finale del grafico è stato integrato il motore di \textit{Forecasting} di Tableau, che estende la curva evidenziando visivamente la stima attesa e il suo intervallo di confidenza (area azzurra sfumata).
 
-\textcolor{red}{\textbf{Foto}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/previsione volume attacchi}
+    \caption{Dashboard 5: Previsione del Volume degli Attacchi}
+    \label{Dashboard_5_Previsione_Volume_Attacchi}
+\end{figure}
 
 \subsubsection*{Analisi Storica Visiva e Cicli del Terrore}
 L'osservazione della curva storica evidenzia tre macro-fasi distinte, fondamentali per comprendere l'evoluzione della minaccia:
@@ -444,7 +458,13 @@ Il software classifica la qualità complessiva della previsione come \textit{"Sc
     \item \textbf{MAPE ($21,2\%$):} L'errore percentuale medio assoluto si attesta poco sopra il 20\%. È questo il parametro che spinge Tableau a definire la qualità "scarsa", ricordando all'analista che, pur essendoci una tendenza alla stabilizzazione, esiste sempre un margine d'incertezza fisiologico di circa un quinto sui volumi reali previsti.
 \end{itemize}
 
-\textcolor{red}{\textbf{Foto dati}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dati dash 5.png}
+    \caption{Dati previsione Dashboard 5}
+    \label{fig:dashboard_5_previsione_volume}
+\end{figure}
+
 
 \subsubsection*{Conclusioni Strategiche (Business Insights)}
 L'insight primario per i decisori (\textit{Actionable Insight}) è che \textbf{la "quantità" globale del terrorismo è attualmente in fase di forte contenimento.} Le politiche di contrasto e le campagne militari del biennio precedente hanno avuto successo nel ridurre i volumi operativi. Tuttavia, la previsione piatta e l'assenza di stagionalità suggeriscono che il fenomeno non è sconfitto, ma si sta "congelando" su un nuovo livello di base (circa 800 eventi mensili) che rappresenta l'attuale "rumore di fondo" fisiologico del rischio globale.
@@ -462,7 +482,12 @@ Le impostazioni tecniche chiave includono:
     \item \textbf{Gamme di Assi Indipendenti:} Questa scelta tecnica è stata fondamentale. Poiché attacchi come i dirottamenti (\textit{Hijacking}) presentano danni storici nell'ordine dei miliardi, mantenere un asse Y sincronizzato avrebbe appiattito visivamente tutte le altre categorie. Svincolando le scale (es. asse in Milioni per i bombardamenti, in Migliaia per gli assalti disarmati), è stato possibile visualizzare i trend specifici di ogni categoria.
 \end{itemize}
 
-\textcolor{red}{\textbf{Foto Dashboard}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dash 6.png}
+    \caption{Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco}
+    \label{Dashboard_6_Previsione_Impatto_Economico}
+\end{figure}
 
 \subsubsection*{Analisi Storica Visiva e Dinamiche di Danno}
 Dall'osservazione dei trend trimestrali emerge chiaramente che il danno economico del terrorismo non segue una distribuzione normale, ma è governato da estremi anomali (Outliers):
@@ -485,7 +510,13 @@ I risultati numerici evidenziano l'entità del rischio finanziario per le due ta
     \item \textbf{Facility/Infrastructure Attack (Qualità: Ok):} La stima trimestrale si assesta su $5.360.684$ dollari, con un margine di errore di $\pm 23.284.718$ dollari.
 \end{itemize}
 
-\textcolor{red}{\textbf{Foto metriche qualità}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dati dash 6.png}
+    \caption{Dati previsione Dashboard 6}
+    \label{fig:dashboard_6_dati_previsione}
+\end{figure}
+
 
 \paragraph{Lettura Diagnostica delle Metriche di Qualità}
 Le valutazioni di Tableau ("Ok" per le infrastrutture, "Scarso" per le esplosioni e i dirottamenti) sono perfettamente giustificate dalle metriche estratte:
@@ -512,7 +543,12 @@ La dashboard è composta da due visualizzazioni sovrapposte e interdipendenti:
     \item \textbf{Multi-Series Line Chart (Bottom):} Un grafico a linee temporale con aggregazione trimestrale che mostra l'andamento storico delle vittime per arma, culminando nell'area di previsione (Forecast) per i successivi 5 trimestri (fino alla fine del 2018).
 \end{enumerate}
 
-\textcolor{red}{\textbf{Foto Dashboard Completa}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dash 7.png}
+    \caption{Dashboard 7: Previsione dell'Intensità (Vittime) per Arma}
+    \label{fig:dashboard_7_previsione_intensita_per_arma}
+\end{figure}
 
 \subsubsection*{Analisi Diagnostica: Dispersione e Outlier (Box Plot)}
 La lettura del Box Plot restituisce una fotografia cruda della letalità tattica:
@@ -541,7 +577,12 @@ L'estrazione dei coefficienti di livellamento ha portato alla luce due scenari a
     \end{itemize}
 \end{enumerate}
 
-\textcolor{red}{\textbf{Foto metriche e tabelle di forecasting}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dati dash 7.png}
+    \caption{Dati previsione Dashboard 7}
+    \label{fig:dashboard_7_dati_previsione}
+\end{figure}
 
 \subsubsection*{Conclusioni Strategiche (Business Insights)}
 Questa dashboard finale fornisce all'intelligence indicazioni operative estremamente chiare:

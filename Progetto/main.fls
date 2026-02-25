@@ -523,16 +523,18 @@ INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
-OUTPUT main.toc
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr8t.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
+OUTPUT main.toc
+INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplro8t.vf
+INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplro8r.tfm
 INPUT .\main.lof
 INPUT .\main.lof
 INPUT main.lof
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8t.tfm
-OUTPUT main.lof
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplri8t.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8r.tfm
+OUTPUT main.lof
 INPUT .\main.lot
 INPUT .\main.lot
 INPUT main.lot
@@ -550,8 +552,6 @@ INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1pcr.fd
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1pcr.fd
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1pcr.fd
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
-INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplro8t.vf
-INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplro8r.tfm
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7y.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmr.tfm
@@ -729,10 +729,25 @@ OUTPUT chapter8\Tableau.aux
 INPUT .\chapter8\Tableau.tex
 INPUT .\chapter8\Tableau.tex
 INPUT chapter8\Tableau.tex
-INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi8t.tfm
-INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplbi8t.vf
-INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi8r.tfm
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_1_enrico.png
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8c.tfm
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\rosso_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\rosso_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\rosso_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\rosso_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\rosso_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\rosso_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\blu_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\blu_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\blu_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\blu_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\blu_dash_1_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\blu_dash_1_enrico.png
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplb8c.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmb.tfm
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7m.vf
@@ -743,11 +758,118 @@ INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplr7
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7y.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmr.tfm
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_enrico.png
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7t.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_sa_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_sa_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_sa_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_sa_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_sa_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_sa_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_na_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_na_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_na_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_na_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_na_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_2_na_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_2_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dati_1_dash_3_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_enrico.png
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi8t.tfm
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplbi8t.vf
 INPUT C:\Users\lucad\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi8r.tfm
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_military_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_military_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_military_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_military_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_military_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_military_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_air_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_air_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_air_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_air_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_air_enrico.png
+INPUT .\chapter8\images\dashboard\Foto_dash_enrico\dash_4_air_enrico.png
+INPUT .\chapter8\images\dashboard\dash_diomi\previsione volume attacchi.png
+INPUT .\chapter8\images\dashboard\dash_diomi\previsione volume attacchi.png
+INPUT .\chapter8\images\dashboard\dash_diomi\previsione volume attacchi.png
+INPUT .\chapter8\images\dashboard\dash_diomi\previsione volume attacchi.png
+INPUT .\chapter8\images\dashboard\dash_diomi\previsione volume attacchi.png
+INPUT .\chapter8\images\dashboard\dash_diomi\previsione volume attacchi.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 5.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 6.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
+INPUT .\chapter8\images\dashboard\dash_diomi\dati dash 7.png
 INPUT .\chapter8\PowerBI.tex
 INPUT .\chapter8\PowerBI.tex
 OUTPUT chapter8\PowerBI.aux
