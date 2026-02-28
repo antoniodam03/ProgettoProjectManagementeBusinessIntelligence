@@ -24,34 +24,33 @@
 \contentsline {section}{\numberline {2.2}Metodologia di Analisi}{18}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Strategia di Visualizzazione}{19}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Gestione della Qualità dei Dati}{19}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Panoramica delle Dashboard Realizzate}{20}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}{20}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Dashboard 2: Analisi e Previsione della Letalità per Regione}{22}{subsection.2.5.2}%
-\contentsline {subsubsection}{Caso Studio Comparativo: South Asia vs North America}{23}{section*.34}%
-\contentsline {paragraph}{Analisi Qualitativa}{23}{section*.37}%
-\contentsline {paragraph}{Analisi Predittiva e Business Insights}{23}{section*.38}%
-\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{24}{section*.42}%
-\contentsline {paragraph}{Analisi delle Metriche di Qualità}{25}{section*.44}%
-\contentsline {paragraph}{Interpretazione Strategica del Modello}{26}{section*.45}%
-\contentsline {subsection}{\numberline {2.5.3}Dashboard 3: Previsione dei Bersagli (Target) per Regione}{26}{subsection.2.5.3}%
-\contentsline {subsubsection}{Validazione Statistica e Comportamento del Modello Predittivo}{28}{section*.49}%
-\contentsline {paragraph}{Motore di Forecasting e Orizzonte Temporale}{28}{section*.50}%
-\contentsline {paragraph}{Il Cambiamento di Paradigma (Soft Target vs Hard Target)}{28}{section*.51}%
-\contentsline {paragraph}{Analisi delle Metriche di Qualità}{28}{section*.53}%
-\contentsline {paragraph}{Implicazioni Strategiche}{29}{section*.54}%
-\contentsline {subsection}{\numberline {2.5.4}Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}{29}{subsection.2.5.4}%
-\contentsline {subsubsection}{Caso Studio Comparativo: \textit {Military} vs \textit {Airports \& Aircraft}}{31}{section*.59}%
-\contentsline {subsection}{\numberline {2.5.5}Dashboard 5: Previsione del Volume degli Attacchi}{32}{subsection.2.5.5}%
-\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{33}{section*.67}%
-\contentsline {paragraph}{Analisi dei Coefficienti di Livellamento}{33}{section*.68}%
-\contentsline {paragraph}{Analisi delle Metriche di Qualità}{34}{section*.69}%
-\contentsline {subsection}{\numberline {2.5.6}Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco}{35}{subsection.2.5.6}%
+\contentsline {section}{\numberline {2.5}Fondamenti Statistici dell'Analisi Predittiva (Forecasting)}{20}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Panoramica delle Dashboard Realizzate}{21}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}{21}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Dashboard 2: Analisi e Previsione della Letalità per Regione}{23}{subsection.2.6.2}%
+\contentsline {subsubsection}{Caso Studio Comparativo: South Asia vs North America}{24}{section*.36}%
+\contentsline {paragraph}{Analisi Qualitativa}{24}{section*.39}%
+\contentsline {paragraph}{Analisi Predittiva e Business Insights}{24}{section*.40}%
+\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{25}{section*.44}%
+\contentsline {paragraph}{Analisi delle Metriche di Qualità}{26}{section*.46}%
+\contentsline {paragraph}{Interpretazione Strategica del Modello}{26}{section*.47}%
+\contentsline {subsection}{\numberline {2.6.3}Dashboard 3: Previsione dei Bersagli (Target) per Regione}{27}{subsection.2.6.3}%
+\contentsline {subsubsection}{Validazione Statistica e Comportamento del Modello Predittivo}{29}{section*.51}%
+\contentsline {paragraph}{Motore di Forecasting e Orizzonte Temporale}{29}{section*.52}%
+\contentsline {paragraph}{Il Cambiamento di Paradigma (Soft Target vs Hard Target)}{29}{section*.53}%
+\contentsline {paragraph}{Analisi delle Metriche di Qualità}{29}{section*.55}%
+\contentsline {paragraph}{Implicazioni Strategiche}{30}{section*.56}%
+\contentsline {subsection}{\numberline {2.6.4}Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}{30}{subsection.2.6.4}%
+\contentsline {subsubsection}{Caso Studio Comparativo: \textit {Military} vs \textit {Airports \& Aircraft}}{32}{section*.61}%
+\contentsline {subsection}{\numberline {2.6.5}Dashboard 5: Previsione del Volume degli Attacchi}{32}{subsection.2.6.5}%
+\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{34}{section*.69}%
+\contentsline {subsection}{\numberline {2.6.6}Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco}{35}{subsection.2.6.6}%
 \contentsline {paragraph}{Motore di Forecasting e Orizzonte Temporale}{36}{section*.77}%
-\contentsline {paragraph}{Analisi dei Dati Predittivi (Focus sulle Categorie Critiche)}{36}{section*.78}%
-\contentsline {paragraph}{Lettura Diagnostica delle Metriche di Qualità}{36}{section*.80}%
-\contentsline {subsection}{\numberline {2.5.7}Dashboard 7: Previsione dell'Intensità (Vittime) per Arma (Diagnostica Avanzata)}{37}{subsection.2.5.7}%
-\contentsline {paragraph}{Motore di Forecasting e Filtro Dati}{38}{section*.87}%
-\contentsline {paragraph}{Analisi dei Dati Predittivi e Scoperta della Stagionalità}{38}{section*.88}%
-\contentsline {chapter}{\numberline {3}Power PI}{40}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{40}{section.3.1}%
-\contentsline {chapter}{Sitografia}{41}{chapter*.91}%
+\contentsline {paragraph}{Analisi dei Dati Predittivi (Focus sulle Categorie Critiche)}{37}{section*.78}%
+\contentsline {paragraph}{Lettura Diagnostica delle Metriche di Qualità}{37}{section*.80}%
+\contentsline {subsection}{\numberline {2.6.7}Dashboard 7: Previsione dell'Intensità (Vittime) per Arma (Diagnostica Avanzata)}{38}{subsection.2.6.7}%
+\contentsline {paragraph}{Motore di Forecasting e Filtro Dati}{39}{section*.87}%
+\contentsline {paragraph}{Analisi dei Dati Predittivi e Scoperta della Stagionalità}{39}{section*.88}%
+\contentsline {chapter}{\numberline {3}Power PI}{41}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{41}{section.3.1}%
+\contentsline {chapter}{Sitografia}{42}{chapter*.91}%

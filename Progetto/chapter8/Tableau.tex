@@ -460,7 +460,9 @@ L'osservazione della curva storica evidenzia tre macro-fasi distinte, fondamenta
 
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
-\paragraph{Motore di Forecasting e Parametri di Base}
+\begin{itemize}
+    \item \textbf{Motore di Forecasting e Parametri di Base}
+\end{itemize}
 Per proiettare il volume degli attacchi nel breve termine (Gennaio -- Dicembre 2018), Tableau ha applicato un algoritmo di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Il software ha selezionato in automatico il periodo ottimale di addestramento (Novembre 2003 -- Dicembre 2017) per basare la stima sulle dinamiche del terrorismo moderno.
 
 Il modello generato è di tipo \textbf{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}). Questa configurazione fissa la stima di base a \textbf{794 attacchi al mese}, con una linea di previsione piatta e un intervallo di confidenza di $\pm 224$ eventi.
@@ -507,11 +509,15 @@ Dall'osservazione dei trend trimestrali emerge chiaramente che il danno economic
 
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
-\paragraph{Motore di Forecasting e Orizzonte Temporale}
+\begin{itemize}
+    \item \textbf{Motore di Forecasting e Parametri di Base}
+\end{itemize}
 Il modello di \textit{Exponential Smoothing} di Tableau ha generato una proiezione per i successivi 4 trimestri (2018 T1 -- 2018 T4), escludendo automaticamente i dati storici più remoti e basando l'addestramento sul periodo \textbf{1995 T3 -- 2017 T4}.
 Per tutte le categorie, il software ha applicato un modello \textbf{Aggiuntivo, Nessuno, Nessuno} (Livello aggiunto, senza Trend continuo, senza Stagionalità), indicando che i danni economici colpiscono in modo imprevedibile durante l'anno.
 
-\paragraph{Analisi dei Dati Predittivi (Focus sulle Categorie Critiche)}
+\begin{itemize}
+    \item \textbf{Analisi dei Coefficienti e delle Metriche di Qualità}
+\end{itemize}
 I risultati numerici estratti dal modello, consultabili nella Figura \ref{fig:dashboard_6_dati_previsione}, evidenziano l'entità del rischio finanziario per le due tattiche economicamente più impattanti:
 \begin{itemize}
     \item \textbf{Bombing/Explosion (Qualità: Scarsa):} Il modello fissa una stima di base di circa $8.494.047$ dollari a trimestre. Tuttavia, l'intervallo di confidenza è colossale: $\pm 250.738.534$ dollari. 
@@ -525,7 +531,9 @@ I risultati numerici estratti dal modello, consultabili nella Figura \ref{fig:da
     \label{fig:dashboard_6_dati_previsione}
 \end{figure}
 
-\paragraph{Lettura Diagnostica delle Metriche di Qualità}
+\begin{itemize}
+    \item \textbf{Lettura Diagnostica delle Metriche di Qualità}
+\end{itemize}
 Le valutazioni di Tableau ("Ok" per le infrastrutture, "Scarso" per le esplosioni e i dirottamenti) sono perfettamente giustificate dalla lettura congiunta dei parametri precedentemente introdotti:
 \begin{itemize}
     \item \textbf{MAPE estremo:} Il parametro che penalizza maggiormente i bombardamenti portandoli a un rating "Scarso" è un MAPE del $4528,8\%$. Questo valore fuori scala indica che i picchi storici sono così violenti e improvvisi da rendere l'errore percentuale medio altissimo rispetto ai periodi di "calma".
@@ -566,10 +574,14 @@ La lettura del Box Plot restituisce una fotografia cruda della letalità tattica
 
 \subsubsection*{Validazione Statistica del Modello Predittivo}
 
-\paragraph{Motore di Forecasting e Filtro Dati}
+\begin{itemize}
+    \item \textbf{Motore di Forecasting e Parametri di Base}
+\end{itemize}
 Il modello ha proiettato i dati di 5 trimestri in avanti (2017 T4 -- 2018 T4). Un dettaglio tecnico rilevante è l'impostazione \textbf{"Ignora ultimo: 1 trimestre"}. Escludendo deliberatamente l'ultimo trimestre del 2017 (spesso incompleto o soggetto a ritardi di consolidamento nel GTD), l'algoritmo ha basato il suo addestramento su una serie storica pienamente consolidata (1995 T2 -- 2017 T3).
 
-\paragraph{Analisi dei Dati Predittivi e Scoperta della Stagionalità}
+\begin{itemize}
+    \item \textbf{Analisi dei Coefficienti e delle Metriche di Qualità}
+\end{itemize}
 L'estrazione dei coefficienti di livellamento, presenti nella Figura \ref{fig:dashboard_7_dati_previsione}, ha portato alla luce due scenari analitici radicalmente diversi a seconda dell'arma:
 
 \begin{enumerate}
