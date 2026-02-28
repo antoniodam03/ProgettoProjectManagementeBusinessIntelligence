@@ -24,6 +24,7 @@ Di seguito viene riportato il \textit{Dizionario dei Dati} (Tabella \ref{tab:dat
 
 \renewcommand{\arraystretch}{1.4}
 
+<<<<<<< HEAD
 \begin{longtable}{|l|p{0.70\textwidth}|}
 
 \caption{Elenco completo delle 27 variabili selezionate dal GTD.}
@@ -126,6 +127,95 @@ Di seguito viene riportato il \textit{Dizionario dei Dati} (Tabella \ref{tab:dat
 \texttt{ransomamt} & Importo del riscatto richiesto (in USD). \\
 
 \end{longtable}
+=======
+\begin{table}[htbp] % 'htbp' cerca di piazzarla qui, in alto, in basso o in una pagina separata
+    \centering
+    \footnotesize % Riduce leggermente il font per farla entrare in una pagina
+    \caption{Elenco completo delle 27 variabili selezionate dal GTD.}
+    \label{tab:dataset_description}
+    
+    % Definisce la larghezza: l = left, p = paragrafo con larghezza fissa
+    \begin{tabular}{|l|p{0.70\textwidth}|}
+        \hline
+        \rowcolor[gray]{0.9} \textbf{Nome Colonna} & \textbf{Descrizione} \\
+        \hline
+        
+        % --- 1. IDENTIFICATIVI E TEMPO ---
+        \texttt{eventid} & Identificativo univoco numerico dell'evento (Chiave Primaria). \\
+        \hline
+        \texttt{iyear} & Anno in cui si è verificato l'incidente. \\
+        \hline
+        \texttt{imonth} & Mese in cui si è verificato l'incidente (0 se sconosciuto). \\
+        \hline
+        \texttt{iday} & Giorno in cui si è verificato l'incidente (0 se sconosciuto). \\
+        \hline
+        
+        % --- 2. GEOGRAFIA ---
+        \texttt{country\_txt} & Nome della Nazione in cui è avvenuto l'attacco. \\
+        \hline
+        \texttt{region\_txt} & Macro-regione geografica (es. Medio Oriente). \\
+        \hline
+        \texttt{provstate} & Nome della Provincia o dello Stato amministrativo. \\
+        \hline
+        \texttt{city} & Nome della città o del villaggio specifico. \\
+        \hline
+        \texttt{latitude} & Coordinata geografica (Latitudine) dell'evento. \\
+        \hline
+        \texttt{longitude} & Coordinata geografica (Longitudine) dell'evento. \\
+        \hline
+        
+        % --- CRITERI ---
+        \texttt{Crit1} & Indicatore binario (1/0) violenza o minaccia di violenza. \\
+        \hline
+        \texttt{Crit2} & Indicatore binario (1/0) perpetrato da gruppo non statale. \\
+        \hline
+        \texttt{Crit3} & Indicatore binario (1/0) scopo politico, religioso o sociale. \\
+        \hline
+        
+        % --- 3. TATTICHE E ARMI ---
+        \texttt{attacktype1\_txt} & Categoria principale della tattica d'attacco. \\
+        \hline
+        \texttt{weaptype1\_txt} & Categoria generale dell'arma utilizzata. \\
+        \hline
+        \texttt{weapsubtype1\_txt} & Sottocategoria specifica dell'arma. \\
+        \hline
+        \texttt{suicide} & Indicatore binario (1/0) se l'attacco è stato suicida. \\
+        \hline
+        \texttt{success} & Indicatore binario (1/0) successo dell'attacco. \\
+        \hline
+        
+        % --- 4. OBIETTIVI ---
+        \texttt{targtype1\_txt} & Categoria generale del bersaglio (es. Civili). \\
+        \hline
+        \texttt{targsubtype1\_txt} & Sottocategoria specifica del bersaglio. \\
+        \hline
+        \texttt{corp1} & Nome dell'ente, azienda o gruppo colpito. \\
+        \hline
+        \texttt{natlty1\_txt} & Nazionalità delle vittime colpite. \\
+        \hline
+        
+        % --- 5. GRUPPI E TERRORISTI ---
+        \texttt{gname} & Nome del gruppo terroristico responsabile. \\
+        \hline
+        \texttt{claimed} & Indicatore binario (1/0) rivendicazione ufficiale. \\
+        \hline
+        \texttt{nperps} & Numero di terroristi partecipanti. \\
+        \hline
+        
+        % --- 6. IMPATTO E VITTIME ---
+        \texttt{nkill} & Numero di persone decedute (Morti). \\
+        \hline
+        \texttt{nwound} & Numero di persone ferite. \\
+        \hline
+        \texttt{propvalue} & Valore stimato del danno economico (USD). \\
+        \hline
+        \texttt{ishostkid} & Indicatore (1/0) rapimento/presa ostaggi. \\
+        \hline
+        \texttt{ransomamt} & Importo del riscatto richiesto (in USD). \\
+        \hline
+    \end{tabular}
+\end{table}
+>>>>>>> origin/Davide
 
 
 

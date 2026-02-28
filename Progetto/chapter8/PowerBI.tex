@@ -1,9 +1,308 @@
-\chapter{Power PI} %\label{1cap:spinta_laterale}
+\chapter{Power BI} %\label{1cap:spinta_laterale}
 
 \begin{preamble}
 {\em
-Preambolo da scrivere
+Nel seguente capitolo viene utilizzato Microsoft Power BI, una piattaforma leader nel settore della Business Intelligence che fornisce visualizzazioni interattive di dati tramite un'interfaccia grafica, consentendo la creazione di report e dashboard attraverso l'uso di linguaggio DAX (Data Analysis Expressions) per l'analisi dei dati.
+Nel contesto del presente progetto, Power BI è stato utilizzato per profilare i gruppi terroristici tramite tecniche di Cluster Analysis (raggruppando gli attori in base a frequenza e letalità) e per identificare le cause radice e i fattori determinanti che influenzano l'esito e l'impatto degli attacchi, completando così il quadro analitico avviato con l'esplorazione descrittiva.
 }
 \end{preamble}
 
-\section{Seguire pdf esempio}
+\section{Materiali e Metodi}
+L'analisi condotta su questo dataset ha come obiettivo principale quello di esplorare le dinamiche profonde del terrorismo globale, andando oltre la semplice descrizione degli eventi per comprendere le correlazioni nascoste tra le tattiche operative, la letalità degli attacchi e il profilo dei gruppi responsabili. Sono state sviluppate diverse visualizzazioni per effettuare le seguenti analisi:
+
+\begin{itemize}
+    \item \textit{Cluster Analysis dei gruppi terroristici (Mappatura Comportamentale)}: questa analisi applica algoritmi di clustering per segmentare i gruppi terroristici in base al loro comportamento operativo (frequenza degli attacchi vs letalità), identificando profili distinti come \textit{minacce egemoniche} o \textit{operatori di nicchia}.
+    
+    \item \textit{Analisi dei Fattori Determinanti del Massacro (Key Influencers)}: sfruttando gli algoritmi di Intelligenza Artificiale integrati, questa analisi esplora quali fattori (es. tipo di arma, tattica, regione geografica) influenzano matematicamente la probabilità che un attacco si trasformi in un evento ad \textit{Alto Impatto} (massacro).
+    
+    \item \textit{Matrice di Asimmetria (Costo Umano vs Costo Economico)}: si è indagato sulla correlazione tra i danni materiali (in USD) e la perdita di vite umane, cercando di capire se esista un trade-off tra la sofisticazione logistica (costo dell'attacco) e la letalità, e come questa vari in base alla resilienza del target.
+    
+    \item \textit{Anatomia del Fallimento e Resilienza dei Target}: questa analisi inverte la prospettiva tradizionale, esaminando le cause e i pattern degli attacchi falliti (sventati o inefficaci). L'obiettivo è stato valutare la capacità difensiva dei diversi bersagli (es. Militari vs Civili) e l'incompetenza operativa in diverse aree geografiche.
+    
+    \item \textit{Analisi della Logistica Operativa e Strategia di Comunicazione}: questa analisi illustra l'efficienza letale in relazione alla dimensione dell'unità operativa (dal \textit{lupo solitario} al battaglione) e incrocia questi dati con la propensione alla rivendicazione (propaganda), per capire come i gruppi utilizzano gli attacchi come strumento di marketing politico.
+\end{itemize}
+
+Queste analisi hanno fornito una visione diagnostica complessiva dell'interazione tra le strategie terroristiche e il loro impatto reale, fornendo diversi spunti per l'allocazione delle risorse di prevenzione e per la comprensione dei fattori di rischio critici.
+
+\subsection{Acquisizione e Trasformazione dei Dati}
+
+La fase preliminare del progetto ha riguardato l'acquisizione e la trasformazione del dataset \textit{Global Terrorism Database}, importato all'interno dell'ambiente Power BI Desktop utilizzando il formato CSV (\textit{Comma-Separated Values}). Una volta stabilita la connessione con la fonte dati, è stato utilizzato l'Editor di Power Query per eseguire le operazioni di pulizia e normalizzazione (ETL - \textit{Extract, Transform, Load}) necessarie a rendere i dati coerenti e pronti per l'analisi.
+
+Nello specifico, sono state eseguite le seguenti operazioni di trasformazione:
+
+\begin{itemize}
+    \item \textit{Intestazioni alzate di livello}: inizialmente, il dataset importato non riconosceva la prima riga come riga di intestazione, trattando i nomi delle variabili come dati ordinari. È stata applicata la trasformazione per promuovere la prima riga a intestazione, assegnando così correttamente il nome a ogni colonna.
+    
+    \item \textit{Gestione dei separatori decimali}: è stata effettuata un'operazione di sostituzione dei valori per garantire la corretta interpretazione dei dati numerici. Poiché il file originale utilizzava la notazione anglosassone (punto per i decimali), è stata eseguita una sostituzione globale dei caratteri "." con ",". Questo passaggio è stato critico per consentire a Power BI di leggere i valori come numeri decimali e non come testo.
+    
+    \item \textit{Conversione e assegnazione dei tipi di dati}: a seguito dell'importazione, Power BI aveva assegnato genericamente il tipo "Stringa" (Testo) a tutte le colonne. È stato quindi necessario modificare manualmente il tipo di dato per ogni colonna chiave, convertendo i campi in \textit{Numero Intero} (es. \textit{eventid}, \textit{nkill}), \textit{Numero Decimale} o \textit{Data}, abilitando così le successive operazioni di aggregazione e calcolo statistico.
+\end{itemize}
+
+\subsection{Arricchimento del Modello Dati (Misure e Colonne)}
+
+Oltre alla pulizia, per consentire l'utilizzo dei dati nel modo migliore all'interno delle dashboard diagnostiche, è stato necessario arricchire il modello creando nuove \textit{Colonne Calcolate} e \textit{Misure DAX} (\textit{Data Analysis Expressions}). 
+Di seguito si riportano le specifiche delle principali metriche e colonne implementate.
+
+\subsubsection{- Analisi della Letalità e dell'Impatto}
+
+Sono stati sviluppati due parametri per quantificare la pericolosità dei gruppi e la gravità degli eventi oltre il semplice conteggio.
+
+\begin{itemize}
+    \item \textit{Efficienza Letale (Misura)}: calcola il tasso medio di mortalità per attacco. È fondamentale per distinguere i gruppi che effettuano "attacchi di massa" da quelli che operano azioni dimostrative a bassa letalità.
+    \begin{verbatim}
+Efficienza_Letale = DIVIDE(SUM('gtd_cleaned_correct'[nkill]),
+ COUNT('gtd_cleaned_correct'[eventid]), 0)
+    \end{verbatim}
+    \item \textit{Livello Massacro (Colonna Calcolata)}: crea una segmentazione binaria degli eventi basata sulla soglia critica di 10 vittime. Questa colonna è utilizzata specificamente dall'algoritmo di AI \textit{Key Influencers} per identificare i fattori determinanti degli attacchi ad alto impatto.
+    \begin{verbatim}
+Livello_Massacro = IF('gtd_cleaned_correct'[nkill] >= 10, 
+ "Alto Impatto (>10 morti)", "Basso Impatto")
+    \end{verbatim}
+\end{itemize}
+
+\subsubsection{- Analisi della Resilienza e del Fallimento}
+
+Per la dashboard "\textit{Anatomia del Fallimento}", è stato necessario invertire la logica di analisi, focalizzandosi sugli insuccessi.
+
+\begin{itemize}
+    \item \textit{\%\_Fallimento (Misura)}: calcola la percentuale di attacchi che sono stati sventati o sono falliti tecnicamente (dove \textit{success = 0}). Questa metrica dinamica permette di valutare la resilienza dei target (es. \textit{Military} vs \textit{Private Citizens}) in diverse regioni.
+    \begin{verbatim}
+%_Fallimento = DIVIDE(
+    CALCULATE(COUNT('gtd_cleaned_correct'[eventid]),
+    'gtd_cleaned_correct'[success] = 0),
+    COUNT('gtd_cleaned_correct'[eventid]),
+    0
+)
+    \end{verbatim}
+    \item \textit{Esito Desc (Colonna Calcolata)}: traduce il flag numerico binario originale (0/1) in etichette testuali comprensibili per i grafici di flusso (\textit{Sankey Diagram}) e le legende.
+    \begin{verbatim}
+Esito_Desc = IF('gtd_cleaned_correct'[success] = 1,
+ "Riuscito", "Fallito")
+    \end{verbatim}
+\end{itemize}
+
+\subsubsection{- Profilazione Logistica e Tattica}
+
+Sono stati creati tre parametri utili a segmentare gli attori in base alla loro organizzazione e alle scelte operative.
+
+\begin{itemize}
+    \item \textit{Dimensione Commando (Colonna Calcolata)}: una classificazione granulare basata sul numero di terroristi partecipanti (\textit{nperps}). Serve a correlare la dimensione dell'unità operativa con il successo dell'attacco, distinguendo tra lupi solitari, cellule e veri e propri battaglioni.
+    \begin{verbatim}
+Dimensione_Commando = 
+SWITCH(
+    TRUE(),
+    'gtd_cleaned_correct'[nperps] < 1, "Sconosciuto",
+    'gtd_cleaned_correct'[nperps] = 1, "1. Lupo Solitario",
+    'gtd_cleaned_correct'[nperps] >= 2 &&
+     'gtd_cleaned_correct'[nperps] <= 4, "2. Piccola Cellula",
+    'gtd_cleaned_correct'[nperps] >= 5 &&
+     'gtd_cleaned_correct'[nperps] <= 15, "3. Commando",
+    'gtd_cleaned_correct'[nperps] > 15 &&
+     'gtd_cleaned_correct'[nperps] <= 50, "4. Larga Scala",
+    'gtd_cleaned_correct'[nperps] > 50, "5. Milizia / Esercito",
+    "Sconosciuto"
+)
+    \end{verbatim}
+    \item \textit{Tipo Cellula (Colonna Calcolata)}: una versione semplificata della precedente, utilizzata per analisi aggregate ad alto livello nelle dashboard riepilogative.
+    \begin{verbatim}
+Tipo_Cellula = SWITCH(TRUE(),
+    'gtd_cleaned_correct'[nperps] = 1, "Lupo Solitario",
+    'gtd_cleaned_correct'[nperps] > 1 &&
+     'gtd_cleaned_correct'[nperps] <= 4, "Piccola Cellula",
+    'gtd_cleaned_correct'[nperps] > 4, "Commando",
+    "Sconosciuto"
+)
+    \end{verbatim}
+    \item \textit{\% Mix Armi (Misura)}: una misura complessa che calcola l'incidenza di uno specifico tipo di arma sul totale dell'arsenale utilizzato da un gruppo. È essenziale per il \textit{Radar Chart} nella Dashboard 1, permettendo di visualizzare la "\textit{firma tattica}" (es. preferenza per esplosivi vs armi da fuoco) di ciascun cluster.
+    \begin{verbatim}
+% Mix Armi = 
+ VAR AttacchiConQuestaArma = COUNTROWS('gtd_cleaned_correct')
+
+ VAR AttacchiTotaliDelGruppo = CALCULATE(
+    COUNTROWS('gtd_cleaned_correct'),
+    REMOVEFILTERS('gtd_cleaned_correct'[weaptype1 fondamentali]))
+ RETURN
+ DIVIDE(AttacchiConQuestaArma, AttacchiTotaliDelGruppo, 0)
+    \end{verbatim}
+\end{itemize}
+
+\subsubsection{- Strategia di Comunicazione}
+
+\begin{itemize}
+    \item \textit{Stato Rivendicazione (Colonna Calcolata)}: normalizza il campo relativo alla rivendicazione di responsabilità, permettendo di analizzare la strategia mediatica dei gruppi (es. chi rivendica per propaganda vs chi agisce nell'ombra).
+    \begin{verbatim}
+Stato_Rivendicazione = 
+SWITCH(
+    'gtd_cleaned_correct'[claimed],
+    1, "Rivendicato",
+    0, "Non Rivendicato",
+    "Sconosciuto"
+)
+    \end{verbatim}
+\end{itemize}
+
+\section{Analisi}
+\subsection{Mappatura Comportamentale e Cluster Analysis}
+\subsubsection{Obiettivo}
+
+L'obiettivo di questa prima dashboard diagnostica è superare la semplice classificazione nominale dei gruppi terroristici per identificare invece dei profili comportamentali comuni. Si è voluto segmentare gli attori in cluster omogenei basati su due variabili critiche: la frequenza operativa (numero di attacchi) e l'intensità letale (numero totale di vittime).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter8/imagesPowerBI/Cluster Analysis Gruppi.png}
+    \caption{Cluster Analysis dei Gruppi Terroristici.}
+    \label{fig:dash1}
+\end{figure}
+\subsubsection{Metodologia di Clustering}
+
+La segmentazione in Cluster è avenuta utilizzando l'algoritmo di \textit{K-Means}, suddividendo l'insieme in 4 gruppi distinti in base alle variabili:\textit{Frequenza Attacchi} (\textit{Count of eventid}) e \textit{Letalità Totale} (\textit{Sum of nkill}).
+
+
+I Cluster sono stati identificati ed interpretati come:
+
+\begin{itemize}
+    \item \textit{Cluster "Alta Efficienza Letale"}: gruppi con un numero moderato di attacchi ma un altissimo tasso di mortalità.
+    \item \textit{Cluster "Minaccia Egemonica"}: gruppi che combinano un'alta frequenza operativa con un alto numero di vittime, rappresentando la minaccia sistemica maggiore.
+    \item \textit{Cluster "Bassa Letalità Media"}: la maggioranza dei gruppi, caratterizzati da azioni sporadiche o dimostrative con basso numero di vittime.
+    \item \textit{Cluster "Media Intensità Operativa"}: gruppi attivi regionalmente con una capacità offensiva costante ma limitata.
+\end{itemize}
+
+
+\subsubsection{Struttura della Dashboard e Analisi dei Risultati}
+
+Come viene mostrato in Figura \ref{fig:dash1}, l'analisi ruota attorno a tre visualizzazioni principali che permettono di esplorare i cluster identificati. Al centro della dashboard, la \textit{Mappatura Comportamentale (Scatter Plot)} posiziona ogni gruppo terroristico in base al volume di attacchi e al numero totale di vittime. L'uso di una scala logaritmica nell'asse X permette di visualizzare chiaramente sia le piccole cellule che le grandi organizzazioni paramilitari, evidenziando la distribuzione dei quattro cluster distinti.
+
+Sulla destra, il \textit{Profilo Tattico dell'Arsenale (Radar Chart)} confronta le armi utilizzate. Questa visualizzazione definisce la tattica di ogni gruppo, mostrando la predilezione per gli esplosivi o l'affidamento ad armi da fuoco. In basso, una \textit{Tabella di Riepilogo} fornisce i dati puntuali come il numero di attacchi e la media dei morti per evento, confermando quantitativamente le evidenze grafiche.
+
+Dall'esplorazione dei dati emergono due dettagli fondamentali che definiscono la comprensione degli attacchi:
+
+Il dato più rilevante riguarda il cluster definito \textit{Alta Efficienza Letale}. Questi gruppi, pur avendo compiuto un numero di attacchi inferiore rispetto alle grandi organizzazioni della \textit{Minaccia Egemonica} (15.509 contro 82.782), registrano un tasso di mortalità per singolo attacco ampliamente più elevato. Questo indica l'esistenza di attori specializzati in pochi eventi ma di portata catastrofica.
+
+Inoltre, il modello mostra una netta separazione tra una moltitudine di piccoli gruppi operanti con azioni frequenti ma a basso impatto e pochi attori dominanti.
+
+In conclusione, l'analisi dimostra che la pericolosità di un gruppo non dipende esclusivamente dalla frequenza degli attacchi o dall'arsenale utilizzato, ma dalla specializzazione tattica volta a massimizzare le vittime in ogni singola operazione.
+
+\subsection{Analisi dei Fattori di Rischio e Key Influencers}
+\subsubsection{Obiettivo}
+
+Questa seconda dashboard diagnostica sposta l'attenzione dal "chi" al "perché", con l'obiettivo di comprendere quali variabili operative influenzino matematicamente la probabilità che un evento si trasformi in un massacro. Per l'analisi, è stato definito come \textit{Massacro} (o evento ad \textit{Alto Impatto}) qualsiasi attacco con più di 10 vittime. 
+
+Per identificare questi pattern è stata utilizzata la funzionalità \textit{Key Influencers} di Power BI. Il modello di \textit{Machine Learning} ha analizzato la colonna calcolata \textit{Livello\_Massacro}, una variabile binaria creata per distinguere gli eventi tra \textit{Alto Impatto} e \textit{Basso Impatto}, al fine di rispondere al quesito: "Quali fattori fanno aumentare la probabilità che l'esito sia catastrofico?".
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter8/imagesPowerBI/Analisi Fattori di Rischio.png}
+    \caption{Analisi dei Fattori di Rischio e Key Influencers.}
+    \label{fig:dash2}
+\end{figure}
+
+
+\subsubsection{Struttura della Dashboard}
+
+La visualizzazione, mostrata in Figura \ref{fig:dash2}, è dominata dal grafico \textit{AI}, che classifica i fattori di rischio in ordine di importanza statistica. Ogni fattore è accompagnato da un moltiplicatore che indica l'incremento relativo del rischio. Sulla destra, un grafico a barre in pila al 100\% permette di confrontare la \textit{Proporzione di Attacchi} tra le diverse armi, evidenziando quelle con la maggiore incidenza di stragi. Il grafico dei \textit{Volumi Operativi} fornisce il contesto statistico mostrando la frequenza delle tattiche, considerando solo gli eventi ad alto impatto. Infine, la dashboard contiene diversi filtri, fondamentali per condurre analisi mirate. Nello specifico, troviamo un \textit{filtro Regione}, per poter analizzare i dati in una determinata area geografica, uno slider per il \textit{Periodo di Analisi}, che consente di isolare archi temporali specifici, e i filtri \textit{Tattica di Attacco} e \textit{Gruppo Terroristico}, utili per calare l'algoritmo predittivo sul comportamento di specifiche organizzazioni
+
+\subsubsection{Analisi dei Dati e Risultati}
+
+Dall'analisi dei fattori chiave emergono tre evidenze fondamentali:
+
+\textit{Il Moltiplicatore Suicida}: il fattore determinante per un massacro non è l'arma, ma la modalità d'attacco. L'algoritmo rileva che se un evento è di tipo \textit{Suicida}, la probabilità che diventi un massacro aumenta di 6,07 volte. La rinuncia a una via di fuga permette infatti all'attentatore di massimizzare i danni senza vincoli logistici.
+
+\textit{La Letalità delle Armi da Fuoco}: contrariamente ad alcune aspettative, l'uso di \textit{Firearms} aumenta la probabilità di un massacro di 1,43 volte. La visualizzazione della proporzione conferma come gli assalti armati abbiano una componente di \textit{Alto Impatto} molto estesa rispetto ad altre tipologie di armamento.
+
+\textit{Volume vs Pericolosità}: confrontando l'AI con i grafici di volume, si nota una discrepanza significativa. Sebbene gli attentati dinamitardi (\textit{Bombing/Explosion}) rappresentino quasi il 50\% degli attacchi totali, non sono il predittore più forte di un massacro rispetto alle azioni suicide o agli assalti mirati.
+
+In conclusione, la minaccia più critica non deriva semplicemente dalla diffusione degli esplosivi, ma dalla combinazione di tattiche suicide e armi leggere, che garantiscono statisticamente la più alta probabilità di causare un elevato numero di vittime.
+
+\subsection{Anatomia del Fallimento e Resilienza dei Target}
+
+
+
+\subsubsection{Obiettivo e Struttura}
+
+Questa dashboard indaga le dinamiche dei fallimenti delle operazioni terroristiche. L'obiettivo è misurare la \textit{Resilienza}, intesa come la capacità di un bersaglio o di una nazione di sventare un attacco o di renderlo inefficace. Attraverso l'analisi della variabile \textit{success}, si è voluto comprendere se esistano regioni, bersagli o armi con tassi di fallimento sistematicamente più alti.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter8/imagesPowerBI/Anatomia del Fallimento.png}
+    \caption{Analisi del Fallimento e Resilienza dei Target.}
+    \label{fig:dash3}
+\end{figure}
+
+La visualizzazione è progettata per un confronto globale rapido. Al centro, in Figura \ref{fig:dash3}, domina la \textit{Griglia della Resilienza Globale}, basata sulla tecnica dei \textit{Small Multiples}: una serie di grafici a linee che monitorano l'evoluzione temporale della metrica \textit{\%\_Fallimento} in ogni macro-regione simultaneamente.
+Sulla destra, la \textit{Correlazione Strumento/Esito} utilizza un grafico a barre in pila al 100\% per confrontare l'efficacia delle diverse armi, distinguendo tra attacchi \textit{Riusciti} (in grigio) e \textit{Falliti} (in rosso). A sinistra, una matrice analizza il \textit{Costo Umano} degli eventi tecnicamente falliti, evidenziando le vittime registrate anche quando l'obiettivo principale non è stato raggiunto. Infine, la dashboard è equipaggiata con un pannello laterale di filtri interattivi (slicer) che abilitano un'esplorazione dinamica dei dati. Nello specifico, sono presenti un \textit{filtro temporale} sull'anno, per isolare periodi storici specifici, e un filtro per \textit{Gruppo Terroristico} (\textit{gname}), fondamentale per valutare il tasso di fallimento e l'affidabilità tattica di specifiche organizzazioni eversive rispetto al contesto globale.
+
+\subsubsection{Analisi dei Dati e Risultati}
+
+L'analisi diagnostica della resilienza ha portato alla luce tre pattern fondamentali:
+
+\textit{La Geografia della Difesa}: osservando la griglia dei grafici a linee, si nota una divergenza netta tra le diverse aree del mondo. In Europa Occidentale, il tasso di fallimento mostra un trend crescente negli ultimi anni, segno di una maggiore efficacia delle misure di prevenzione. Al contrario, in aree di conflitto attivo come il Medio Oriente, la linea del fallimento rimane bassa e piatta, indicando che la maggior parte degli attacchi raggiunge purtroppo il proprio obiettivo.
+
+\textit{Affidabilità delle Armi}: il grafico a barre evidenzia come gli attacchi condotti con esplosivi presentino una percentuale di fallimento più ampia rispetto agli assalti armati. Ciò suggerisce che gli ordigni sono più soggetti a malfunzionamenti tecnici o a interventi preventivi di disinnesco, mentre le armi da fuoco garantiscono una percentuale di successo operativo superiore.
+
+\textit{Il Costo del Fallimento}: la matrice rivela un dato drammatico riguardante i target fortificati (militari e forze dell'ordine). Anche quando gli attacchi contro queste strutture vengono classificati come "Falliti", si registra comunque un numero medio di vittime diverso da zero. Questo dimostra che il fallimento dell'attacco spesso coincide con la morte dell'attentatore o delle guardie perimetrali, confermando che la resilienza ha quasi sempre un costo umano.
+
+\subsection{Analisi dell’Impatto Economico e Finanziamento}
+
+
+
+\subsubsection{Obiettivo e Struttura}
+
+Questa dashboard sposta l'analisi dal costo umano a quello finanziario, con l'obiettivo di quantificare le conseguenze materiali del terrorismo (misurate tramite la variabile \textit{propvalue}) e indagare le strategie di autofinanziamento, come i rapimenti a scopo di estorsione (\textit{ransomamt}). L'indagine mira a verificare la correlazione tra vittime e danni economici, individuando i bersagli che garantiscono i riscatti più elevati.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter8/imagesPowerBI/Impatto Economico del Terrorismo.png}
+    \caption{Analisi dell’Impatto Economico e Finanziamento.}
+    \label{fig:dash4}
+\end{figure}
+
+La dashboard, mostrata in Figura \ref{fig:dash4}, è organizzata per offrire una visione macroeconomica integrata da dettagli sui flussi finanziari:
+
+L'analisi è guidata dall' \textit{Albero di Scomposizione (Decomposition Tree)}, un ogetto visivo che permette di suddividere il totale dei danni materiali esplodendoli per \textit{Tattica di Attacco}, \textit{Arma Utilizzata}, \textit{Bersaglio} e \textit{Regione}. 
+
+A destra, la \textit{Matrice di Asimmetria (Scatter Plot)} mette in relazione la media delle vittime con quella dei danni materiali per identificare attacchi puramente infrastrutturali. In basso, un grafico a barre analizza il \textit{Modello di Finanziamento}, mostrando i riscatti medi per categoria di ostaggio. Infine, una serie di \textit{KPI Finanziari} e un indicatore a tachimetro monitorano i volumi globali dei danni e il tasso di successo dei rapimenti.
+
+\subsubsection{Analisi dei Dati e Risultati}
+
+L'esplorazione dei dati economici ha rivelato dinamiche divergenti rispetto all'analisi puramente tattica:
+
+\textit{I Driver del Costo Materiale}: l'albero di scomposizione evidenzia che la tattica più onerosa è il \textit{Bombing/Explosion}, responsabile della maggior parte dei danni economici globali. 
+
+Questi attacchi colpiscono prevalentemente \textit{Proprietà Private} e \textit{Business}. Al contrario, gli assalti armati, pur essendo letali, generano danni materiali contenuti, confermando che gli esplosivi rimangono lo strumento d'elezione per il sabotaggio infrastrutturale.
+
+\textit{Asimmetria tra Morti e Dollari}: la matrice dimostra l'assenza di una correlazione lineare tra letalità e danno economico. Numerosi eventi registrano danni milionari a fronte di zero vittime; si tratta di operazioni mirate a colpire sedi governative per paralizzare l'economia senza causare perdite umane dirette.
+
+\textit{L'Economia dei Rapimenti}: i dati evidenziano una selezione razionale dei bersagli. I riscatti medi più elevati non riguardano i privati cittadini, ma figure legate a \textit{Governi} e \textit{Giornalisti}. Questo suggerisce che le organizzazioni selezionano i soggetti da sequestrare in base alla capacità di pagamento dell'ente di appartenenza, trasformando il rapimento in una forma di tassazione per finanziare le attività operative.
+
+\subsection{Analisi della Logistica Operativa e Strategia di Comunicazione}
+
+
+
+\subsubsection{Obiettivo e Struttura}
+
+L'ultima dashboard diagnostica si concentra sugli aspetti organizzativi e comunicativi dei gruppi terroristici. L'obiettivo è valutare come la dimensione dell'unità operativa influisca sull'efficacia tattica e analizzare l'uso del terrorismo come strumento di marketing politico attraverso lo studio delle rivendicazioni di responsabilità. L'indagine mira a stabilire la correlazione tra l'organizzazione del \textit{commando} e la sua letalità, individuando al contempo le logiche dietro la propaganda dei gruppi.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{chapter8/imagesPowerBI/Logica e Propaganda.png}
+    \caption{Analisi della Logistica Operativa e Strategia di Comunicazione.}
+    \label{fig:dash5}
+\end{figure}
+
+Come mostrato in Figura \ref{fig:dash5}, gli elementi presenti sono organizzati per offrire una visione integrata dell'efficacia operativa e della strategia comunicativa:
+
+La \textit{Matrice di Letalità} incrocia la \textit{Dimensione del Commando} con il \textit{Tipo di Attacco}. L'intensità del colore evidenzia le combinazioni più letali, permettendo di identificare i picchi di mortalità media per evento.
+
+In basso a sinistra, il grafico sulla \textit{Strategia di Comunicazione} analizza la propensione alla rivendicazione per tipologia di bersaglio, distinguendo tra eventi \textit{Rivendicati} e \textit{Non Rivendicati}. 
+
+Infine, una serie di \textit{KPI Operativi} e un indicatore a tachimetro monitorano il volume operativo totale e la percentuale globale di attacchi che hanno ricevuto una rivendicazione ufficiale. In aggiunta, nella parte inferiore destra è presente un \textit{filtro per Regione} che consente di focalizzare dinamicamente l'intera analisi su specifiche aree macro-geografiche (come il Medio Oriente o l'Europa Occidentale), permettendo di osservare come le logiche organizzative e la necessità di fare propaganda si adattino ai diversi contesti territoriali.
+
+\subsubsection{Analisi dei Dati e Risultati}
+
+L'analisi logistica e comunicativa ha portato a conclusioni operative fondamentali:
+
+\textit{Efficienza vs Dimensione}: la matrice di letalità ridimensiona il fenomeno del "\textit{Lupo Solitario}" in termini di impatto assoluto. I dati mostrano che l'efficacia letale cresce proporzionalmente alla complessità organizzativa: le \textit{Milizie} o gli \textit{Eserciti} registrano medie di mortalità drasticamente superiori (es. 14,65 morti per assalto) rispetto ai singoli individui (1,40 morti). Si rileva tuttavia un'eccezione critica nei dirottamenti aerei (\textit{Hijacking}), dove anche commando di medie dimensioni raggiungono livelli di letalità estremi.
+
+\textit{Il Marketing del Terrore}: l'analisi delle rivendicazioni rivela una strategia di comunicazione opportunistica. I gruppi tendono a rivendicare principalmente gli attacchi contro target di alto profilo, come \textit{Airports \& Aircraft} o \textit{Government}, per massimizzare la visibilità mediatica internazionale. Al contrario, gli attacchi contro \textit{Private Citizens} rimangono spesso non rivendicati, suggerendo la volontà di non associare il proprio nome a stragi civili indiscriminate che non garantiscano un immediato ritorno politico.
+
+\textit{Il Silenzio della Maggioranza}: un dato significativo emerge dalla bassa percentuale globale di rivendicazioni. La maggior parte degli attacchi nel database non riceve una rivendicazione ufficiale, indicando che per molte organizzazioni l'obiettivo primario è l'impatto locale o l'intimidazione diretta, piuttosto che la propaganda su scala globale.
