@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.11)  25 FEB 2026 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.11)  25 FEB 2026 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1505,30 +1505,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-<chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png, id=439, 1431.84938pt x 743.77875pt>
+<chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png, id=440, 1431.84938pt x 743.77875pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png  used on input line 87.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png  used on input line 95.
 (pdftex.def)             Requested size: 352.81554pt x 183.26582pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[20 <./chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png>]
-<chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png, id=450, 560.0925pt x 410.2828pt>
-File: chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png Graphic file (type png)
-<use chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png  used on input line 114.
-(pdftex.def)             Requested size: 352.81554pt x 258.45448pt.
-<chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png, id=451, 557.08125pt x 410.2828pt>
-File: chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png Graphic file (type png)
-<use chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png  used on input line 121.
-(pdftex.def)             Requested size: 352.81554pt x 259.85056pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1540,11 +1521,36 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21 <./chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png>]
-<chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png, id=462, 1433.355pt x 741.52031pt>
+[20]
+<chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png, id=452, 560.0925pt x 410.2828pt>
+File: chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png Graphic file (type png)
+<use chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png>
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png  used on input line 122.
+(pdftex.def)             Requested size: 352.81554pt x 258.45448pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png, id=453, 557.08125pt x 410.2828pt>
+File: chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png Graphic file (type png)
+<use chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png>
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png  used on input line 129.
+(pdftex.def)             Requested size: 352.81554pt x 259.85056pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21 <./chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico.png>]
+<chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png, id=464, 1433.355pt x 741.52031pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png  used on input line 145.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png  used on input line 153.
 (pdftex.def)             Requested size: 352.81554pt x 182.517pt.
 
 
@@ -1557,19 +1563,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22 <./chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png>]
-<chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png, id=473, 1430.34375pt x 735.49782pt>
+[22 <./chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico.png>]
+<chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png, id=475, 1430.34375pt x 735.49782pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png  used on input line 168.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png  used on input line 176.
 (pdftex.def)             Requested size: 352.81554pt x 181.41621pt.
-<chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png, id=474, 1434.86063pt x 740.7675pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png, id=476, 1434.86063pt x 740.7675pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png  used on input line 176.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png  used on input line 184.
 (pdftex.def)             Requested size: 352.81554pt x 182.13956pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
@@ -1579,7 +1588,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[23 <./chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png> <./chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png>]
+[23 <./chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1587,20 +1596,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[24 <./chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png>]
-<chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png, id=494, 838.63312pt x 490.83376pt>
+[24 <./chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico.png> <./chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico.png>]
+<chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png, id=497, 838.63312pt x 490.83376pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png  used on input line 224.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png  used on input line 232.
 (pdftex.def)             Requested size: 352.81554pt x 206.49329pt.
-<chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png, id=496, 746.03719pt x 398.23781pt>
-File: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png Graphic file (type png)
-<use chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png  used on input line 248.
-(pdftex.def)             Requested size: 352.81554pt x 188.33243pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1609,21 +1610,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25 <./chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png>]
-<chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png, id=507, 1438.6247pt x 736.25063pt>
+[25 <./chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico.png> <./chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico.png>]
+<chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png, id=506, 746.03719pt x 398.23781pt>
+File: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png Graphic file (type png)
+<use chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png>
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png  used on input line 256.
+(pdftex.def)             Requested size: 352.81554pt x 188.33243pt.
+<chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png, id=508, 1438.6247pt x 736.25063pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png  used on input line 263.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png  used on input line 271.
 (pdftex.def)             Requested size: 352.81554pt x 180.55711pt.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26 <./chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png> <./chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1631,20 +1632,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[27]
-<chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png, id=528, 1032.10594pt x 565.36218pt>
+[26 <./chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27 <./chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico.png>]
+<chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png, id=525, 1032.10594pt x 565.36218pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png  used on input line 301.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png  used on input line 309.
 (pdftex.def)             Requested size: 352.81554pt x 193.26442pt.
-<chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png, id=530, 1032.10594pt x 569.12625pt>
-File: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png Graphic file (type png)
-<use chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png  used on input line 320.
-(pdftex.def)             Requested size: 352.81554pt x 194.55115pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1654,20 +1655,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [28 <./chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico.png>]
-<chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png, id=541, 1432.60219pt x 741.52031pt>
+<chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png, id=540, 1032.10594pt x 569.12625pt>
+File: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png Graphic file (type png)
+<use chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png>
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png  used on input line 328.
+(pdftex.def)             Requested size: 352.81554pt x 194.55115pt.
+<chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png, id=542, 1432.60219pt x 741.52031pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png  used on input line 335.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png  used on input line 343.
 (pdftex.def)             Requested size: 352.81554pt x 182.61884pt.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <./chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png> <./chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1675,40 +1676,46 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[30]
+[29 <./chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30 <./chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico.png>]
 <chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png, id=561, 1440.13031pt x 742.27313pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png  used on input line 382.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png  used on input line 390.
 (pdftex.def)             Requested size: 352.81554pt x 181.84152pt.
 <chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png, id=562, 1437.87187pt x 746.03719pt>
 File: chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png Graphic file (type png)
 <use chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png>
-Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png  used on input line 390.
+Package pdftex.def Info: chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png  used on input line 398.
 (pdftex.def)             Requested size: 352.81554pt x 183.0596pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[31 <./chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png> <./chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png>]
-<chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png, id=569, 1292.57906pt x 704.6325pt>
+[31 <./chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico.png>]
+<chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png, id=571, 1292.57906pt x 704.6325pt>
 File: chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png Graphic file (type png)
 <use chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png>
-Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png  used on input line 418.
+Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png  used on input line 426.
 (pdftex.def)             Requested size: 352.81554pt x 192.32841pt.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32 <./chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1716,11 +1723,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[33]
-<chapter8/images/dashboard/dash_diomi/dati dash 5.png, id=591, 743.02594pt x 316.18124pt>
+[32 <./chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[33 <./chapter8/images/dashboard/dash_diomi/previsione volume attacchi.png>]
+<chapter8/images/dashboard/dash_diomi/dati dash 5.png, id=592, 743.02594pt x 316.18124pt>
 File: chapter8/images/dashboard/dash_diomi/dati dash 5.png Graphic file (type png)
 <use chapter8/images/dashboard/dash_diomi/dati dash 5.png>
-Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dati dash 5.png  used on input line 455.
+Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dati dash 5.png  used on input line 463.
 (pdftex.def)             Requested size: 352.81554pt x 150.13457pt.
 
 
@@ -1734,7 +1749,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <chapter8/images/dashboard/dash_diomi/dash 6.png, id=600, 1415.2875pt x 726.46407pt>
 File: chapter8/images/dashboard/dash_diomi/dash 6.png Graphic file (type png)
 <use chapter8/images/dashboard/dash_diomi/dash 6.png>
-Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dash 6.png  used on input line 479.
+Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dash 6.png  used on input line 487.
 (pdftex.def)             Requested size: 352.81554pt x 181.09457pt.
 
 
@@ -1745,14 +1760,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [35 <./chapter8/images/dashboard/dash_diomi/dash 6.png>]
-Overfull \hbox (0.44328pt too wide) in paragraph at lines 501--502
+Overfull \hbox (0.44328pt too wide) in paragraph at lines 509--510
 \OT1/ppl/m/n/10.95 (-20) 8.494.047$ \T1/ppl/m/n/10.95 (-20) dol-la-ri a tri-me-stre. Tut-ta-via, l'in-ter-val-lo di con-fi-den-za è co-los-sa-le: $\OMS/zplm/m/n/10.95 ^^F\OT1/ppl/m/n/10.95 (-20) 250.738.534$
  []
 
-<chapter8/images/dashboard/dash_diomi/dati dash 6.png, id=612, 1129.97156pt x 545.78906pt>
+<chapter8/images/dashboard/dash_diomi/dati dash 6.png, id=610, 1129.97156pt x 545.78906pt>
 File: chapter8/images/dashboard/dash_diomi/dati dash 6.png Graphic file (type png)
 <use chapter8/images/dashboard/dash_diomi/dati dash 6.png>
-Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dati dash 6.png  used on input line 507.
+Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dati dash 6.png  used on input line 515.
 (pdftex.def)             Requested size: 352.81554pt x 170.40875pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1762,25 +1777,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [36 <./chapter8/images/dashboard/dash_diomi/dati dash 6.png>]
-<chapter8/images/dashboard/dash_diomi/dash 7.png, id=622, 1442.38875pt x 718.93594pt>
+<chapter8/images/dashboard/dash_diomi/dash 7.png, id=623, 1442.38875pt x 718.93594pt>
 File: chapter8/images/dashboard/dash_diomi/dash 7.png Graphic file (type png)
 <use chapter8/images/dashboard/dash_diomi/dash 7.png>
-Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dash 7.png  used on input line 540.
+Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dash 7.png  used on input line 548.
 (pdftex.def)             Requested size: 352.81554pt x 175.85014pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[37 <./chapter8/images/dashboard/dash_diomi/dash 7.png>]
-<chapter8/images/dashboard/dash_diomi/dati dash 7.png, id=632, 963.6pt x 456.20438pt>
-File: chapter8/images/dashboard/dash_diomi/dati dash 7.png Graphic file (type png)
-<use chapter8/images/dashboard/dash_diomi/dati dash 7.png>
-Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dati dash 7.png  used on input line 574.
-(pdftex.def)             Requested size: 352.81554pt x 167.0318pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1792,7 +1793,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[38])
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[38 <./chapter8/images/dashboard/dash_diomi/dash 7.png>]
+<chapter8/images/dashboard/dash_diomi/dati dash 7.png, id=644, 963.6pt x 456.20438pt>
+File: chapter8/images/dashboard/dash_diomi/dati dash 7.png Graphic file (type png)
+<use chapter8/images/dashboard/dash_diomi/dati dash 7.png>
+Package pdftex.def Info: chapter8/images/dashboard/dash_diomi/dati dash 7.png  used on input line 582.
+(pdftex.def)             Requested size: 352.81554pt x 167.0318pt.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1830,17 +1845,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2E9727F648C382ACA07BF4F27BCE3B04;7388.
  ) 
 Here is how much of TeX's memory you used:
- 38608 strings out of 467871
- 769280 string characters out of 5418375
+ 38613 strings out of 467871
+ 769321 string characters out of 5418375
  1225880 words of memory out of 5000000
  65956 multiletter control sequences out of 15000+600000
- 718287 words of font info for 522 fonts, out of 8000000 for 9000
+ 718372 words of font info for 524 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,14n,139p,2573b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/lucad/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (48 pages, 8280281 bytes).
+Output written on main.pdf (48 pages, 8281829 bytes).
 PDF statistics:
- 759 PDF objects out of 1000 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
+ 762 PDF objects out of 1000 (max. 8388607)
+ 212 named destinations out of 1000 (max. 500000)
  126401 words of extra memory for PDF output out of 128383 (max. 10000000)
 
