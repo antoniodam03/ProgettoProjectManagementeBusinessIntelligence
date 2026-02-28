@@ -3,63 +3,75 @@
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{Introduzione}{1}{section*.5}%
 \contentsline {section}{\numberline {0.1}Approfondimento del Dataset Global Terrorism Database (GTD)}{1}{section.0.1}%
-\contentsline {subsection}{\numberline {0.1.1}Qualità dei Dati e Preparazione (ETL)}{4}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.1}Qualità dei Dati e Preparazione (ETL)}{3}{subsection.0.1.1}%
 \contentsline {subsection}{\numberline {0.1.2}Preprocessing dei Dati in Python}{4}{subsection.0.1.2}%
-\contentsline {chapter}{\numberline {1}Qlik}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Analisi descrittiva}{7}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Caricamento dei dati su Qlik}{7}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Data Analysis Dataset Global Terrorism Database}{8}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Analisi della distribuzione geopolitica delle minacce}{9}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Utente}{9}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Obiettivo}{10}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Filtri ed esempi di utilizzo}{10}{subsection.1.3.3}%
-\contentsline {subsubsection}{Evoluzione degli "Hotspot" e della Matrice Ideologica (Filtro Anno e Regione)}{10}{section*.11}%
-\contentsline {subsubsection}{Analisi della Letalità (Filtro per Criticità)}{12}{section*.16}%
-\contentsline {section}{\numberline {1.4}Analisi delle tattiche di attacco e armamenti}{15}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Utente}{15}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Obiettivo}{16}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{16}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Analisi dell'impatto economico e danni causati}{20}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Utente}{21}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Obiettivo}{21}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Filtri interattivi ed esempi di utilizzo}{22}{subsection.1.5.3}%
-\contentsline {section}{\numberline {1.6}Geopolitica dei Sequestri: Attori, Vittime e Dinamiche Estorsive}{26}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Utente}{27}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Obiettivo}{28}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Filtri interattivi ed esempi di utilizzo}{28}{subsection.1.6.3}%
-\contentsline {section}{\numberline {1.7}Analisi strategica delle rivendicazioni e propaganda}{33}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Trend Storico del Tasso di Rivendicazione}{33}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Rivendicazioni: Successi vs Fallimenti}{34}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Utente}{34}{subsection.1.7.3}%
-\contentsline {subsection}{\numberline {1.7.4}Obiettivo}{35}{subsection.1.7.4}%
-\contentsline {subsection}{\numberline {1.7.5}Filtri interattivi ed esempi di utilizzo}{35}{subsection.1.7.5}%
-\contentsline {section}{\numberline {1.8}Conclusioni}{36}{section.1.8}%
-\contentsline {chapter}{\numberline {2}Tableau}{37}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Seguire pdf}{37}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Power BI}{38}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Materiali e Metodi}{38}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Acquisizione e Trasformazione dei Dati}{39}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Arricchimento del Modello Dati (Misure e Colonne)}{39}{subsection.3.1.2}%
-\contentsline {subsubsection}{- Analisi della Letalità e dell'Impatto}{39}{section*.41}%
-\contentsline {subsubsection}{- Analisi della Resilienza e del Fallimento}{40}{section*.42}%
-\contentsline {subsubsection}{- Profilazione Logistica e Tattica}{40}{section*.43}%
-\contentsline {subsubsection}{- Strategia di Comunicazione}{41}{section*.44}%
-\contentsline {section}{\numberline {3.2}Analisi}{42}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Mappatura Comportamentale e Cluster Analysis}{42}{subsection.3.2.1}%
-\contentsline {subsubsection}{Obiettivo}{42}{section*.45}%
-\contentsline {subsubsection}{Metodologia di Clustering}{42}{section*.47}%
-\contentsline {subsubsection}{Struttura della Dashboard e Analisi dei Risultati}{42}{section*.48}%
-\contentsline {subsection}{\numberline {3.2.2}Analisi dei Fattori di Rischio e Key Influencers}{43}{subsection.3.2.2}%
-\contentsline {subsubsection}{Obiettivo}{43}{section*.49}%
-\contentsline {subsubsection}{Struttura della Dashboard}{43}{section*.51}%
-\contentsline {subsubsection}{Analisi dei Dati e Risultati}{43}{section*.52}%
-\contentsline {subsection}{\numberline {3.2.3}Anatomia del Fallimento e Resilienza dei Target}{44}{subsection.3.2.3}%
-\contentsline {subsubsection}{Obiettivo e Struttura}{44}{section*.53}%
-\contentsline {subsubsection}{Analisi dei Dati e Risultati}{45}{section*.55}%
-\contentsline {subsection}{\numberline {3.2.4}Analisi dell’Impatto Economico e Finanziamento}{46}{subsection.3.2.4}%
-\contentsline {subsubsection}{Obiettivo e Struttura}{46}{section*.56}%
-\contentsline {subsubsection}{Analisi dei Dati e Risultati}{46}{section*.58}%
-\contentsline {subsection}{\numberline {3.2.5}Analisi della Logistica Operativa e Strategia di Comunicazione}{47}{subsection.3.2.5}%
-\contentsline {subsubsection}{Obiettivo e Struttura}{47}{section*.59}%
-\contentsline {subsubsection}{Analisi dei Dati e Risultati}{48}{section*.61}%
-\contentsline {chapter}{Sitografia}{49}{chapter*.62}%
+\contentsline {chapter}{\numberline {1}Qlik}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Analisi descrittiva}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Caricamento dei dati su Qlik}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Data Analysis Dataset Global Terrorism Database}{7}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Analisi della distribuzione geopolitica delle minacce}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Utente}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Obiettivo}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Filtri ed esempi di utilizzo}{9}{subsection.1.3.3}%
+\contentsline {subsubsection}{Evoluzione degli "Hotspot" e della Matrice Ideologica (Filtro Anno e Regione)}{9}{section*.10}%
+\contentsline {subsubsection}{Analisi della Letalità (Filtro per Criticità)}{11}{section*.15}%
+\contentsline {section}{\numberline {1.4}Analisi delle tattiche di attacco e armamenti}{14}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Utente}{14}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Obiettivo}{15}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{15}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Analisi dell'impatto economico e danni causati}{19}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Utente}{20}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Obiettivo}{20}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Filtri interattivi ed esempi di utilizzo}{21}{subsection.1.5.3}%
+\contentsline {section}{\numberline {1.6}Geopolitica dei Sequestri: Attori, Vittime e Dinamiche Estorsive}{25}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Utente}{26}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Obiettivo}{27}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Filtri interattivi ed esempi di utilizzo}{27}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}Analisi strategica delle rivendicazioni e propaganda}{32}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Trend Storico del Tasso di Rivendicazione}{32}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Rivendicazioni: Successi vs Fallimenti}{33}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Utente}{33}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Obiettivo}{34}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Filtri interattivi ed esempi di utilizzo}{34}{subsection.1.7.5}%
+\contentsline {section}{\numberline {1.8}Conclusioni}{35}{section.1.8}%
+\contentsline {chapter}{\numberline {2}Tableau}{36}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduzione}{36}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Metodologia di Analisi}{36}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Strategia di Visualizzazione}{37}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Gestione della Qualità dei Dati}{37}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Fondamenti Statistici dell'Analisi Predittiva (Forecasting)}{38}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Panoramica delle Dashboard Realizzate}{39}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}{39}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Dashboard 2: Analisi e Previsione della Letalità per Regione}{41}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Dashboard 3: Previsione dei Bersagli (Target) per Regione}{45}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}{48}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Dashboard 5: Previsione del Volume degli Attacchi}{51}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco}{53}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.7}Dashboard 7: Previsione dell'Intensità (Vittime) per Arma (Diagnostica Avanzata)}{56}{subsection.2.6.7}%
+\contentsline {chapter}{\numberline {3}Power BI}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Materiali e Metodi}{59}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Acquisizione e Trasformazione dei Dati}{60}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Arricchimento del Modello Dati (Misure e Colonne)}{60}{subsection.3.1.2}%
+\contentsline {subsubsection}{- Analisi della Letalità e dell'Impatto}{60}{section*.91}%
+\contentsline {subsubsection}{- Analisi della Resilienza e del Fallimento}{61}{section*.92}%
+\contentsline {subsubsection}{- Profilazione Logistica e Tattica}{61}{section*.93}%
+\contentsline {subsubsection}{- Strategia di Comunicazione}{62}{section*.94}%
+\contentsline {section}{\numberline {3.2}Analisi}{63}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Mappatura Comportamentale e Cluster Analysis}{63}{subsection.3.2.1}%
+\contentsline {subsubsection}{Obiettivo}{63}{section*.95}%
+\contentsline {subsubsection}{Metodologia di Clustering}{63}{section*.97}%
+\contentsline {subsubsection}{Struttura della Dashboard e Analisi dei Risultati}{63}{section*.98}%
+\contentsline {subsection}{\numberline {3.2.2}Analisi dei Fattori di Rischio e Key Influencers}{64}{subsection.3.2.2}%
+\contentsline {subsubsection}{Obiettivo}{64}{section*.99}%
+\contentsline {subsubsection}{Struttura della Dashboard}{64}{section*.101}%
+\contentsline {subsubsection}{Analisi dei Dati e Risultati}{64}{section*.102}%
+\contentsline {subsection}{\numberline {3.2.3}Anatomia del Fallimento e Resilienza dei Target}{65}{subsection.3.2.3}%
+\contentsline {subsubsection}{Obiettivo e Struttura}{65}{section*.103}%
+\contentsline {subsubsection}{Analisi dei Dati e Risultati}{66}{section*.105}%
+\contentsline {subsection}{\numberline {3.2.4}Analisi dell’Impatto Economico e Finanziamento}{67}{subsection.3.2.4}%
+\contentsline {subsubsection}{Obiettivo e Struttura}{67}{section*.106}%
+\contentsline {subsubsection}{Analisi dei Dati e Risultati}{67}{section*.108}%
+\contentsline {subsection}{\numberline {3.2.5}Analisi della Logistica Operativa e Strategia di Comunicazione}{68}{subsection.3.2.5}%
+\contentsline {subsubsection}{Obiettivo e Struttura}{68}{section*.109}%
+\contentsline {subsubsection}{Analisi dei Dati e Risultati}{69}{section*.111}%
+\contentsline {chapter}{Conclusioni}{70}{section*.112}%
