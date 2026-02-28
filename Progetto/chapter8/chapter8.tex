@@ -257,7 +257,7 @@ In sintesi, l’analisi non si limita a contare gli eventi, ma cerca di comprend
 L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione dei filtri permette all'analista di esplorare i dati in modo interattivo per isolare scenari complessi e verificare ipotesi investigative in tempo reale. Attraverso la selezione mirata delle variabili, è possibile rispondere a quesiti operativi specifici:
 
 \begin{itemize}
-    \item \textbf{1. Quali sono le modalità di attacco predominanti?}
+    \item \textbf{Quali sono le modalità di attacco predominanti?}
     L'analisi del Grafico a Ciambella evidenzia una netta prevalenza della categoria \textit{Bombing/Explosion}, che costituisce la modalità standard per la maggioranza dei gruppi armati, seguita dagli assalti armati (\textit{Armed Assault}). L'applicazione del filtro \textit{Suicide} conferma e radicalizza questa tendenza: in presenza di attacchi suicidi, l'uso di \textit{Explosives} diventa l'armamento quasi esclusivo, marginalizzando drasticamente altre modalità come gli assalti armati (\textit{Armed Assault}). Questo dato conferma che il vettore suicida è tatticamente concepito quasi sempre come un sistema di guida umano per ordigni esplosivi.
     
     La Figura \ref{fig:suicide} mostra la dashboard con il filtro applicato.
@@ -269,7 +269,7 @@ L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione de
     \label{fig:suicide}
     \end{figure}
 
-    \item \textbf{2. Qual è il tasso di letalità per ogni tipo di arma?}
+    \item \textbf{Qual è il tasso di letalità per ogni tipo di arma?}
     Applicando il filtro \textit{Bersaglio = Airports \& Aircraft}, il Grafico Combinato permette di isolare la minaccia specifica per il settore aviazione.
     L'analisi visiva evidenzia che gli \textit{Explosives} (Esplosivi) costituiscono l'arma nettamente più utilizzata in termini di frequenza (Barra più alta). Il confronto con la linea della letalità conferma inoltre che gli esplosivi detengono il primato assoluto del tasso di mortalità per questo scenario, superando drasticamente l'impatto di altre armi come \textit{Firearms} o \textit{Incendiary}, che pur essendo presenti, registrano livelli di letalità marginali.
 
@@ -282,7 +282,7 @@ L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione de
     \label{fig:airport}
     \end{figure}
 
-    \item \textbf{3. Adattamento Tattico al Bersaglio}
+    \item \textbf{Adattamento Tattico al Bersaglio}
     Confrontando le modalità di attacco del gruppo Taliban su due categorie di vittime distinte, \textit{Tourists} (Turisti) e \textit{Private Citizens \& Property} (Cittadini Privati), emerge una significativa variazione del \textit{modus operandi}. 
     Mentre contro i cittadini privati la tattica predominante è l’uso massiccio di \textit{Bombing/Explosion} e \textit{Armed Assault}, volto a generare intimidazione diffusa e destabilizzazione sociale, contro i turisti si osserva uno scenario tattico più composito. Sebbene emerga un’incidenza rilevante di \textit{Hostage Taking} (Presa di Ostaggi) per il suo elevato valore negoziale e mediatico, le modalità più convenzionali non vengono abbandonate: sia il \textit{Bombing/Explosion} che l’\textit{Armed Assault} registrano infatti una frequenza del 33{,}3\% ciascuno.
     Ciò evidenzia una capacità strategica di differenziare l’azione operativa, alternando la violenza indiscriminata contro la popolazione locale a un mix di attacchi diretti e rapimenti mirati contro target internazionali.
@@ -385,7 +385,7 @@ L’efficacia della dashboard risiede nella sua natura dinamica: l’integrazion
 
 \begin{itemize}
 
-\item \textbf{1. Quali regioni e quali tattiche generano il maggiore impatto economico?} \\
+\item \textbf{Quali regioni e quali tattiche generano il maggiore impatto economico?} \\
 Osservando il grafico “Analisi comparativa dei danni per regione e tattica” nella sua configurazione globale, è possibile identificare immediatamente le macro-aree con la maggiore concentrazione di perdite patrimoniali. 
 Successivamente, {applicando il filtro \textit{Regione}}, l'analisi scende nel dettaglio per verificare se determinate modalità operative (ad esempio \textit{Bombing/Explosion}) risultino sistematicamente associate ai danni più elevati in quell'area specifica.
 
@@ -418,14 +418,14 @@ Tramite il filtro \textit{Zona Geografica}, è possibile inoltre isolare ulterio
     \end{figure}
 
 
-\item \textbf{2. L’impatto economico è in crescita nel lungo periodo?} \\
+\item \textbf{L’impatto economico è in crescita nel lungo periodo?} \\
 Attraverso il grafico “Trend storico e previsione dei danni”, l’utente può analizzare l’andamento annuale del valore economico distrutto. 
 L'integrazione di una \textbf{linea di regressione} consente di distinguere tra picchi legati a singoli eventi straordinari e variazioni strutturali di lungo periodo, fornendo un supporto concreto alle valutazioni prospettiche sul rischio economico. \\
 Ad esempio, osservando la dashboard in Figura \ref{fig:impatto_economicomicroregione}, si nota che in Italia, pur essendoci stati eventi di grande impatto economico (come la strage di Bologna), l’andamento complessivo dei danni mostra una diminuzione nel tempo. La linea di regressione, con pendenza negativa, conferma questa tendenza.  
 
 Questo indica che, nel tempo sia la frequenza sia l’intensità degli eventi più distruttivi si sono ridotte, probabilmente grazie a misure di sicurezza più efficaci e a una maggiore capacità di risposta e protezione delle infrastrutture.
 
-\item \textbf{3. Qual è l'impatto economico di un certo tipo di attacco e come si distribuisce?} \\
+\item \textbf{Qual è l'impatto economico di un certo tipo di attacco e come si distribuisce?} \\
 Utilizzando il filtro \textit{Attack Type} e selezionando, ad esempio, la voce \textit{Armed Assault}, la dashboard isola i costi generati specificamente dalle incursioni armate. Questa vista permette di rispondere a tre interrogativi strategici sulla natura di questa minaccia:
 
 \begin{enumerate}
@@ -448,7 +448,7 @@ Utilizzando il filtro \textit{Attack Type} e selezionando, ad esempio, la voce \
     \label{fig:impattoassalto}
     \end{figure}
 
-    \item \textbf{4. Profilazione economica di un gruppo terroristico} \\
+    \item \textbf{Profilazione economica di un gruppo terroristico} \\
 La dashboard consente un'analisi granulare focalizzata su singoli attori. Selezionando un determinato \textit{Gruppo Terroristico} dal pannello filtri, l'intera interfaccia si riconfigura per mostrare il "profilo economico" dell'organizzazione.
 \begin{itemize}
     \item I \textbf{KPI} ricalcolano immediatamente il \textit{Danno Medio} e \textit{Massimo}, permettendo di capire se il gruppo opera con attacchi frequenti a basso costo o con rari eventi catastrofici.
@@ -556,7 +556,7 @@ consapevole le strategie di mitigazione del rischio e di tutela del personale.
 L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione dei filtri consente al Security Manager e all'Analista di esplorare i dati in modo interattivo, isolando specifici scenari di crisi e verificando ipotesi sulla sicurezza in tempo reale. Attraverso la selezione mirata delle variabili, è possibile rispondere a quesiti operativi concreti riguardanti la minaccia dei sequestri.
 
 \begin{itemize}
-    \item \textbf{1. Quali macro-aree presentano la maggiore densità di rapimenti e chi sono gli attori?}
+    \item \textbf{Quali macro-aree presentano la maggiore densità di rapimenti e chi sono gli attori?}
     Osservando la Mappa Geografica nella sua configurazione globale, è possibile identificare le zone critiche dove il fenomeno è endemico. Successivamente, applicando il filtro \textit{Geografia$\rightarrow$Region}, l'analisi scende nel dettaglio per verificare quali gruppi siano egemoni in quel territorio e come si distribuisca la minaccia tra i vari stati.
 
     Un esempio significativo è riportato in Figura \ref{fig:Furti}, dove è stato applicato il filtro sulla macro-area \textit{South Asia}. La dashboard isola il sotto-insieme di dati pertinente e l'analisi incrociata dei grafici permette di ricostruire lo scenario operativo:
@@ -573,7 +573,7 @@ L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione de
     \label{fig:Furti}
     \end{figure}
 
-    \item \textbf{2. Dove si localizza esattamente la minaccia all'interno dei confini nazionali?}
+    \item \textbf{Dove si localizza esattamente la minaccia all'interno dei confini nazionali?}
 Tramite il filtro \textit{Geografia$\rightarrow$Country}, è possibile isolare l'analisi per singolo stato, passando da una visione strategica regionale a un contesto tattico nazionale.
 Questa selezione attiva il meccanismo di \textit{Drill-down} sulla mappa: i poligoni areali lasciano il posto al \textit{Point Layer}, che geolocalizza i singoli eventi di sequestro.
 
@@ -592,7 +592,7 @@ Un'esempio di questa analisi è mostrato in Figura \ref{fig:sequestriIndia}, dov
     \label{fig:sequestriIndia}
     \end{figure}
 
-\item \textbf{3. Filtro per Città (Analisi Micro-Tattica):} 
+\item \textbf{Filtro per Città (Analisi Micro-Tattica):} 
 Attraverso il filtro Geografia $\rightarrow$ City, l’analisi può essere ulteriormente
 raffinata, consentendo di isolare un singolo centro urbano e di osservare la distribuzione
 puntuale degli eventi di sequestro all’interno dello spazio cittadino.
@@ -626,7 +626,7 @@ nei confronti di personale straniero, come mostrato in Figura \ref{fig:cittadina
     \label{fig:cittadina}
 \end{figure}
 
-\item \textbf{4. Filtro per Anno (Analisi Evolutiva Temporale):}
+\item \textbf{Filtro per Anno (Analisi Evolutiva Temporale):}
 Il filtro Anno consente di analizzare l’evoluzione del fenomeno dei sequestri
 nel lungo periodo, permettendo di confrontare differenti fasi storiche e di
 valutare eventuali cambiamenti nell’intensità, negli attori coinvolti e nel
@@ -754,7 +754,7 @@ In sintesi, l’analisi mira a trasformare la complessità delle dinamiche propa
 L'efficacia della dashboard risiede nella sua natura dinamica: l'integrazione dei filtri consente all'Analista di Intelligence o al Security Manager di esplorare i dati in modo interattivo, isolando specifici scenari geopolitici e verificando ipotesi sulle tattiche di \textit{Information Warfare} in tempo reale. Attraverso la selezione mirata delle variabili (Gruppo, Regione, Nazione), è possibile rispondere a quesiti operativi concreti riguardanti la strategia comunicativa e la minaccia percepita.
 
 \begin{itemize}
-    \item \textbf{1. Qual è il grado di dipendenza mediatica e l'impiego del martirio da parte di un network terroristico strutturato?}
+    \item \textbf{Qual è il grado di dipendenza mediatica e l'impiego del martirio da parte di un network terroristico strutturato?}
     Tramite il pannello di controllo, è possibile isolare l'analisi su uno specifico ``brand del terrore'' in un determinato teatro operativo. Un esempio significativo è riportato in Figura \ref{fig:PropagandaAQIM}, dove sono stati applicati i filtri \textit{Geografia$\rightarrow$Middle East \& North Africa$\rightarrow$Algeria} e \textit{Gruppo$\rightarrow$Al-Qaida in the Islamic Maghreb (AQIM)}. La dashboard isola il sotto-insieme di dati pertinente e l'analisi incrociata permette di ricostruire il profilo psicologico e mediatico del gruppo:
     \begin{enumerate}
         \item \textbf{Magnitudo e Tasso di Propaganda:} I KPI mostrano un volume di 179 attentati con un Tasso Medio di Propaganda del 32\%, un valore quasi doppio rispetto alla media globale (17\%). Questo indica una forte dipendenza del gruppo dall'attenzione pubblica per legittimare la propria presenza sul territorio algerino.

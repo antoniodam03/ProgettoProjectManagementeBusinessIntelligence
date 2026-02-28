@@ -164,6 +164,7 @@ Per preparare il dataset del \textit{Global Terrorism Database} per l'importazio
 \begin{enumerate}
     \item \textit{Importazione delle librerie e caricamento del dataset:}
 
+    {\small
     \begin{verbatim}
 import pandas as pd
 import numpy as np
@@ -184,20 +185,26 @@ columns_of_interest = [
 
 df = pd.read_csv(file_path, usecols=columns_of_interest, 
 encoding='ISO-8859-1', engine='python')
-\end{verbatim}
+    \end{verbatim}
+    }
 
     \item \textit{Pulizia dei valori numerici:} sostituzione di \texttt{-99} con \texttt{NaN}
-\begin{verbatim}
+
+    {\small
+    \begin{verbatim}
 numeric_cols_unknown = ["nkill", "nwound", "propvalue", "ransomamt", 
 "nperps"]
 
 for col in numeric_cols_unknown:
     df[col] = pd.to_numeric(df[col], errors='coerce')
     df[col] = df[col].replace(-99, np.nan)
-\end{verbatim}
+    \end{verbatim}
+    }
 
     \item \textit{Creazione di una colonna data unificata:} combinazione di anno, mese e giorno in una singola colonna \texttt{date}.
-\begin{verbatim}
+
+    {\small
+    \begin{verbatim}
 def create_date(row):
     try:
         year = int(row['iyear'])
@@ -209,22 +216,24 @@ def create_date(row):
 
 df['date'] = df.apply(create_date, axis=1)
 df = df.drop(columns=['iyear', 'imonth', 'iday'])
-\end{verbatim}
+    \end{verbatim}
+    }
 
     \item \textit{Esplorazione del dataset pulito:} visualizzazione delle prime righe per controllo.
-\begin{verbatim}
+
+    {\small
+    \begin{verbatim}
 df.head()
-\end{verbatim}
+    \end{verbatim}
+    }
 
     \item \textit{Salvataggio del dataset pulito:} creazione di un file CSV pronto per BI.
-\begin{verbatim}
+
+    {\small
+    \begin{verbatim}
 output_path = "/Users/antonio/Desktop/gtd_cleaned_CORRECT.csv"
 df.to_csv(output_path, index=False, encoding='utf-8')
 print("Dataset corretto generato.")
-\end{verbatim}
+    \end{verbatim}
+    }
 \end{enumerate}
-
-
-
-
-
