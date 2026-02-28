@@ -1,10 +1,616 @@
-\chapter{Tableau} %\label{1cap:spinta_laterale}
+\chapter{Tableau} \label{cap:tableau}
 
 \begin{preamble}
 {\em
-Preambolo da scrivere
+    Questo capitolo è dedicato all'esplorazione visiva e all'analisi predittiva del Global Terrorism Database (GTD) attraverso l'ambiente analitico di Tableau. Trasformando oltre quarant'anni di dati storici in dashboard interattive e modelli di forecasting, il presente lavoro si propone di superare la semplice statistica descrittiva. L'obiettivo è fornire strumenti dinamici in grado di svelare pattern nascosti, quantificare l'evoluzione della letalità e proiettare scenari futuri, convertendo così l'intrinseca complessità dei dati grezzi in informazioni strategiche (\textit{Actionable Insights}) a supporto dei processi decisionali e di sicurezza.
 }
 \end{preamble}
 
+<<<<<<< HEAD
 \section{Seguire pdf}
 
+=======
+\section{Introduzione}
+
+Il presente capitolo illustra la fase di \textbf{Data Visualization} e \textbf{Analisi Predittiva}, realizzata mediante l'utilizzo del software Tableau. La scelta di questo strumento è stata dettata dalla necessità di gestire un dataset complesso come il \textit{Global Terrorism Database} (GTD), caratterizzato da una profonda serie storica (1970--2017) e da una natura multivariata (geografica, temporale e categorica).
+
+L'obiettivo principale del progetto è trasformare i dati grezzi in informazioni strategiche (\textit{Actionable Insights}). Non ci si è limitati a una rappresentazione descrittiva degli eventi passati, ma si è sfruttato il motore analitico di Tableau per implementare:
+
+\begin{itemize}
+    \item \textbf{Modelli di Forecasting:} basati su tecniche di smussamento esponenziale per proiettare i trend futuri.
+    \item \textbf{Clustering:} per individuare pattern nascosti e isolare anomalie all'interno dei dati.
+\end{itemize}
+
+L'analisi mira dunque a isolare le dinamiche della minaccia nel futuro immediato e a medio termine, fornendo una visione d'insieme chiara e scientificamente fondata.
+
+
+\section{Metodologia di Analisi}
+L'approccio analitico adottato segue un flusso logico strutturato in tre fasi distinte, necessarie per rispondere alle \textit{Business Questions} definite in fase di progettazione:
+
+\begin{enumerate}
+    \item \textbf{Analisi Descrittiva (Cosa è successo?):} Esplorazione dei trend storici per comprendere l'evoluzione del fenomeno, la distribuzione geografica degli attacchi e l'impatto in termini di vittime ed economia.
+    \item \textbf{Analisi Diagnostica (Perché è successo?):} Indagine sulle correlazioni tra variabili (es. relazione tra numero di feriti e numero di morti) e sulla segmentazione degli eventi tramite tecniche di clustering per isolare gli attacchi ad alta intensità.
+    \item \textbf{Analisi Predittiva (Cosa potrebbe succedere?):} Applicazione di algoritmi predittivi per stimare i volumi futuri degli attacchi, l'evoluzione della letalità e i target a rischio, fornendo supporto ai processi di pianificazione strategica e di sicurezza.
+\end{enumerate}
+
+\section{Strategia di Visualizzazione}
+Per garantire la massima leggibilità e interattività, le dashboard sono state progettate seguendo le \textit{best practices} della Data Visualization. Ogni visualizzazione è stata costruita per rispondere a una specifica domanda chiave, utilizzando filtri dinamici (per Regione, Anno o Tipo di Attacco) che permettono all'utente di esplorare i dati a diversi livelli di granularità.
+
+
+Sono state impiegate diverse tipologie di grafici avanzati, tra cui:
+\begin{itemize}
+    \item \textbf{Dual Axis Chart:} per il confronto di metriche con scale differenti.
+    \item \textbf{Scatter Plot:} per l'analisi di dispersione e correlazione.
+    \item \textbf{Highlight Tables:} per la visualizzazione immediata delle densità di rischio tramite gradienti di colore.
+    \item \textbf{Box Plot (Diagrammi a Scatola):} abbinati a scale logaritmiche, per l'analisi diagnostica della dispersione e l'identificazione degli \textit{outliers} estremi (es. letalità delle singole armi).
+    \item \textbf{Small Multiples (Grafici a Faccette):} con assi Y resi indipendenti, per confrontare storicamente grandezze economiche radicalmente diverse senza appiattire la visualizzazione.
+    \item \textbf{Stacked Area e 100\% Stacked Bar Chart:} per l'analisi della composizione percentuale nel tempo (es. evoluzione dei target e tassi di successo/fallimento).
+\end{itemize}
+
+\section{Gestione della Qualità dei Dati}
+Una fase critica antecedente alla visualizzazione ha riguardato la bonifica dei campi relativi alle vittime: \texttt{nkill} (numero di morti) e \texttt{nwound} (numero di feriti). L'analisi preliminare nel Pannello Dati di Tableau ha evidenziato due problematiche strutturali:
+
+\begin{enumerate}
+    \item \textbf{Errata Tipizzazione (Data Type Mismatch):} In fase di importazione, Tableau aveva interpretato queste colonne come stringhe. È stato necessario forzare il \textit{Type Casting} in \textbf{Numero Intero} per abilitare le aggregazioni matematiche (somme, medie).
+    
+    \item \textbf{Gestione dei Valori Nulli (Missing Values):} Numerosi record presentavano valori vuoti. È stata applicata la funzione \texttt{ZN()} (\textit{Zero Null}):
+    \begin{quote}
+        \texttt{nkill\_fix = ZN([nkill])} $\rightarrow$ Se il valore è nullo, viene convertito in 0.
+    \end{quote}
+    
+    \item \textbf{Creazione di Metriche Aggregate (Campi Calcolati):} Per valutare l'impatto umano complessivo degli eventi (Intensità Totale), è stato creato un nuovo campo calcolato unendo i decessi e i feriti bonificati:
+    \begin{quote}
+        \texttt{nvittime = ZN([nkill\_fix ]) + ZN([nwound\_fix ])}
+    \end{quote}
+    
+    \item \textbf{Filtraggio e Riduzione del Rumore (Data Subsetting):} Per garantire la robustezza statistica dei modelli predittivi (in particolare il \textit{Forecasting} sulle armi e sui danni economici), il dataset è stato depurato dalle categorie marginali o prive di una serie storica sufficientemente densa, isolando solo i dati consolidati.
+\end{enumerate}
+
+\section{Fondamenti Statistici dell'Analisi Predittiva (Forecasting)}
+\label{sec:fondamenti_statistici}
+
+Per proiettare i trend futuri all'interno delle dashboard, il motore analitico di Tableau utilizza algoritmi di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). A differenza delle medie mobili semplici, che assegnano lo stesso peso a tutti i dati storici, il livellamento esponenziale attribuisce un peso via via decrescente alle osservazioni più vecchie, rendendo il modello più reattivo ai cambiamenti recenti.
+
+Per garantire una corretta interpretazione dei risultati (\textit{Actionable Insights}) presentati nelle sezioni successive, è fondamentale definire i parametri matematici e le metriche di errore utilizzati per valutare l'affidabilità di ciascuna previsione.
+
+\subsection*{Coefficienti di Livellamento}
+I modelli generati si basano su tre coefficienti principali, i cui valori oscillano tra $0$ e $1$. Valori prossimi a $1$ indicano che il modello si adatta rapidamente alle ultime fluttuazioni, mentre valori prossimi a $0$ indicano una maggiore inerzia e aderenza alla media storica:
+\begin{itemize}
+    \item \textbf{Alpha ($\alpha$) - Livello:} Misura la rapidità con cui il modello aggiorna il valore di base della previsione. Un Alpha basso significa che un improvviso picco anomalo di attacchi non stravolgerà la linea di base futura.
+    \item \textbf{Beta ($\beta$) - Trend:} Determina la reattività del modello ai cambiamenti di pendenza (crescita o decrescita). Se Beta è $0$, il modello non rileva alcuna tendenza strutturale in aumento o in diminuzione.
+    \item \textbf{Gamma ($\gamma$) - Stagionalità:} Regola il peso dato ai pattern ciclici. Un valore superiore a $0$ certifica che il modello ha matematicamente isolato una ricorrenza stagionale (ad esempio, un aumento sistematico degli attacchi nei mesi estivi).
+\end{itemize}
+
+\subsection*{Metriche di Valutazione dell'Errore}
+A causa dell'intrinseca volatilità del fenomeno terroristico (caratterizzato da "Cigni Neri" e picchi anomali improvvisi), Tableau spesso classifica la qualità della previsione come "Scarsa". Questa etichetta non invalida l'algoritmo, ma è il risultato della lettura rigorosa delle seguenti metriche:
+\begin{itemize}
+    \item \textbf{RMSE (Root Mean Square Error)} e \textbf{MAE (Mean Absolute Error):} Esprimono lo scostamento assoluto tra i valori stimati dal modello e i dati reali osservati. Sono misurati nella stessa unità di misura del grafico (es. numero di vittime o dollari di danno).
+    \item \textbf{MASE (Mean Absolute Scaled Error):} È un indicatore fondamentale per validare il modello. Confronta l'errore del modello di livellamento esponenziale con quello di un modello \textit{Naive} (un modello elementare che ipotizza che il valore di domani sarà identico a quello di oggi). Un MASE $< 1$ dimostra matematicamente che l'algoritmo applicato è superiore alla predizione di base e ha intercettato un pattern reale.
+    \item \textbf{MAPE (Mean Absolute Percentage Error):} Esprime l'errore medio in termini percentuali. È la metrica che penalizza maggiormente i dati sul terrorismo: in serie storiche dove i valori normali sono bassi ma si verificano picchi estremi del $+3000\%$, il MAPE si alza vertiginosamente, spingendo il software a classificare precauzionalmente la qualità del modello come "Scarsa" per avvisare l'analista dell'alta varianza.
+\end{itemize}
+
+\section{Panoramica delle Dashboard Realizzate}
+Il progetto si articola in 7 Dashboard, organizzate in un percorso narrativo che parte dall'analisi storica globale per arrivare a previsioni specifiche su target e regioni:
+
+\begin{itemize}
+    \item \textbf{Dashboard 1:} Analisi Temporale degli Attacchi e delle Vittime (Trend Storici).
+    \item \textbf{Dashboard 2:} Analisi e Previsione della Letalità per Regione.
+    \item \textbf{Dashboard 3:} Previsione dei Bersagli (Target) per Regione.
+    \item \textbf{Dashboard 4:} Analisi degli Esiti dell’Attacco (Successo vs Fallimento).
+    \item \textbf{Dashboard 5:} Previsione del Volume degli Attacchi.
+    \item \textbf{Dashboard 6:} Previsione dell’Impatto Economico per Tipo di Attacco.
+    \item \textbf{Dashboard 7:} Previsione dell’Intensità (Vittime) per Tipo di Attacco e Arma.
+
+\end{itemize}
+
+
+\subsection{Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}
+
+\subsubsection*{Obiettivo dell'Analisi}
+Questa dashboard(\ref{Dashboard1}) rappresenta il punto di ingresso all'analisi storica, mettendo a confronto la \textbf{Frequenza} del fenomeno (Conteggio degli Attacchi -- Linea Blu) con la sua \textbf{Letalità Totale} (Somma delle Vittime/\texttt{nkill} -- Linea Rossa). L'obiettivo è verificare la correlazione tra volume di fuoco e impatto umano, rispondendo al quesito: \textit{"L'aumento del numero di attacchi si traduce sempre in un aumento proporzionale delle vittime, o esistono periodi in cui il terrorismo diventa intrinsecamente più letale?"}.
+
+\subsubsection*{Configurazione della Visualizzazione}
+È stato utilizzato un grafico \textbf{Dual Axis} (Doppio Asse) con scale indipendenti:
+\begin{itemize}
+    \item \textbf{Asse Sinistro (Attacchi):} Scala adattata al volume degli eventi.
+    \item \textbf{Asse Destro (Vittime):} Scala adattata al numero dei deceduti.
+\end{itemize}
+Questa scelta tecnica è cruciale: sganciando la sincronizzazione degli assi, è possibile sovrapporre visivamente i trend per confrontare la "forma" delle curve, identificando immediatamente i momenti in cui la mortalità cresce a un ritmo diverso rispetto alla frequenza degli attacchi.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_1_enrico}
+    \caption{Dashboard 1}
+    \label{Dashboard1}
+\end{figure}
+
+
+\subsubsection*{Analisi del Trend (Confronto Attacchi vs Vittime)}
+Osservando il grafico, emergono due fasi distinte:
+\begin{enumerate}
+    \item \textbf{Parallelismo (1970 -- 2000):} Le due linee si muovono quasi all'unisono. Quando gli attacchi salgono, le vittime salgono in proporzione. Questo indica una letalità media costante e una "capacità distruttiva" standardizzata degli attacchi.
+    \item \textbf{Divergenza e Accelerazione (Post-2010):} È la fase più critica. Sebbene entrambe le curve crescano, la linea delle \textbf{Vittime} mostra un'accelerazione verticale più marcata rispetto alla linea degli \textbf{Attacchi}. Questo fenomeno suggerisce un cambiamento strutturale nel \textit{modus operandi}: negli ultimi anni del dataset, il terrorismo è diventato più efficiente nel causare vittime (attacchi di massa, uso di esplosivi più potenti), rompendo la correlazione lineare del passato.
+\end{enumerate}
+
+\subsubsection*{Validazione Statistica dei Modelli}
+Per confermare matematicamente l'osservazione visiva, sono state applicate \textbf{Linee di Tendenza Polinomiali di 3° grado (Cubiche)}. I parametri statistici estratti confermano la robustezza dell'analisi:
+\begin{itemize}
+    \item \textbf{Significatività (P-Value):} Per entrambe le curve, il \textit{P-Value} è $< 0,0001$. Essendo ben al di sotto della soglia di $0,05$, possiamo affermare con certezza statistica che la crescita osservata non è casuale ma descrive un trend reale.
+    \item \textbf{Confronto dei Coefficienti:}
+    \begin{itemize}
+        \item La curva delle Vittime (\ref{Dati_Vittime_Dashboard_1}) ha un coefficiente cubico ($x^3$) di $3,92 \cdot 10^{-8}$.
+        \item La curva degli Attacchi(\ref{Dati_Attacchi_Dashboard_1}) ha un coefficiente cubico ($x^3$) di $1,76 \cdot 10^{-8}$.
+    \end{itemize}
+    \textit{Interpretazione:} Il coefficiente delle vittime è più del doppio di quello degli attacchi. Matematicamente, questo conferma che la curva della mortalità è più "ripida" e cresce più velocemente.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/rosso_dash_1_enrico}
+    \caption{Dati Vittime Dashboard 1}
+    \label{Dati_Vittime_Dashboard_1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/blu_dash_1_enrico}
+    \caption{Dati Attacchi Dashboard 1}
+    \label{Dati_Attacchi_Dashboard_1}
+\end{figure}
+
+\subsubsection*{Conclusioni}
+L'analisi dimostra che il rapporto tra attacchi e vittime non è $1:1$. L'impennata della linea rossa e i coefficienti del modello polinomiale rivelano un aggravamento della minaccia nell'ultimo decennio analizzato: il terrorismo moderno non colpisce solo più spesso, ma colpisce "più forte".
+
+\begin{center}
+    \fbox{
+        \parbox{0.9\textwidth}{
+            \textbf{Nota Metodologica: Il "Missing Data" del 1993}\\
+            I dati relativi al 1993 sono andati persi storicamente a causa di un problema durante il trasferimento degli archivi cartacei della \textit{Pinkerton Global Intelligence Service}. In fase di \textit{Data Cleaning}, si è scelto di mantenere il valore nullo piuttosto che interpolare artificialmente i dati, per preservare l'integrità scientifica. Tableau gestisce correttamente questa mancanza interrompendo la linea, segnalando visivamente l'assenza di informazioni per quell'anno specifico.
+        }
+    }
+\end{center}
+
+\subsection{Dashboard 2: Analisi e Previsione della Letalità per Regione}
+
+\subsubsection*{Obiettivo dell'Analisi}
+Questa dashboard (\ref{Dashboard_2}) indaga la relazione tra l'intensità dell'attacco (misurata in numero di feriti, \texttt{nwound}) e la sua mortalità (numero di morti, \texttt{nkill}). L'obiettivo è duplice: verificare la correlazione tra le due variabili e prevedere l'evoluzione della letalità media, permettendo confronti geografici mirati.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_2_enrico}
+    \caption{Dashboard 2}
+    \label{Dashboard_2}
+\end{figure}
+
+
+\begin{enumerate}
+    \item \textbf{Analisi di Correlazione e Clustering (Scatter Plot):} La parte superiore ospita un grafico a dispersione dove ogni punto rappresenta un singolo evento.
+    \begin{itemize}
+        \item \textbf{Clustering K-Means:} Tramite l'algoritmo \textit{K-Means} di Tableau, gli attacchi sono stati raggruppati statisticamente per gravità.
+        \item \textbf{Legge di Potenza:} La densa "nuvola" colorata vicino all'origine rappresenta il \textit{Cluster a Bassa-Alta Intensità}. I punti isolati (\textit{Outliers}) rappresentano gli "Eventi Critici", rari ma devastanti.
+    \end{itemize}
+
+    \item \textbf{Trend Storico e Previsione (Forecast):} La parte inferiore utilizza il motore di \textit{Exponential Smoothing} di Tableau. L'area ombreggiata attorno alla linea di previsione rappresenta l'intervallo di confidenza al 95\%. Anche in questo grafico è visibile l'interruzione dei dati corrispondente all'anno 1993.
+
+    \item \textbf{Analisi Geografica (Filtro Dinamico):} L'implementazione di un filtro per regione permette di trasformare una media mondiale generica in uno strumento di specifico per area.
+\end{enumerate}
+
+\subsubsection{Caso Studio Comparativo: South Asia vs North America}
+Per validare il modello, è stato eseguito un confronto diretto tra \textit{South Asia} (\ref{Dashboard_2_South_Asia}) e \textit{North America} (\ref{Dashboard_2_North_America}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_2_sa_enrico}
+    \caption{Dashboard 2 South Asia}
+    \label{Dashboard_2_South_Asia}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_2_na_enrico}
+    \caption{Dashboard 2 North America}
+    \label{Dashboard_2_North_America}
+\end{figure}
+
+\paragraph{Analisi Qualitativa}
+\begin{itemize}
+    \item \textbf{South Asia:} La nuvola di punti nello \textit{Scatter Plot} è estremamente densa, confermando che gli eventi ad alta intensità non sono eccezioni ma ricorrenze statistiche.
+    \item \textbf{North America:} Il grafico appare quasi "vuoto". La quasi totalità degli eventi si concentra nell'origine; i casi ad alta intensità sono rari (es. 11 settembre).
+\end{itemize}
+
+\paragraph{Analisi Predittiva e Business Insights}
+L'analisi del \textit{Tasso di Letalità Previsto} (rapporto tra morti e feriti stimati) ha rivelato risultati inaspettati:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lcl}
+        \hline
+        \textbf{Regione} & \textbf{Tasso di Letalità} & \textbf{Caratteristica della Minaccia} \\ \hline
+        South Asia & 0,766 & Alta frequenza, letalità "diluita" (molti feriti) \\
+        North America & 0,990 & Bassa frequenza, alta efficienza letale \\ \hline
+    \end{tabular}
+    \caption{Confronto del tasso di letalità previsto tra South Asia e North America.}
+    \label{tab:confronto_letalita}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{South Asia (0,766):} Ogni 100 feriti si registrano circa 76 decessi. La tipologia di attacchi (spesso esplosivi in aree aperte) genera un numero massiccio di feriti. La minaccia è definita dal \textbf{volume} degli eventi.
+    \item \textbf{North America (0,990):} Il rapporto è quasi $1:1$. Sebbene gli attacchi siano rari, mostrano una "efficienza letale" superiore, suggerendo l'uso di armi specifiche (sparatorie di massa) con esiti più frequentemente fatali.
+\end{itemize}
+
+\subsubsection*{Conclusioni Strategiche}
+Il confronto evidenzia due profili di rischio opposti: nel \textbf{Sud Asia}, le strutture di emergenza devono focalizzarsi sulla gestione dei grandi flussi di feriti; in \textbf{Nord America}, la prevenzione deve concentrarsi sull'anticipazione dell'evento raro, data l'altissima probabilità di decesso in caso di attacco.
+
+
+\subsubsection*{Validazione Statistica del Modello Predittivo}
+
+\paragraph{Motore di Forecasting e Parametri di Base}
+Per generare la proiezione futura della letalità, Tableau ha utilizzato un algoritmo di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Il modello selezionato automaticamente è di tipo \textbf{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}).
+
+L'algoritmo ha calcolato i seguenti valori per la previsione(\ref{Dashboard_2_Dati_Previsione_n1}:
+\begin{itemize}
+    \item \textbf{Rapporto di Letalità Iniziale previsto:} $0,864$
+    \item \textbf{Intervallo di confidenza (95\%):} $\pm 0,701$
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dati_dash_2_enrico}
+    \caption{Dashboard 2 Dati Previsione n1}
+    \label{Dashboard_2_Dati_Previsione_n1}
+\end{figure}
+
+\paragraph{Analisi delle Metriche di Qualità}
+Il software ha classificato la qualità della previsione come \textit{"Scarsa"}. Tale valutazione non indica un errore di modellazione, ma riflette l'estrema volatilità del fenomeno. Le metriche specifiche chiariscono il quadro(\ref{Dashboard_2_Dati_Previsione_n2}:
+
+\begin{itemize}
+    \item \textbf{RMSE ($0,358$) e MAE ($0,245$):} Misurano lo scostamento tra valori previsti e reali. Essendo contenuti, indicano che la linea di base è centrata correttamente sulla media storica.
+    \item \textbf{MASE ($0,91$):} Essendo inferiore a $1$, certifica che il modello ha prestazioni superiori rispetto a un modello \textit{Naive}. Il sistema estrae dunque un pattern statistico valido.
+    \item \textbf{MAPE ($27,8\%$):} L'errore percentuale spiega il rating di Tableau; esiste un margine d'incertezza del 30\% circa sulle previsioni.
+\end{itemize}
+
+
+
+\paragraph{Interpretazione Strategica del Modello}
+Dal punto di vista dell'analisi di \textit{intelligence}, una qualità statistica definita "scarsa" a causa dell'alta varianza è un'informazione preziosa. L'ampiezza dell'intervallo di confidenza ($\pm 0,701$) dimostra matematicamente che il terrorismo non segue un trend lineare.
+
+Gli eventi estremi possono alterare le medie in qualsiasi momento. Il modello suggerisce che non si deve basare la pianificazione solo sulla media attesa ($0,86$), ma si devono preparare le risorse di emergenza per l'estremo superiore dell'intervallo di confidenza, ovvero per potenziali picchi di letalità improvvisi.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_2_enrico}
+    \caption{Dashboard 2 Dati Previsione n2}
+    \label{Dashboard_2_Dati_Previsione_n2}
+\end{figure}
+
+
+\subsection{Dashboard 3: Previsione dei Bersagli (Target) per Regione}
+
+\subsubsection*{Obiettivo dell'Analisi (Vittimologia)}
+Mentre le dashboard precedenti si sono concentrate sui volumi globali e sull'impatto in termini di vite umane (letalità), questa visualizzazione (\ref{Dashboard_3}) sposta il focus sulla \textbf{Vittimologia}. L'obiettivo è analizzare chi viene colpito e con quale frequenza, incrociando le tipologie di bersaglio (\texttt{targtype1\_txt}) con le aree geografiche (\texttt{region\_txt}).
+
+Al fine di valutare il "Rischio di essere colpiti", la metrica utilizzata non è più la somma dei decessi, ma il \textbf{Conteggio degli Eventi} (Frequenza). Questo permette di identificare quali settori sono strutturalmente più sotto tiro, indipendentemente dall'esito letale del singolo attacco. La dashboard si compone di due strumenti complementari: un'analisi dinamica temporale (a sinistra) e una mappatura statica del rischio (a destra).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_3_enrico}
+    \caption{Dashboard 3}
+    \label{Dashboard_3}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Evoluzione Temporale e Previsione (Stacked Area Chart):} La parte sinistra della dashboard ospita un grafico ad aree impilate che mostra la composizione dei bersagli dal 1970 al 2017. I settori analizzati sono i cinque principali: \textit{Business, Government (General), Military, Police,} e \textit{Private Citizens \& Property}.
+    \begin{itemize}
+        \item \textbf{Analisi Storica Visiva:} Il grafico evidenzia come la distribuzione dei bersagli non sia costante. Si nota una crescita significativa a cavallo tra gli anni '80 e '90, seguita da una flessione. Tuttavia, il dato più allarmante è l'esplosione volumetrica post-2010 (anche in questo grafico è visibile il "buco" del 1993).
+        \item \textbf{Strategic Forecasting (Previsione a 5 anni):} Il valore aggiunto di questo grafico è la proiezione futura (2017--2021), rappresentata dall'area più chiara a destra. Questa estensione supporta i processi di \textit{Strategic Planning} a medio termine dei governi. L'intervallo di confidenza associato si allarga progressivamente, indicando matematicamente l'aumento dell'incertezza man mano che ci si allontana dai dati storici.
+    \end{itemize}
+
+    \item \textbf{Matrice di Concentrazione degli Attacchi (Heatmap):} La parte destra della dashboard risponde alla necessità di localizzare geograficamente la minaccia tramite una \textit{Highlight Table} (Tabella Termica). Incrociando le Regioni (sulle righe) con i Target (sulle colonne), l'intensità del colore mappa la densità storica degli attacchi, fungendo da vera e propria mappa di rischio statica.
+    \begin{itemize}
+        \item \textbf{Identificazione delle "Zone Rosse":} Analizzando i dati crudi riportati nella matrice, emergono chiaramente le combinazioni a massimo rischio globale. Le celle dal colore più intenso si trovano in \textit{Middle East \& North Africa}, dove gli attacchi ai \textit{Private Citizens} raggiungono la cifra record di 15.257 eventi storici, seguiti dagli attacchi alla \textit{Police} (6.893). Anche il \textit{South Asia} mostra una densità critica, con 10.491 attacchi ai privati cittadini e 8.471 ai militari.
+        \item Al contrario, regioni come \textit{Australasia \& Oceania} mostrano celle chiarissime (poche decine di attacchi), confermando un profilo di rischio quasi nullo.
+    \end{itemize}
+
+    \item \textbf{Interattività e Risposta alle Business Questions:} Il collante dell'intera dashboard è il \textbf{Filtro Dinamico per Regione}, posizionato in alto a destra. Selezionando un'area specifica (es. \textit{Western Europe}), sia l'\textit{Area Chart} che la previsione si ricalcolano immediatamente. Questo permette agli analisti di rispondere a domande di business mirate, come ad esempio verificare se in Europa si stia assistendo a uno spostamento dei bersagli dalle istituzioni (\textit{Government}) verso i mercati civili (\textit{Business} o \textit{Private Citizens}).
+\end{enumerate}
+
+\subsubsection{Validazione Statistica e Comportamento del Modello Predittivo}
+
+\paragraph{Motore di Forecasting e Orizzonte Temporale}
+Per la proiezione a 5 anni (2017--2021) dei volumi di attacco sui diversi bersagli, il motore analitico ha utilizzato il Livellamento Esponenziale sui dati storici dal 1970 al 2016. Coerentemente con la granularità annuale del dataset, il software non ha forzato alcuna componente di stagionalità (Modello Stagione: \textit{Nessuna}).
+
+\paragraph{Il Cambiamento di Paradigma (Soft Target vs Hard Target)}
+L'analisi dei coefficienti (\ref{Dashboard_3_Dati_Previsione_n1}) del modello rivela una netta spaccatura matematica tra gli obiettivi civili e quelli istituzionali, confermando l'ipotesi visiva di un cambio di strategia del terrorismo moderno:
+
+
+
+\begin{enumerate}
+    \item \textbf{Istituzioni, Forze dell'Ordine e Business (Hard/Economic Targets):} Per categorie come \texttt{Police}, \texttt{Military}, \texttt{Government} e \texttt{Business}, il coefficiente Beta ($\beta$, che regola la pendenza del trend) è pari a $0,000$. Di conseguenza, il modello prevede una stabilizzazione della minaccia: la stima di crescita per il quinquennio successivo è pari a $0$ rispetto al valore iniziale.
+    \item \textbf{Civili e Proprietà Private (Soft Targets):} Per la categoria \texttt{Private Citizens \& Property}, il coefficiente $\beta$ è salito a $0,297$, portando il modello a calcolare un incremento stimato impressionante di $+2.084$ attacchi nel quinquennio. Questo dato certifica matematicamente lo spostamento della violenza verso bersagli non difesi.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dati_dash_3_enrico}
+    \caption{Dashboard 3 Dati Previsione n1}
+    \label{Dashboard_3_Dati_Previsione_n1}
+\end{figure}
+
+
+\paragraph{Analisi delle Metriche di Qualità}
+Come già osservato nell'analisi della letalità (Dashboard 2), Tableau classifica la qualità complessiva di queste previsioni come \textit{"Scarsa"}. Questa valutazione(\ref{Dashboard_3_Dati_Previsione_n2}) è il riflesso dell'alta volatilità geopolitica. Esaminando le metriche specifiche:
+
+\begin{itemize}
+    \item \textbf{MAPE :} Si attesta su valori che vanno dal $27,7\%$ per il settore \textit{Business} fino a un picco del $50,1\%$ per i \textit{Private Citizens}. L'errore così alto sui civili è dovuto all'impennata anomala ed esponenziale degli attacchi nell'ultimo decennio, che rende i dati storici del passato meno affidabili per prevedere l'entità esatta della crescita futura.
+    \item \textbf{MASE :} I valori oscillano tra $1,01$ e $1,11$. Essendo leggermente superiori a $1$, indicano che, a causa delle brusche oscillazioni (cicli di pace seguiti da improvvise ondate di attentati), il modello di smussamento esponenziale fatica a performare significativamente meglio di una semplice "previsione Naive" (che replicherebbe linearmente l'ultimo dato noto).
+\end{itemize}
+
+\paragraph{Implicazioni Strategiche}
+L'alta varianza (testimoniata dall'ampio intervallo di confidenza, es. $\pm 780$ attacchi sui civili) e la netta distinzione dei trend modellati suggeriscono un'importante indicazione di \textit{Intelligence}: mentre le misure di sicurezza fisiche a protezione di basi militari e palazzi governativi sembrano aver "congelato" la crescita degli attacchi contro di essi (trend piatto), i terroristi hanno compensato rivolgendosi verso gli spazi pubblici. La previsione indica ai decisori politici che la vera priorità strategica dei prossimi anni sarà la messa in sicurezza dei \textit{Soft Target} urbani, dove l'incertezza e il volume atteso sono massimi.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dati_1_dash_3_enrico}
+    \caption{Dashboard 3 Dati Previsione n2}
+    \label{Dashboard_3_Dati_Previsione_n2}
+\end{figure}
+
+
+\subsection{Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}
+
+\subsubsection*{Obiettivo dell'Analisi}
+Mentre le dashboard precedenti hanno esaminato la frequenza, la letalità e la natura dei bersagli, questa visualizzazione (\ref{Dashboard_4}) sposta il focus sull'efficacia delle misure di sicurezza e dell'intelligence antiterrorismo. L'analisi si basa sulla variabile binaria dell'esito dell'attacco: \textbf{Successo} (l'attacco è stato portato a termine come pianificato) o \textbf{Fallimento} (l'ordigno è stato disinnescato, il terrorista intercettato o l'azione è fallita per cause tecniche).
+
+L'obiettivo strategico è comprendere se le capacità difensive globali stiano migliorando nel tempo e se la natura del bersaglio influisca sulla probabilità di riuscita dell'attentato. La dashboard è composta da due visualizzazioni temporali sincronizzate e governate da un filtro globale per tipologia di bersaglio.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_4_enrico}
+    \caption{Dashboard 4}
+    \label{Dashboard_4}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Analisi Temporale dell'Efficacia (Composizione e Trend):} La porzione principale della dashboard risponde alla domanda su come variano i risultati storicamente.
+    \begin{itemize}
+        \item \textbf{100\% Stacked Bar Chart:} Il grafico a barre in pila normalizzato al 100\% mostra visivamente la proporzione annua tra attacchi riusciti (porzione Arancione) e attacchi falliti (porzione Viola). A livello globale, emerge un dato strutturale: il terrorismo ha un tasso di successo fisiologicamente altissimo. Questo è tipico delle tattiche asimmetriche, in cui l'attaccante ha il vantaggio della sorpresa.
+        \item \textbf{Trend Line dell'Efficacia (Tasso di Fallimento):} Sotto l'istogramma, un grafico a linee isola e traccia unicamente la percentuale dei fallimenti nel corso dei decenni.
+        \begin{itemize}
+            \item \textit{Analisi Storica:} Si nota un picco anomalo di fallimenti nei primi anni '70 (intorno al 1972, prossimo al 20\%).
+            \item \textit{Il Trend Recente:} Il dato di business più rilevante si osserva nella parte finale della curva (dal 2010 al 2017). La linea del tasso di fallimento mostra una crescita rapida e costante, passando da valori sotto il 10\% a picchi che superano il 15\%--20\%. Questo trend in salita è un indicatore positivo: certifica che l'implementazione di moderne tecnologie di prevenzione, la sorveglianza digitale e il miglioramento delle operazioni di \textit{intelligence} stanno portando a sventare un numero sempre maggiore di attentati.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Correlazione tra Bersaglio ed Esito (Analisi "Hard vs Soft Target"):}
+    Per rispondere al quesito se sia più difficile colpire una base militare rispetto a una piazza pubblica, la dashboard è stata dotata di un \textbf{Filtro Dinamico per Target} (\texttt{targtype1\_txt}). Questo strumento interattivo permette di condurre un'analisi differenziale immediata:
+
+
+
+    \begin{itemize}
+        \item \textbf{Hard Targets (es. Military / Police):} Selezionando bersagli istituzionali, dotati di protocolli di sicurezza attivi, perimetri fortificati e personale armato, la linea del "Tasso di Fallimento" tende a posizionarsi su valori percentuali mediamente più alti. Le difese passive e attive fungono da deterrente o riescono a neutralizzare la minaccia durante la fase di esecuzione.
+        \item \textbf{Soft Targets (es. Private Citizens \& Property):} Cambiando il filtro su obiettivi civili (luoghi pubblici, piazze, mercati), si osserva un restringimento della barra viola e un crollo della linea dei fallimenti. Privi di difese strutturali, questi bersagli garantiscono ai terroristi una probabilità di successo dell'azione quasi assoluta.
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection*{Conclusioni Strategiche}
+Questa dashboard chiude il cerchio dell'analisi, trasformando una variabile binaria in un misuratore di \textit{performance} per la sicurezza globale. La visualizzazione dimostra che, sebbene spostare l'attenzione sui \textit{Soft Target} garantisca ai terroristi tassi di successo altissimi, gli sforzi di prevenzione sistemica degli ultimi anni stanno invertendo la rotta, registrando i tassi di fallimento dell'attacco più alti degli ultimi 40 anni.
+
+
+
+\subsubsection{Caso Studio Comparativo: \textit{Military} vs \textit{Airports \& Aircraft}}
+Per rispondere al quesito specifico se sia più difficile colpire una base militare rispetto a un aeroporto, sono stati isolati i dati di queste due categorie tramite il filtro dinamico, analizzando le rispettive linee di tendenza dei fallimenti. Il confronto ha rivelato un dato statistico di grande rilevanza strategica.
+
+
+
+\begin{itemize}
+    \item \textbf{Analisi del Target \textit{Military} (Basi e Forze Armate):} Filtrando per obiettivi militari, il grafico a barre mostra (\ref{Dashboard_4_Military}) che il tasso di successo degli attacchi rimane storicamente molto alto. Osservando la \textit{Trend Line} del tasso di fallimento, notiamo che per decenni (dal 1970 al 2014) la percentuale di attacchi sventati ha oscillato in una fascia relativamente bassa, tra il 5\% e il 10\%. Solo nel biennio finale (2016--2017) si registra un'impennata che supera il 20\%.
+
+    \textit{Interpretazione:} Sebbene le basi militari siano \textit{Hard Targets} (obiettivi fortificati), le truppe operano spesso in zone di conflitto attivo o in scenari asimmetrici, dove sono costantemente esposte ad agguati, ordigni improvvisati, rendendo la prevenzione assoluta molto complessa.
+
+    \item \textbf{Analisi del Target \textit{Airports \& Aircraft} (Aviazione Civile e Infrastrutture):} Cambiando il filtro sul settore dell'aviazione (\ref{Dashboard_4_Airports_&_Aircraft}), lo scenario cambia drasticamente. La prima evidenza tecnica è il cambio di scala dell'asse Y del grafico del Trend di Efficacia: mentre per i militari il tetto massimo era intorno al 20\%, qui l'asse arriva all'80\%. Storicamente, l'aviazione mostra tassi di fallimento molto più alti (spesso tra il 15\% e il 30\% già negli anni passati), con un picco anomalo e verticale nell'ultimo anno registrato (2017), dove la percentuale di attacchi falliti o sventati schizza quasi all'80\%. Il grafico a barre soprastante conferma visivamente questo dato, mostrando ampie porzioni (fallimenti) che dominano in diverse annate.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_4_military_enrico}
+    \caption{Dashboard 4 Military}
+    \label{Dashboard_4_Military}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/Foto_dash_enrico/dash_4_air_enrico}
+    \caption{Dashboard 4 Airports  Aircraft}
+    \label{Dashboard_4_Airports_&_Aircraft}
+\end{figure}
+
+Questa marcata discrepanza deriva dalla natura delle difese:
+\begin{enumerate}
+    \item \textbf{Standardizzazione Globale:} Il settore aeroportuale è regolato da protocolli di sicurezza internazionali standardizzati (\textit{metal detector}, \textit{scanner} a raggi X, controlli incrociati sui passeggeri, \textit{intelligence} preventiva) che bloccano la minaccia prima che entri nella fase esecutiva.
+    \item \textbf{Vulnerabilità Tattica:} Un aeroporto è un ambiente chiuso e controllato, dove l'attaccante deve superare filtri successivi. Un convoglio militare, al contrario, si trova spesso in campo aperto, dove l'attaccante può sfruttare il fattore sorpresa o la forza bruta.
+\end{enumerate}
+
+
+\subsection{Dashboard 5: Previsione del Volume degli Attacchi}
+
+\subsubsection*{Obiettivo dell'Analisi}
+Questa dashboard si concentra sull'analisi puramente volumetrica del fenomeno terroristico a livello globale. A differenza delle precedenti analisi strutturate su base annua, questa visualizzazione adotta una granularità temporale maggiore (mensile). L'obiettivo è identificare micro-trend, fluttuazioni a breve termine e, soprattutto, stimare il carico operativo globale per le forze di sicurezza e l'intelligence nell'immediato futuro (orizzonte temporale di 12 mesi).
+
+\subsubsection*{Configurazione della Visualizzazione}
+La dashboard mostrata in Figura \ref{Dashboard_5_Previsione_Volume_Attacchi} è costruita attorno a un \textbf{Time-Series Line Chart} continuo:
+\begin{itemize}
+    \item \textbf{Asse X (Temporale):} Mese di Date (scala continua dal 1970 al 2017).
+    \item \textbf{Asse Y (Metrica):} Conteggio di \texttt{Eventid} (frequenza assoluta degli attacchi).
+\end{itemize}
+Nella porzione finale del grafico è stato integrato il motore di \textit{Forecasting} di Tableau, che estende la curva evidenziando visivamente la stima attesa e il suo intervallo di confidenza (area azzurra sfumata).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/previsione volume attacchi}
+    \caption{Dashboard 5: Previsione del Volume degli Attacchi - Line chart temporale che illustra l'andamento mensile degli attacchi globali dal 1970 al 2017, con proiezione predittiva per il 2018.}
+    \label{Dashboard_5_Previsione_Volume_Attacchi}
+\end{figure}
+
+\subsubsection*{Analisi Storica Visiva e Cicli del Terrore}
+L'osservazione della curva storica evidenzia tre macro-fasi distinte, fondamentali per comprendere l'evoluzione della minaccia:
+\begin{enumerate}
+    \item \textbf{Fase di Latenza e Crescita Lenta (1970 -- 2010):} Il volume mensile degli attacchi si mantiene storicamente al di sotto della soglia dei 600 eventi. Le oscillazioni sono frequenti ma contenute (si nota fisiologicamente l'interruzione dei dati del 1993, coerentemente con i "Missing Data" storici del GTD).
+    \item \textbf{L'Esplosione Volumetrica (2011 -- 2014):} Si registra una rottura strutturale (\textit{breakout}) senza precedenti. Il numero di attacchi subisce un'accelerazione verticale, triplicando i volumi storici e raggiungendo un picco assoluto intorno al 2014, superando i 1.600 attacchi mensili (dinamica strettamente correlata all'instabilità geopolitica in Medio Oriente e all'ascesa di nuove organizzazioni strutturate).
+    \item \textbf{La Contrazione Repentina (2015 -- 2017):} Dopo il picco, la curva subisce un crollo drammatico e continuo, dimezzando i volumi mensili fino a tornare sotto la soglia dei 1.000 eventi/mese nel 2017. Questo indica una forte contrazione delle capacità operative delle reti terroristiche.
+\end{enumerate}
+
+\subsubsection*{Validazione Statistica del Modello Predittivo}
+
+\begin{itemize}
+    \item \textbf{Motore di Forecasting e Parametri di Base}
+\end{itemize}
+Per proiettare il volume degli attacchi nel breve termine (Gennaio -- Dicembre 2018), Tableau ha applicato un algoritmo di \textbf{Livellamento Esponenziale} (\textit{Exponential Smoothing}). Il software ha selezionato in automatico il periodo ottimale di addestramento (Novembre 2003 -- Dicembre 2017) per basare la stima sulle dinamiche del terrorismo moderno.
+
+Il modello generato è di tipo \textbf{Aggiuntivo} per il Livello, senza Trend e senza Stagionalità (Modello: \textit{Aggiuntivo, Nessuno, Nessuno}). Questa configurazione fissa la stima di base a \textbf{794 attacchi al mese}, con una linea di previsione piatta e un intervallo di confidenza di $\pm 224$ eventi.
+
+I dettagli matematici di questa elaborazione sono sintetizzati nella \textbf{Figura \ref{fig:dashboard_5_previsione_volume}}. La tabella di riepilogo illustra sia i coefficienti di livellamento scelti dall'algoritmo (che confermano matematicamente l'assenza di trend e stagionalità tramite l'azzeramento dei parametri $\beta$ e $\gamma$), sia le metriche di scostamento ed errore (tra cui RMSE, MAE e MAPE). Sono proprio questi indicatori a determinare la classificazione "Scarsa" assegnata da Tableau, evidenziando il margine di incertezza fisiologico di un fenomeno altamente volatile.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dati dash 5.png}
+    \caption{Dati previsione Dashboard 5 - Tabella riassuntiva dei coefficienti di livellamento e delle metriche di errore calcolate dal modello predittivo.}
+    \label{fig:dashboard_5_previsione_volume}
+\end{figure}
+
+\subsubsection*{Conclusioni Strategiche (Business Insights)}
+L'insight primario per i decisori (\textit{Actionable Insight}) è che \textbf{la "quantità" globale del terrorismo è attualmente in fase di forte contenimento.} Le politiche di contrasto e le campagne militari del biennio precedente hanno avuto successo nel ridurre i volumi operativi. Tuttavia, la previsione piatta e l'assenza di stagionalità suggeriscono che il fenomeno non è sconfitto, ma si sta "congelando" su un nuovo livello di base (circa 800 eventi mensili) che rappresenta l'attuale "rumore di fondo" fisiologico del rischio globale.
+
+\subsection{Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco}
+
+\subsubsection*{Obiettivo dell'Analisi}
+Mentre le dashboard precedenti si sono focalizzate sul costo in vite umane, questa visualizzazione analizza i danni materiali e l'impatto finanziario degli eventi terroristici (\texttt{propvalue\_fix}). L'obiettivo è quantificare il danno economico associato a ciascuna tipologia di attacco (\texttt{Attacktype1 Txt}) e stimare le perdite finanziarie attese per l'anno successivo (orizzonte temporale di 4 trimestri), fornendo informazioni cruciali per le politiche assicurative, la ricostruzione e la gestione del rischio infrastrutturale.
+
+\subsubsection*{Configurazione della Visualizzazione}
+Per gestire l'enorme sproporzione economica tra diverse tattiche, la dashboard, visibile nella Figura \ref{Dashboard_6_Previsione_Impatto_Economico}, è stata progettata come uno \textit{Small Multiples Line Chart} (Grafico a Linee a Faccette), suddiviso per righe.
+Le impostazioni tecniche chiave includono:
+\begin{itemize}
+    \item \textbf{Asse Temporale Continuo:} Aggregazione per \textbf{Trimestre di Date}, ideale per filtrare il rumore di fondo giornaliero mantenendo la sensibilità ai picchi.
+    \item \textbf{Gamme di Assi Indipendenti:} Questa scelta tecnica è stata fondamentale. Poiché attacchi come i dirottamenti (\textit{Hijacking}) presentano danni storici nell'ordine dei miliardi, mantenere un asse Y sincronizzato avrebbe appiattito visivamente tutte le altre categorie. Svincolando le scale (es. asse in Milioni per i bombardamenti, in Migliaia per gli assalti disarmati), è stato possibile visualizzare i trend specifici di ogni categoria.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dash 6.png}
+    \caption{Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco - Small Multiples Line Chart che scompone i danni economici storici e le stime future per ciascuna tattica.}
+    \label{Dashboard_6_Previsione_Impatto_Economico}
+\end{figure}
+
+\subsubsection*{Analisi Storica Visiva e Dinamiche di Danno}
+Dall'osservazione dei trend trimestrali emerge chiaramente che il danno economico del terrorismo non segue una distribuzione normale, ma è governato da estremi anomali (Outliers):
+\begin{enumerate}
+    \item \textbf{Danni Strutturali Costanti (\textit{Bombing/Explosion} e \textit{Facility/Infrastructure Attack}):} Queste due categorie rappresentano il "costo fisso" del terrorismo. Le linee presentano continue oscillazioni di grave entità, dimostrando che l'uso di esplosivi e il sabotaggio di infrastrutture sono le tattiche preferite per causare logoramento economico continuo.
+    \item \textbf{Eventi "Cigno Nero" (\textit{Hijacking} e \textit{Armed Assault}):} Grafici come quello dei dirottamenti mostrano linee piatte vicine allo zero per decenni, interrotte da singoli picchi catastrofici fuori scala (evidente il riflesso degli attacchi dell'11 Settembre 2001 e i successivi impatti sul mercato dell'aviazione civile e immobiliare).
+    \item \textbf{Impatto Economico Nullo (\textit{Assassination} e \textit{Hostage Taking}):} Come prevedibile, tattiche mirate alla persona (omicidi mirati o rapimenti) generano danni materiali trascurabili, confermando la solidità e la coerenza del dataset.
+\end{enumerate}
+
+\subsubsection*{Validazione Statistica del Modello Predittivo}
+
+\begin{itemize}
+    \item \textbf{Motore di Forecasting e Parametri di Base}
+\end{itemize}
+Il modello di \textit{Exponential Smoothing} di Tableau ha generato una proiezione per i successivi 4 trimestri (2018 T1 -- 2018 T4), escludendo automaticamente i dati storici più remoti e basando l'addestramento sul periodo \textbf{1995 T3 -- 2017 T4}.
+Per tutte le categorie, il software ha applicato un modello \textbf{Aggiuntivo, Nessuno, Nessuno} (Livello aggiunto, senza Trend continuo, senza Stagionalità), indicando che i danni economici colpiscono in modo imprevedibile durante l'anno.
+
+\begin{itemize}
+    \item \textbf{Analisi dei Coefficienti e delle Metriche di Qualità}
+\end{itemize}
+I risultati numerici estratti dal modello, consultabili nella Figura \ref{fig:dashboard_6_dati_previsione}, evidenziano l'entità del rischio finanziario per le due tattiche economicamente più impattanti:
+\begin{itemize}
+    \item \textbf{Bombing/Explosion (Qualità: Scarsa):} Il modello fissa una stima di base di circa $8.494.047$ dollari a trimestre. Tuttavia, l'intervallo di confidenza è colossale: $\pm 250.738.534$ dollari. 
+    \item \textbf{Facility/Infrastructure Attack (Qualità: Ok):} La stima trimestrale si assesta su $5.360.684$ dollari, con un margine di errore di $\pm 23.284.718$ dollari.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dati dash 6.png}
+    \caption{Dati previsione Dashboard 6 - Dettaglio delle stime economiche previste, intervalli di confidenza e metriche di errore per categoria.}
+    \label{fig:dashboard_6_dati_previsione}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Lettura Diagnostica delle Metriche di Qualità}
+\end{itemize}
+Le valutazioni di Tableau ("Ok" per le infrastrutture, "Scarso" per le esplosioni e i dirottamenti) sono perfettamente giustificate dalla lettura congiunta dei parametri precedentemente introdotti:
+\begin{itemize}
+    \item \textbf{MAPE estremo:} Il parametro che penalizza maggiormente i bombardamenti portandoli a un rating "Scarso" è un MAPE del $4528,8\%$. Questo valore fuori scala indica che i picchi storici sono così violenti e improvvisi da rendere l'errore percentuale medio altissimo rispetto ai periodi di "calma".
+    \item \textbf{Coefficiente Alpha (Livello):} Per quasi tutte le tattiche questo valore è bassissimo ($0,000$ o $0,040$). Questo significa che il modello non dà peso all'ultimo trimestre registrato, capendo che un attentato distruttivo oggi non implica necessariamente un attentato domani. L'unica eccezione è \textit{Bombing/Explosion} ($\alpha = 0,180$), che mostra una leggera "memoria a breve termine", confermando che le campagne di bombardamento avvengono spesso a ondate contigue.
+    \item \textbf{Beta e Gamma azzerati:} L'assenza di trend ($\beta = 0$) e stagionalità ($\gamma = 0$) conferma che la distruzione del capitale non segue cicli economici prevedibili, ma dipende unicamente dall'iniziativa geopolitica degli attaccanti.
+\end{itemize}
+
+\subsubsection*{Conclusioni Strategiche (Business Insights)}
+L'analisi predittiva dell'impatto economico restituisce una direttiva fondamentale per l'analisi del rischio (\textit{Risk Management}): il terrorismo genera danni finanziari secondo dinamiche di estrema varianza. Le proiezioni piatte del modello non devono illudere su un rischio basso. Al contrario, gli enormi intervalli di confidenza (centinaia di milioni di dollari) indicano che le coperture assicurative governative, i fondi di emergenza e i budget di sicurezza per le infrastrutture critiche non possono essere calibrati sulle medie attese, ma devono essere parametrizzati per assorbire lo shock estremo stimato dal limite superiore della previsione.
+
+\subsection{Dashboard 7: Previsione dell'Intensità (Vittime) per Arma (Diagnostica Avanzata)}
+
+\subsubsection*{Obiettivo dell'Analisi}
+L'ultima fase del progetto sposta il focus sulle scelte tattiche dei gruppi terroristici, analizzando la letalità in base all'arma utilizzata (\texttt{Weaptype1 Txt}). L'obiettivo è duplice: da un lato, condurre una diagnostica avanzata sulla dispersione delle vittime per capire il reale "potenziale distruttivo" di ogni arma; dall'altro, prevedere il volume di vittime atteso per l'anno successivo. 
+
+\textit{Nota Metodologica:} Per garantire la robustezza statistica del modello predittivo ed evitare distorsioni causate da rumore di fondo, il dataset è stato filtrato. Sono state escluse le armi marginali o prive di serie storiche sufficienti, concentrando l'analisi esclusivamente sulle cinque categorie principali e storicamente più rilevanti: \textit{Explosives, Firearms, Incendiary, Melee} e \textit{Unknown}.
+
+\subsubsection*{Configurazione della Visualizzazione}
+La dashboard, presente in Figura \ref{fig:dashboard_7_previsione_intensita_per_arma}, è composta da due visualizzazioni sovrapposte e interdipendenti:
+\begin{enumerate}
+    \item \textbf{Box Plot con Scala Logaritmica (Top):} Un diagramma a scatola e baffi progettato per l'analisi degli \textit{Outliers}. Poiché gli eventi terroristici estremi creano un asse Y sproporzionato (decine di migliaia di vittime), è stata applicata una \textbf{scala logaritmica}. Questo stratagemma visivo permette di "comprimere" i valori anomali e rendere visibile la scatola grigia, che rappresenta il 50\% centrale degli attacchi (dal 25° al 75° percentile).
+    \item \textbf{Multi-Series Line Chart (Bottom):} Un grafico a linee temporale con aggregazione trimestrale che mostra l'andamento storico delle vittime per arma, culminando nell'area di previsione (Forecast) per i successivi 5 trimestri (fino alla fine del 2018).
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dash 7.png}
+    \caption{Dashboard 7: Previsione dell'Intensità (Vittime) per Arma - Visualizzazione combinata con Box Plot logaritmico per lo studio della dispersione (in alto) e grafico temporale predittivo (in basso).}
+    \label{fig:dashboard_7_previsione_intensita_per_arma}
+\end{figure}
+
+\subsubsection*{Analisi Diagnostica: Dispersione e Outlier (Box Plot)}
+La lettura del Box Plot restituisce una fotografia cruda della letalità tattica:
+\begin{itemize}
+    \item \textbf{La "Normalità" a bassa intensità:} Le scatole grigie per quasi tutte le armi sono schiacciate verso il basso. Questo conferma matematicamente che la stragrande maggioranza degli attacchi (la norma statistica) causa da 0 a pochissime vittime. Ad esempio, per la categoria \textit{Incendiary}, la mediana è prossima allo zero (spesso i danni sono solo materiali).
+    \item \textbf{L'Estremismo Distruttivo (Outliers):} Le dense colonne di cerchi blu che si innalzano sopra le scatole, specialmente per \textit{Explosives} e \textit{Firearms}, rappresentano le anomalie. Il fatto che per gli esplosivi i punti arrivino in cima alla scala logaritmica dimostra che, sebbene la maggior parte delle bombe faccia poche vittime, questa è l'arma che ha il potenziale di generare stragi di massa fuori controllo (cigni neri tattici).
+\end{itemize}
+
+\subsubsection*{Validazione Statistica del Modello Predittivo}
+
+\begin{itemize}
+    \item \textbf{Motore di Forecasting e Parametri di Base}
+\end{itemize}
+Il modello ha proiettato i dati di 5 trimestri in avanti (2017 T4 -- 2018 T4). Un dettaglio tecnico rilevante è l'impostazione \textbf{"Ignora ultimo: 1 trimestre"}. Escludendo deliberatamente l'ultimo trimestre del 2017 (spesso incompleto o soggetto a ritardi di consolidamento nel GTD), l'algoritmo ha basato il suo addestramento su una serie storica pienamente consolidata (1995 T2 -- 2017 T3).
+
+\begin{itemize}
+    \item \textbf{Analisi dei Coefficienti e delle Metriche di Qualità}
+\end{itemize}
+L'estrazione dei coefficienti di livellamento, presenti nella Figura \ref{fig:dashboard_7_dati_previsione}, ha portato alla luce due scenari analitici radicalmente diversi a seconda dell'arma:
+
+\begin{enumerate}
+    \item \textbf{Il Modello Additivo (Esplosivi e Armi Bianche/Incendiarie):}
+    Per armi come gli \textit{Explosives}, il sistema ha generato un modello \textbf{Aggiuntivo, Nessuno, Nessuno}. La previsione si attesta su una media drammatica di $7.870$ vittime stimate a trimestre, ma senza alcun ciclo prevedibile ($\beta = 0, \gamma = 0$). L'intervallo di confidenza enorme ($\pm 2.875$) e il MAPE del $25,8\%$ giustificano la qualità \textit{"Scarsa"}: gli attacchi esplosivi sono caotici, impulsivi e non seguono calendari regolari. Il coefficiente di livello ($\alpha = 0,500$) indica un rapido adattamento del modello alle variazioni storiche recenti.
+    
+    \item \textbf{Il Modello Moltiplicativo (Armi da Fuoco - Firearms):}
+    L'insight più rilevante dell'intera analisi emerge dalle armi da fuoco. Tableau ha classificato la qualità del modello come \textbf{"Ok"}, identificando matematicamente un pattern strutturato. Il modello selezionato è \textbf{Moltiplicativo, Nessuno, Moltiplicativo}. 
+    \begin{itemize}
+        \item \textbf{La Stagionalità:} Il sistema ha assegnato un contributo stagionale del \textbf{100\%}, rilevando un picco ciclico atteso nel secondo trimestre dell'anno (2018 T2) e un calo nel quarto (2018 T4).
+        \item \textbf{Coefficiente Gamma ($\gamma = 0,194$):} La presenza di un fattore Gamma attivo (che come definito modella la stagionalità) conferma che tale componente non è un errore casuale, ma una ricorrenza storica che l'algoritmo ha intercettato. Il MAPE contenuto ($33,3\%$, un ottimo risultato per dati sul terrorismo) e il MASE a $0,65$ confermano la validità superiore del modello predittivo rispetto a un'ipotesi \textit{Naive}.
+    \end{itemize}
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter8/images/dashboard/dash_diomi/dati dash 7.png}
+    \caption{Dati previsione Dashboard 7 - Riepilogo dei modelli statistici applicati, con particolare evidenza per il modello moltiplicativo stagionale estratto per le armi da fuoco.}
+    \label{fig:dashboard_7_dati_previsione}
+\end{figure}
+
+\subsubsection*{Conclusioni Strategiche (Business Insights)}
+Questa dashboard finale fornisce all'intelligence indicazioni operative estremamente chiare:
+\begin{itemize}
+    \item \textbf{Gestione dell'Imprevedibile (\textit{Explosives}):} La difesa contro gli attacchi esplosivi non può essere pianificata su base stagionale. La minaccia si mantiene costantemente su volumi altissimi (quasi 8.000 vittime stimate a trimestre) con dinamiche caotiche. Le risorse di prevenzione in questo campo devono operare a ciclo continuo.
+    \item \textbf{Pianificazione Tattica Preventiva (\textit{Firearms}):} La scoperta di un modello \textit{Moltiplicativo} stagionale per gli assalti a fuoco (con picchi nei trimestri centrali dell'anno, spesso coincidenti con le stagioni calde o periodi di maggiore affollamento civile all'aperto) offre un vantaggio tattico. I decisori possono utilizzare questo dato per programmare \textit{ramp-up} (incrementi) dei livelli di allerta e del dispiegamento di forze dell'ordine nei centri urbani in previsione dei periodi statisticamente più a rischio.
+\end{itemize}
+>>>>>>> origin/Diomi

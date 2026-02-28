@@ -1,0 +1,55 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{Introduzione}{1}{section*.5}%
+\contentsline {section}{\numberline {0.1}Approfondimento del Dataset Global Terrorism Database (GTD)}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Qualità dei Dati e Preparazione (ETL)}{3}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Preprocessing dei Dati in Python}{4}{subsection.0.1.2}%
+\contentsline {chapter}{\numberline {1}Qlik}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Analisi descrittiva}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Caricamento dei dati su Qlik}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Data Analysis Dataset Global Terrorism Database}{7}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Analisi della distribuzione geopolitica delle minacce}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Utente}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Obiettivo}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Filtri ed esempi di utilizzo}{9}{subsection.1.3.3}%
+\contentsline {subsubsection}{Evoluzione degli "Hotspot" e della Matrice Ideologica (Filtro Anno e Regione)}{9}{section*.10}%
+\contentsline {subsubsection}{Analisi della Letalità (Filtro per Criticità)}{11}{section*.15}%
+\contentsline {section}{\numberline {1.4}Analisi delle tattiche di attacco e armamenti}{13}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Utente}{13}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Obiettivo}{14}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Filtri ed esempi di utilizzo}{14}{subsection.1.4.3}%
+\contentsline {chapter}{\numberline {2}Tableau}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduzione}{18}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Metodologia di Analisi}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Strategia di Visualizzazione}{19}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Gestione della Qualità dei Dati}{19}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Panoramica delle Dashboard Realizzate}{20}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Dashboard 1: Analisi Temporale degli Attacchi e delle Vittime}{20}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Dashboard 2: Analisi e Previsione della Letalità per Regione}{22}{subsection.2.5.2}%
+\contentsline {subsubsection}{Caso Studio Comparativo: South Asia vs North America}{23}{section*.34}%
+\contentsline {paragraph}{Analisi Qualitativa}{23}{section*.37}%
+\contentsline {paragraph}{Analisi Predittiva e Business Insights}{23}{section*.38}%
+\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{24}{section*.42}%
+\contentsline {paragraph}{Analisi delle Metriche di Qualità}{25}{section*.44}%
+\contentsline {paragraph}{Interpretazione Strategica del Modello}{26}{section*.45}%
+\contentsline {subsection}{\numberline {2.5.3}Dashboard 3: Previsione dei Bersagli (Target) per Regione}{26}{subsection.2.5.3}%
+\contentsline {subsubsection}{Validazione Statistica e Comportamento del Modello Predittivo}{28}{section*.49}%
+\contentsline {paragraph}{Motore di Forecasting e Orizzonte Temporale}{28}{section*.50}%
+\contentsline {paragraph}{Il Cambiamento di Paradigma (Soft Target vs Hard Target)}{28}{section*.51}%
+\contentsline {paragraph}{Analisi delle Metriche di Qualità}{28}{section*.53}%
+\contentsline {paragraph}{Implicazioni Strategiche}{29}{section*.54}%
+\contentsline {subsection}{\numberline {2.5.4}Dashboard 4: Analisi degli Esiti dell'Attacco (Successo vs Fallimento)}{29}{subsection.2.5.4}%
+\contentsline {subsubsection}{Caso Studio Comparativo: \textit {Military} vs \textit {Airports \& Aircraft}}{31}{section*.59}%
+\contentsline {subsection}{\numberline {2.5.5}Dashboard 5: Previsione del Volume degli Attacchi}{32}{subsection.2.5.5}%
+\contentsline {paragraph}{Motore di Forecasting e Parametri di Base}{33}{section*.67}%
+\contentsline {subsection}{\numberline {2.5.6}Dashboard 6: Previsione dell'Impatto Economico per Tipo di Attacco}{34}{subsection.2.5.6}%
+\contentsline {paragraph}{Motore di Forecasting e Orizzonte Temporale}{35}{section*.75}%
+\contentsline {paragraph}{Analisi dei Dati Predittivi (Focus sulle Categorie Critiche)}{35}{section*.76}%
+\contentsline {paragraph}{Lettura Diagnostica delle Metriche di Qualità}{36}{section*.78}%
+\contentsline {subsection}{\numberline {2.5.7}Dashboard 7: Previsione dell'Intensità (Vittime) per Arma (Diagnostica Avanzata)}{37}{subsection.2.5.7}%
+\contentsline {paragraph}{Motore di Forecasting e Filtro Dati}{38}{section*.85}%
+\contentsline {paragraph}{Analisi dei Dati Predittivi e Scoperta della Stagionalità}{38}{section*.86}%
+\contentsline {chapter}{\numberline {3}Power PI}{40}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Seguire pdf esempio}{40}{section.3.1}%
+\contentsline {chapter}{Sitografia}{41}{chapter*.89}%
